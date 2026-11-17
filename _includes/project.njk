@@ -1,0 +1,29 @@
+---
+layout: base.njk
+---
+{# A project page: a title, the story in the project's own words, then a photo gallery.
+   Used by every file in /projects. Photos come from the `photos` list in the file's header. #}
+{% set photoFolder = "/assets/img/projects/" + page.fileSlug + "/" %}
+<article class="project">
+  <header class="page-head wrap">
+    <p class="label">Visual art · Project</p>
+    <h1 class="title">{{ title }}</h1>
+    {% if subtitle %}<p class="intro">{{ subtitle }}</p>{% endif %}
+    {% if request %}<a class="btn btn--rose" href="#request">{{ request.heading }}</a>{% endif %}
+  </header>
+
+  {% if photos and photos.length %}
+  <div class="wrap gallery gallery--project">
+    {% for photo in photos %}
+    <figure class="gallery__item" data-name="{{ photo.file | fileName }}">
+      <a href="{{ photoFolder }}{{ photo.file }}"><img src="{{ photoFolder }}{{ photo.file }}" alt="{{ photo.alt }}" loading="lazy"></a>
+      {% if photo.caption %}<figcaption><span class="tile__title">{{ photo.caption }}</span></figcaption>{% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="wrap"><div class="prose project__story">{{ content | safe }}</div></div>
+  {% if request %}{% include "event-request.njk" %}{% endif %}
+  <nav class="wrap pager" aria-label="More art"><span></span><a class="pager__all" href="/art/"><span class="label">All visual art</span></a><span></span></nav>
+</article>

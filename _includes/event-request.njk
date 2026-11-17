@@ -1,0 +1,46 @@
+{# "Request this for your event" form for a project page. Turned on by a `request` block in the
+   project's header (heading, text, options). Submissions arrive in Netlify as "request-<project>",
+   then the visitor goes to the Calendly link in _data/contact.js. Styles reuse the contact form's. #}
+{% set formName = "request-" + page.fileSlug %}
+<section class="request wrap" id="request">
+  <h2 class="h2">{{ request.heading }}</h2>
+  <p class="intro">{{ request.text }}</p>
+  <form class="contact" name="{{ formName }}" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="bot-field" data-then-url="{{ contact.calendly }}">
+    <input type="hidden" name="form-name" value="{{ formName }}">
+    <input type="hidden" name="art" value="{{ title }}">
+    <p class="contact__hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+    <div class="contact__row">
+      <label class="field"><span class="label label--small">Name</span><input name="name" type="text" autocomplete="name" required></label>
+      <label class="field"><span class="label label--small">Email</span><input name="email" type="email" autocomplete="email" required></label>
+    </div>
+    <div class="contact__row">
+      <label class="field"><span class="label label--small">Event</span><input name="event" type="text" required></label>
+      <label class="field"><span class="label label--small">Dates</span><input name="dates" type="text"></label>
+    </div>
+    <div class="contact__row">
+      <label class="field"><span class="label label--small">Location</span><input name="location" type="text" placeholder="City or venue"></label>
+      <label class="field"><span class="label label--small">Expected guests</span><input name="guests" type="text"></label>
+    </div>
+
+    <fieldset class="contact__kinds">
+      <legend class="label">Indoors or outdoors?</legend>
+      <div class="chips">
+        {% for place in ["Indoors", "Outdoors", "Both"] %}<label class="chip"><input type="radio" name="setting" value="{{ place }}"><span>{{ place }}</span></label>{% endfor %}
+      </div>
+    </fieldset>
+
+    {% if request.options %}
+    <fieldset class="contact__kinds">
+      <legend class="label">What would you like?</legend>
+      <div class="chips">
+        {% for option in request.options %}<label class="chip"><input type="radio" name="wanted" value="{{ option }}"><span>{{ option }}</span></label>{% endfor %}
+      </div>
+    </fieldset>
+    {% endif %}
+
+    <label class="field"><span class="label label--small">Tell me about it</span><textarea name="message" rows="6"></textarea></label>
+    <button class="btn btn--rose" type="submit">Send and book a call</button>
+    <p class="contact__status" role="status" aria-live="polite"></p>
+  </form>
+</section>

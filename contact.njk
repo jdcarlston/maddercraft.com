@@ -11,7 +11,7 @@ description: Ask JD Carlston about ritual, ceremony, magickal work or an art com
 </section>
 
 <div class="wrap">
-  <form class="contact" name="contact" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+  <form class="contact" name="contact" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="bot-field" data-then-url="{{ contact.calendly }}">
     <input type="hidden" name="form-name" value="contact">
     <p class="contact__hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
@@ -35,29 +35,10 @@ description: Ask JD Carlston about ritual, ceremony, magickal work or an art com
 </div>
 
 <script>
-(function () {
-  var calendly = {{ contact.calendly | dump | safe }};
-  var form = document.querySelector("form.contact");
-  var status = form.querySelector(".contact__status");
-
-  // /contact/?kind=ceremony preselects a chip
-  var want = new URLSearchParams(location.search).get("kind");
-  if (want) { var r = document.getElementById("kind-" + want); if (r) r.checked = true; }
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var btn = form.querySelector("button");
-    btn.disabled = true;
-    status.textContent = "Sending…";
-    var data = new URLSearchParams(new FormData(form)).toString();
-    fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: data })
-      .then(function (res) {
-        if (!res.ok) throw new Error(res.status);
-        status.textContent = "Thank you. Taking you to my calendar…";
-        var q = new URLSearchParams({ name: form.name.value, email: form.email.value });
-        location.href = calendly + "?" + q.toString();
-      })
-      .catch(function () { form.submit(); });
-  });
-})();
+  // /contact/?kind=ceremony preselects that kind of work. Sending is handled by /assets/js/forms.js.
+  (function () {
+    var want = new URLSearchParams(location.search).get("kind");
+    var choice = want && document.getElementById("kind-" + want);
+    if (choice) choice.checked = true;
+  })();
 </script>

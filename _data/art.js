@@ -5,6 +5,7 @@ module.exports = {
   // The pieces shown on the home page, in order. Use the file names from the list below.
   featured: [
     "mosaic-face.jpg",
+    "windward-weave.jpg",
     "bound-heart.jpg",
     "haloed-woman.jpg",
     "chameleon.jpg",
@@ -20,6 +21,12 @@ module.exports = {
     "alt": "The eyes of the goddess over a gold-mended patchwork quilt, with a crocodile rising from water",
     "title": "Akhilanda Tapestry",
     "medium": "Fiber and digital"
+  },
+  {
+    "file": "windward-weave.jpg",
+    "alt": "The Windward Weave: a wall of knotted fabric strips in red light beneath a cluster of mirror balls",
+    "title": "The Windward Weave",
+    "medium": "Fiber"
   },
   {
     "file": "mosaic-face.jpg",

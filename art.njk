@@ -9,6 +9,16 @@ description: Watercolor, oil pastel, acrylic and fiber work from Madder Craft.
   <h1 class="title">Portfolio</h1>
   <p class="intro">{{ art.intro }}</p>
 </section>
+{% if collections.projects and collections.projects.length %}
+<div class="wrap project-cards">
+  {% for project in collections.projects %}
+  <a class="project-card tile" href="{{ project.url }}">
+    <img src="/assets/img/projects/{{ project.page.fileSlug }}/{{ project.data.photos[0].file }}" alt="{{ project.data.photos[0].alt }}" loading="lazy">
+    <span class="project-card__caption"><span class="tile__title">{{ project.data.title }}</span><span class="tile__note">Project</span></span>
+  </a>
+  {% endfor %}
+</div>
+{% endif %}
 <div class="wrap gallery">
   {% for p in art.pieces %}
   <figure class="gallery__item" data-name="{{ p.file | fileName }}">
