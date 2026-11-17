@@ -1,0 +1,19 @@
+---
+layout: base.njk
+title: Visual Art
+permalink: /art/
+description: Watercolor, oil pastel, acrylic and fiber work from Madder Craft.
+---
+<section class="page-head wrap">
+  <p class="label">Visual art</p>
+  <h1 class="title">Portfolio</h1>
+  <p class="intro">{{ art.intro }}</p>
+</section>
+<div class="wrap gallery">
+  {% for p in art.pieces %}
+  <figure class="gallery__item">
+    <a href="/assets/img/art/{{ p.file }}"><img src="/assets/img/art/{{ p.file }}" alt="{{ p.alt }}" loading="lazy"></a>
+    {% if p.title %}<figcaption><span class="tile__title">{{ p.title }}</span>{% if p.medium %}<span class="tile__note">{{ p.medium }}</span>{% endif %}</figcaption>{% endif %}
+  </figure>
+  {% endfor %}
+</div>

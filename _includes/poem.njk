@@ -1,0 +1,16 @@
+---
+layout: base.njk
+---
+{% set n = collections.poems | neighbors(page.url) %}
+<article class="reading reading--poem">
+  <header class="reading__head">
+    <p class="label">Poetry · {{ page.date | longDate }}</p>
+    <h1 class="title">{{ title }}</h1>
+  </header>
+  <div class="poem">{{ content | safe }}</div>
+  <nav class="pager" aria-label="More poems">
+    {% if n.earlier %}<a href="{{ n.earlier.url }}"><span class="label">← Earlier</span><span class="pager__title">{{ n.earlier.data.title }}</span></a>{% else %}<span></span>{% endif %}
+    <a class="pager__all" href="/poetry/"><span class="label">All poems</span></a>
+    {% if n.later %}<a class="pager__next" href="{{ n.later.url }}"><span class="label">Later →</span><span class="pager__title">{{ n.later.data.title }}</span></a>{% else %}<span></span>{% endif %}
+  </nav>
+</article>

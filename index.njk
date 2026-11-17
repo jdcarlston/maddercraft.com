@@ -1,0 +1,71 @@
+---
+layout: base.njk
+title: Madder Craft
+heroHeader: true
+---
+<section class="hero">
+  <img class="hero__bg" src="/assets/img/pleromic-nursery-art.jpg" alt="" aria-hidden="true">
+  <div class="hero__wash" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <h1 class="hero__title">{% set archText = "Madder Craft" %}{% set archId = "arc-home" %}{% include "arch-title.njk" %}</h1>
+    <p class="hero__line">Visual art, music, poetry and ritual.</p>
+    <a class="btn btn--gold" href="/art/">View the work</a>
+  </div>
+</section>
+
+<section class="section" id="visual-art">
+  <div class="section__head wrap">
+    <div><p class="label">Visual art</p><h2 class="h2">Portfolio</h2><p class="intro">{{ art.intro }}</p></div>
+    <a class="more" href="/art/">See all →</a>
+  </div>
+  {% set items = art.pieces | head(8) | artTiles %}
+  {% set height = 460 %}{% set rowLabel = "Selected artwork" %}{% include "row.njk" %}
+</section>
+
+<section class="section" id="music">
+  <div class="section__head wrap">
+    <div><p class="label">Music</p><h2 class="h2">{{ music.band }}</h2><p class="intro">{{ music.intro }}</p></div>
+    <a class="more" href="/music/">See all →</a>
+  </div>
+  {% set items = music.releases | musicTiles %}
+  {% set height = 400 %}{% set rowLabel = "Rose Madder album covers" %}{% include "row.njk" %}
+</section>
+
+{% set feature = null %}{% for p in collections.poems %}{% if p.fileSlug == "autumn-heart" %}{% set feature = p %}{% endif %}{% endfor %}
+<section class="section" id="poetry">
+  <div class="wrap feature">
+    <div class="feature__text">
+      <p class="label">Poetry</p>
+      <h2 class="h2">{{ feature.data.title }}</h2>
+      <p class="feature__lines">{{ feature.content | openingLines(4) }}</p>
+      <a class="more" href="{{ feature.url }}">Read the poem →</a>
+    </div>
+    <div class="feature__img"><img src="{{ feature.content | firstImage }}" alt="Sunset through a window, a hanging lantern and autumn leaves" loading="lazy"></div>
+  </div>
+  <div class="wrap cards">
+    {% set shown = 0 %}{% for p in collections.poems %}{% if p.fileSlug != "autumn-heart" and shown < 4 %}{% set shown = shown + 1 %}
+    <article class="card">
+      <p class="label label--small">{{ p.date | monthYear }}</p>
+      <h3><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
+      <p class="card__lines">{{ p.content | openingLines(2) }}</p>
+    </article>{% endif %}{% endfor %}
+  </div>
+  <div class="wrap center"><a class="btn btn--line" href="/poetry/">All {{ collections.poems.length }} poems</a></div>
+</section>
+
+<section class="ritual" id="ritual">
+  <div class="wrap ritual__inner">
+    <div class="ritual__img"><img src="/assets/img/ritual-altar.jpg" alt="A red ritual altar with candles, roses and offerings, in front of a gold painting of a woman with a leopard and a red painting of roses" loading="lazy"></div>
+    <div class="ritual__text">
+      <p class="label">Esoteric</p>
+      <h2 class="h2">Ritual &amp; Ceremony</h2>
+      <p class="ritual__lede">[A few lines in your words about the rituals and ceremonies you hold, and who they're for.]</p>
+      <ul class="list">
+        <li><span>[Ceremony or ritual]</span><span class="label label--small">[When or how]</span></li>
+        <li><span>[Ceremony or ritual]</span><span class="label label--small">[When or how]</span></li>
+        <li><span>[Ceremony or ritual]</span><span class="label label--small">[When or how]</span></li>
+      </ul>
+      <a class="btn btn--rose" href="/contact/?kind=ceremony">Ask about a ceremony</a>
+    </div>
+  </div>
+</section>

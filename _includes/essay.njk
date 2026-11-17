@@ -1,0 +1,12 @@
+---
+layout: base.njk
+---
+<article class="reading">
+  <header class="reading__head">
+    <p class="label">Essay · {{ page.date | longDate }}</p>
+    <h1 class="title">{{ title }}</h1>
+    {% if subtitle %}<p class="subtitle">{{ subtitle }}</p>{% endif %}
+  </header>
+  <div class="prose">{{ content | safe }}</div>
+  <nav class="pager" aria-label="More essays"><span></span><a class="pager__all" href="/essays/"><span class="label">All essays</span></a><span></span></nav>
+</article>

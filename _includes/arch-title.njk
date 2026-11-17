@@ -1,0 +1,6 @@
+{# Gold title curved along a translucent arch, like the Pleromic Nursery cover. Needs: archText, archId #}
+<svg class="arch" viewBox="0 0 900 300" role="img" aria-label="{{ archText }}">
+  <path d="M10 292 V176 C10 64 226 12 450 12 C674 12 890 64 890 176 V292 Z" fill="rgba(46,16,24,0.55)"/>
+  <path id="{{ archId }}" d="M110 250 Q450 60 790 250" fill="none"/>
+  <text class="arch__text" font-size="{{ archSize or 112 }}" text-anchor="middle"><textPath href="#{{ archId }}" startOffset="50%">{{ archText }}</textPath></text>
+</svg>

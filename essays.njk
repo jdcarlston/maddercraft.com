@@ -1,0 +1,15 @@
+---
+layout: base.njk
+title: Essays
+permalink: /essays/
+description: Essays from Madder Craft.
+---
+<section class="page-head wrap">
+  <p class="label">Prose</p>
+  <h1 class="title">Essays</h1>
+</section>
+<div class="wrap">
+  <ul class="index">
+  {% for e in collections.essays %}<li><a href="{{ e.url }}">{{ e.data.title }}</a><span class="label label--small">{{ e.date | monthYear }}</span></li>{% endfor %}
+  </ul>
+</div>

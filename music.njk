@@ -1,0 +1,27 @@
+---
+layout: base.njk
+title: Music
+permalink: /music/
+description: Rose Madder explores Ecstatic Black Metal, Noise, Folk and other forms of avant garde music.
+---
+<section class="page-head wrap">
+  <p class="label">Music</p>
+  <h1 class="title">{{ music.band }}</h1>
+  <p class="intro">{{ music.intro }}</p>
+  <a class="btn btn--rose" href="{{ music.listen }}">Listen on SoundCloud</a>
+</section>
+<div class="wrap releases">
+  {% for r in music.releases %}
+  <figure class="release{% if r.w > r.h %} release--wide{% endif %}">
+    <img src="/assets/img/music/{{ r.file }}" alt="{{ r.title }} album cover" loading="lazy">
+    <figcaption><span class="tile__title">{{ r.title }}</span><span class="tile__note">{{ r.note }}</span></figcaption>
+  </figure>
+  {% endfor %}
+</div>
+<section class="wrap section">
+  <p class="label">Live</p>
+  <h2 class="h2">Performance</h2>
+  <div class="performances">
+    {% for p in music.performances %}<img src="/assets/img/music/{{ p.file }}" alt="{{ p.alt }}" loading="lazy">{% endfor %}
+  </div>
+</section>

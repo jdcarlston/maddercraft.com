@@ -1,0 +1,9 @@
+{# Edge-to-edge scrolling row of images. Expects `items` with file/src, alt, title, note, w, h, and `height`. #}
+<div class="row" tabindex="0" role="region" aria-label="{{ rowLabel }}">
+  {% for it in items %}
+  <figure class="tile" style="--w:{{ (it.w or 3) / (it.h or 4) }}; --h:{{ height }}px">
+    <img src="{{ it.src }}" alt="{{ it.alt }}" loading="lazy">
+    {% if it.title or it.note %}<figcaption><span class="tile__title">{{ it.title }}</span><span class="tile__note">{{ it.note }}</span></figcaption>{% endif %}
+  </figure>
+  {% endfor %}
+</div>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if title and title != site.name %}{{ title }} · {% endif %}{{ site.name }}</title>
+<meta name="description" content="{{ description or site.description }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta property="og:title" content="{{ title or site.name }}">
+<meta property="og:description" content="{{ description or site.description }}">
+<meta property="og:image" content="{{ site.url }}{{ ogImage or '/assets/img/pleromic-nursery-art.jpg' }}">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lancelot&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="page">
+  <div class="border border--right" aria-hidden="true"></div>
+  <div class="border border--left" aria-hidden="true"></div>
+
+  <header class="masthead{% if heroHeader %} masthead--over{% endif %}">
+    <a class="brand" href="/">
+      <img src="/assets/img/logo.svg" alt="" width="115" height="115">
+      <span class="brand__name">Madder Craft</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      {% for item in site.nav %}<a href="{{ item.href }}"{% if page.url.startsWith(item.href) and item.href != '/#ritual' %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+    </nav>
+  </header>
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="footer" id="about">
+    <div class="divider" aria-hidden="true"><span></span>{% include "rose.njk" %}<span></span></div>
+    <img src="/assets/img/logo.svg" alt="" width="199" height="199">
+    <p class="footer__name">Madder Craft</p>
+    <p class="footer__line">Visual art, music, poetry, ritual and ceremony.</p>
+    <nav class="footer__links" aria-label="Elsewhere">
+      {% for l in site.elsewhere %}<a href="{{ l.href }}">{{ l.label }}</a>{% endfor %}
+    </nav>
+    <p class="footer__about">Madder Craft is the creative practice of JD Carlston, who also owns <a href="https://red-thread-labs.com">Red Thread Labs LLC</a>, where she runs coaching, workshops and retreats. For her engineering and leadership work, visit <a href="https://jdcarlston.com">jdcarlston.com</a>.</p>
+    <p class="footer__small">© {{ site.year }} Madder Craft</p>
+  </footer>
+</div>
+</body>
+</html>
