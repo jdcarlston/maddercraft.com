@@ -1,7 +1,8 @@
-{# Edge-to-edge scrolling row of images. Expects `items` with file/src, alt, title, note, w, h, and `height`. #}
+{# Edge-to-edge scrolling row of images.
+   Expects `items` (tiles from the artTiles or musicTiles filter), `height` in pixels, and `rowLabel` for screen readers. #}
 <div class="row" tabindex="0" role="region" aria-label="{{ rowLabel }}">
   {% for it in items %}
-  <figure class="tile" style="--w:{{ (it.w or 3) / (it.h or 4) }}; --h:{{ height }}px">
+  <figure class="tile" data-name="{{ it.name }}" style="--w:{{ (it.w or 3) / (it.h or 4) }}; --h:{{ height }}px">
     <img src="{{ it.src }}" alt="{{ it.alt }}" loading="lazy">
     {% if it.title or it.note %}<figcaption><span class="tile__title">{{ it.title }}</span><span class="tile__note">{{ it.note }}</span></figcaption>{% endif %}
   </figure>

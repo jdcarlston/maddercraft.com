@@ -18,7 +18,7 @@ heroHeader: true
     <div><p class="label">Visual art</p><h2 class="h2">Portfolio</h2><p class="intro">{{ art.intro }}</p></div>
     <a class="more" href="/art/">See all →</a>
   </div>
-  {% set items = art.pieces | head(8) | artTiles %}
+  {% set items = art.pieces | piecesByFile(art.featured) | artTiles %}
   {% set height = 460 %}{% set rowLabel = "Selected artwork" %}{% include "row.njk" %}
 </section>
 
@@ -59,13 +59,17 @@ heroHeader: true
     <div class="ritual__text">
       <p class="label">Esoteric</p>
       <h2 class="h2">Ritual &amp; Ceremony</h2>
-      <p class="ritual__lede">[A few lines in your words about the rituals and ceremonies you hold, and who they're for.]</p>
+      <p class="ritual__lede">I craft rituals for the transitions in a life, and guide people to create their own: a birth, a coming-of-age, a graduation, a marriage, a divorce, a death, or anything we need to mark in between.</p>
+      <p class="ritual__lede">I also teach ceremonial and chaos magickal practice, and how to use the science of the subjective to get more of what you want out of life.</p>
       <ul class="list">
-        <li><span>[Ceremony or ritual]</span><span class="label label--small">[When or how]</span></li>
-        <li><span>[Ceremony or ritual]</span><span class="label label--small">[When or how]</span></li>
-        <li><span>[Ceremony or ritual]</span><span class="label label--small">[When or how]</span></li>
+        <li><span>Element 11</span><span class="label label--small">Sanctuary Coordinator · 2012 to present</span></li>
+        <li><span>Sleep Over Mystery School</span><span class="label label--small">2022 to present</span></li>
+        <li><span>Burning Man</span><span class="label label--small">2016 · 2018 · 2022</span></li>
+        <li><span>Love Burn</span><span class="label label--small">2024 · 2025 · 2026</span></li>
+        <li><span>Lakes of Fire</span><span class="label label--small">2025</span></li>
+        <li><span>Babalon Rising</span><span class="label label--small">2026</span></li>
       </ul>
-      <a class="btn btn--rose" href="/contact/?kind=ceremony">Ask about a ceremony</a>
+      <a class="btn btn--rose" href="/contact/?kind=ceremony">Learn more</a>
     </div>
   </div>
 </section>

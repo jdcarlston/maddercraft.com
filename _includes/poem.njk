@@ -4,7 +4,7 @@ layout: base.njk
 {% set n = collections.poems | neighbors(page.url) %}
 <article class="reading reading--poem">
   <header class="reading__head">
-    <p class="label">Poetry · {{ page.date | longDate }}</p>
+    <p class="label">Poetry · {{ page.date | monthLongYear if dateIsMonthOnly else page.date | longDate }}</p>
     <h1 class="title">{{ title }}</h1>
   </header>
   <div class="poem">{{ content | safe }}</div>

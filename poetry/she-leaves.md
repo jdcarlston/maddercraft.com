@@ -1,6 +1,8 @@
 ---
 title: "She Leaves"
-date: 2017-09-15
+date: 2014-08-01
+# Written in August 2014 (exact day unknown); first posted to Medium in September 2017.
+dateIsMonthOnly: true
 category: poetry
 sorted_by: tags
 medium_tags: ["Poetry", "Leaving", "Divorce", "Poem", "Leave"]

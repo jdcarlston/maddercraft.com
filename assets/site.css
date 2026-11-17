@@ -121,7 +121,7 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
 .ritual__text { flex: 1 1 420px; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
 .ritual__lede { font-size: 21px; margin: 0; }
 .list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rose); width: 100%; }
-.list li { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--rose); font-size: 22px; }
+.list li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; padding: 16px 0; border-bottom: 1px solid var(--rose); font-size: 22px; }
 
 /* ---------- Footer ---------- */
 .footer { display: flex; flex-direction: column; align-items: center; gap: 16px; max-width: 1200px; margin: 0 auto; padding: 72px var(--padx) 56px; text-align: center; }
@@ -210,3 +210,10 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
 .contact .btn:disabled { opacity: 0.6; cursor: wait; }
 .contact__status { margin: 0; color: var(--muted); min-height: 1.5em; }
 @media (max-width: 640px) { .contact__row { grid-template-columns: 1fr; } }
+
+/* ---------- File names on hover ----------
+   Shown when the page body has the "show-names" class, which base.njk adds when
+   `showFileNames` is true in _data/site.js. Any element with data-name gets a label. */
+.gallery__item { position: relative; }
+.show-names [data-name]::before { content: attr(data-name); position: absolute; top: 10px; right: 10px; z-index: 2; padding: 6px 10px; background: rgba(46,16,24,0.92); color: var(--gold); font-family: var(--caps); font-size: 13px; letter-spacing: 0.08em; border-radius: 4px; opacity: 0; transition: opacity 0.15s; pointer-events: none; }
+.show-names [data-name]:hover::before, .show-names [data-name]:focus-within::before { opacity: 1; }

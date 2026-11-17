@@ -16,6 +16,9 @@ module.exports = function (eleventyConfig) {
     new Date(d).toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" }).toUpperCase());
   eleventyConfig.addFilter("longDate", (d) =>
     new Date(d).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }));
+  // For writing where only the month is known: "August 2014".
+  eleventyConfig.addFilter("monthLongYear", (d) =>
+    new Date(d).toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" }));
   eleventyConfig.addFilter("year", (d) => new Date(d).getUTCFullYear());
 
   // First few lines of a poem's text, for previews.
@@ -37,8 +40,28 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("head", (arr, n) => (arr || []).slice(0, n));
-  eleventyConfig.addFilter("artTiles", (pieces) => pieces.map((p) => ({ src: "/assets/img/art/" + p.file, alt: p.alt, title: p.title, note: p.medium, w: 3, h: 4 })));
-  eleventyConfig.addFilter("musicTiles", (rel) => rel.map((r) => ({ src: "/assets/img/music/" + r.file, alt: r.title + " album cover", title: r.title, note: r.note, w: r.w, h: r.h })));
+  // A file's name without its folder or extension: "/assets/img/art/towhee.jpg" -> "towhee".
+  const fileName = (path) => String(path).split("/").pop().replace(/\.[^.]+$/, "");
+  eleventyConfig.addFilter("fileName", fileName);
+
+  // Looks up portfolio pieces by file name, keeping the order of the list given.
+  // Used for the home page's `featured` list in _data/art.js. Unknown names are skipped.
+  eleventyConfig.addFilter("piecesByFile", (pieces, files) =>
+    files.map((file) => pieces.find((piece) => piece.file === file)).filter(Boolean));
+
+  // The scrolling rows (_includes/row.njk) all take the same "tile" shape:
+  //   { src, alt, title, note, name, w, h }  where w/h is the image's shape.
+  // These two filters turn art pieces and music releases into tiles.
+  eleventyConfig.addFilter("artTiles", (pieces) =>
+    pieces.map((piece) => {
+      const src = "/assets/img/art/" + piece.file;
+      return { src, alt: piece.alt, title: piece.title, note: piece.medium, name: fileName(src), w: 3, h: 4 };
+    }));
+  eleventyConfig.addFilter("musicTiles", (releases) =>
+    releases.map((release) => {
+      const src = "/assets/img/music/" + release.file;
+      return { src, alt: release.title + " album cover", title: release.title, note: release.note, name: fileName(src), w: release.w, h: release.h };
+    }));
 
   // Neighbours in a collection, for earlier/later links.
   eleventyConfig.addFilter("neighbors", (items, url) => {

@@ -11,7 +11,7 @@ description: Watercolor, oil pastel, acrylic and fiber work from Madder Craft.
 </section>
 <div class="wrap gallery">
   {% for p in art.pieces %}
-  <figure class="gallery__item">
+  <figure class="gallery__item" data-name="{{ p.file | fileName }}">
     <a href="/assets/img/art/{{ p.file }}"><img src="/assets/img/art/{{ p.file }}" alt="{{ p.alt }}" loading="lazy"></a>
     {% if p.title %}<figcaption><span class="tile__title">{{ p.title }}</span>{% if p.medium %}<span class="tile__note">{{ p.medium }}</span>{% endif %}</figcaption>{% endif %}
   </figure>

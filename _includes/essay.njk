@@ -3,7 +3,7 @@ layout: base.njk
 ---
 <article class="reading">
   <header class="reading__head">
-    <p class="label">Essay · {{ page.date | longDate }}</p>
+    <p class="label">Essay · {{ page.date | monthLongYear if dateIsMonthOnly else page.date | longDate }}</p>
     <h1 class="title">{{ title }}</h1>
     {% if subtitle %}<p class="subtitle">{{ subtitle }}</p>{% endif %}
   </header>
