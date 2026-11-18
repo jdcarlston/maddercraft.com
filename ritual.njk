@@ -13,18 +13,17 @@ description: Ritual, ceremony and esoteric practice with JD Carlston of Madder C
 </section>
 
 <div class="wrap"><div class="prose ritual-page">
-  <section id="events">
-    <h2>Events</h2>
-    <p>Where I have held ritual and ceremony:</p>
-    <ul class="list">
-      {% for e in ritual.events %}<li><span>{{ e.name }}</span><span class="label label--small">{{ e.when }}</span></li>
-      {% endfor %}
-    </ul>
-  </section>
-
   <section id="ceremonies">
     <h2>Ceremonies</h2>
     <p>I craft rituals for the transitions in a life, and guide people to create their own: a birth, a coming-of-age, a graduation, a marriage, a divorce, a death, or anything we need to mark in between. Each one is built <em>with</em> you, from what the moment means to the people in it.</p>
+  </section>
+
+  <section id="workshops-labs">
+    <h2>Workshops &amp; Labs</h2>
+    <p>Some things are learned best in a room full of people. Through <a href="/red-thread-labs/">Red Thread Labs</a> I hold labs, workshops and events where people practice relationship skills together: noticing the patterns they're stuck in, trying out new ways of meeting each other, and getting honest feedback in a space built for it.</p>
+    <p><strong>Practice Labs</strong>, our hands-on workshops, are for anyone who wants deeper, more authentic connection, whether you're dating, partnered for decades, or somewhere in between. You come as <em>the scientist of your own life</em>, and you leave with skills you've actually practiced.</p>
+    <p>I also plan and host <strong>multi-day retreats</strong>, <strong>dinners</strong>, and <strong>lunch and learns</strong>, and bring this work to teams, communities and gatherings.</p>
+    <p><a class="btn btn--line" href="https://red-thread-labs.com">Explore Red Thread Labs</a></p>
   </section>
 
   <section id="coaching">
@@ -48,6 +47,15 @@ description: Ritual, ceremony and esoteric practice with JD Carlston of Madder C
   <section id="esoterica">
     <h2>Esoterica</h2>
     <p>I teach ceremonial and chaos magickal practice, Hermetic Qabalah, and <em>the science of the subjective</em>: how attention, symbol and story shape what we experience, and how to use them to get more of what you want out of life.</p>
+  </section>
+
+  <section id="events">
+    <h2>Events</h2>
+    <p>Where I have held ritual and ceremony:</p>
+    <ul class="list">
+      {% for e in ritual.events %}<li><span>{{ e.name }}</span><span class="label label--small">{{ e.when }}</span></li>
+      {% endfor %}
+    </ul>
   </section>
 
   <p><a class="btn btn--rose" href="/contact/?kind=ceremony">Request a ceremony</a></p>

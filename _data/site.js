@@ -17,12 +17,13 @@ module.exports = {
   nav: [
     // Each item jumps to its section on the Ritual page (ritual.njk).
     { label: "Ritual", href: "/ritual/", children: [
-      { label: "Events", href: "/ritual/#events" },
       { label: "Ceremonies", href: "/ritual/#ceremonies" },
+      { label: "Workshops & Labs", href: "/ritual/#workshops-labs" },
       { label: "Coaching", href: "/ritual/#coaching" },
       { label: "The Destination Method", href: "/ritual/#destination-method" },
       { label: "NLP", href: "/ritual/#nlp" },
       { label: "Esoterica", href: "/ritual/#esoterica" },
+      { label: "Events", href: "/ritual/#events" },
     ] },
     // Workshop lists every page in /projects, in their `order`. Add a project there and add it here too.
     { label: "Workshop", href: "/workshop/", children: [
