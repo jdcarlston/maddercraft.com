@@ -4,6 +4,8 @@ subtitle: "A hanging net, tied by many hands and woven by the wind. Never-Knot-B
 description: "The Windward Weave, a hanging net tied by many hands, by JD Carlston of Madder Craft."
 # The gallery, in order. `file` is in /assets/img/projects/windward-weave/; `caption` is optional.
 photos:
+  - file: bell-and-ribbons.jpg
+    alt: "A hand with blue glitter nails holding a strip of the Weave beside a small brass bell, the knotted silk in red, purple and green against the desert"
   - file: camp-at-night.jpg
     alt: "The Weave hanging around a camp at dusk, its strips lit pink, green and gold beside trees washed in purple light"
   - file: strips-in-sun.jpg
