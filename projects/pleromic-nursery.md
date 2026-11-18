@@ -5,6 +5,12 @@ status: EP · Coming soon
 subtitle: "The coming EP from Rose Madder, still in the studio."
 description: "Pleromic Nursery, the coming EP from Rose Madder, the music of JD Carlston of Madder Craft."
 # The gallery, in order. `file` is in /assets/img/projects/pleromic-nursery/; `caption` is optional.
+# Songs to play on the page (same format as `tracks` in _data/music.js).
+tracks:
+  - title: OHM
+    file: music/pleromic-nursery/ohm-preview.mp3
+    length: "1:15"
+    preview: true
 photos:
   - file: cover.jpg
     alt: "Pleromic Nursery album cover"
@@ -16,6 +22,6 @@ photos:
 
 ## In the studio
 
-*Pleromic Nursery* is the next record from Rose Madder, being finished now. A preview of the track "OHM" will play here soon.
+*Pleromic Nursery* is the next record from Rose Madder, being finished now. Listen to a preview of the track "OHM" above.
 
 [Hear Rose Madder's earlier releases](/music/)

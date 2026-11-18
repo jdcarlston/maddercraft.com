@@ -235,6 +235,9 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
 .project-video video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: var(--iron); }
 .project-video figcaption { margin-top: 12px; max-width: 70ch; font-size: 17px; font-style: italic; color: var(--muted); line-height: 1.5; }
 
+/* Songs on a project page sit in a narrow column under the photos. */
+.project-tracks { max-width: 640px; margin-bottom: 24px; }
+
 /* About pages (Red Thread Labs, Engineering Leadership): a readable column under the heading. */
 .about-page { max-width: 820px; margin-bottom: 64px; }
 .about-page .list { margin: 0 0 1.2em; padding: 0; }

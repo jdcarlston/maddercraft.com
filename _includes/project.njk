@@ -42,6 +42,13 @@ layout: base.njk
   </div>
   {% endif %}
 
+  {# Optional `tracks`: songs from the media bucket, played with the same player as the Music page. #}
+  {% if tracks %}
+  {% set r = { tracks: tracks } %}
+  <div class="wrap project-tracks">{% include "tracks.njk" %}</div>
+  <script src="/assets/js/player.js" defer></script>
+  {% endif %}
+
   <div class="wrap"><div class="prose project__story">{{ content | safe }}</div></div>
   {% if request %}{% include "event-request.njk" %}{% endif %}
   {% if support %}{% include "support-request.njk" %}{% endif %}
