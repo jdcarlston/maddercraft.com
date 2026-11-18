@@ -3,6 +3,7 @@ layout: base.njk
 ---
 {# A project page: a title, a photo gallery, then the story in the project's own words.
    Used by every file in /projects. Photos come from the `photos` list in the file's header.
+   An optional `video` plays above the photos.
    Optional forms at the bottom: a `request` block (book it for an event) or a
    `support` block (help build or fund it). #}
 {% set photoFolder = "/assets/img/projects/" + page.fileSlug + "/" %}
@@ -14,6 +15,15 @@ layout: base.njk
     {% if request %}<a class="btn btn--rose" href="#request">{{ request.heading }}</a>{% endif %}
     {% if support %}<a class="btn btn--rose" href="#support">{{ support.heading }}</a>{% endif %}
   </header>
+
+  {# Optional `video` block: a clip from the media bucket (see `media` in _data/site.js), shown above the photos.
+     It plays silently on a loop; the controls turn the sound on. #}
+  {% if video %}
+  <figure class="wrap project-video">
+    <video src="{{ site.media }}/{{ video.file }}"{% if video.poster %} poster="{{ site.media }}/{{ video.poster }}"{% endif %} controls muted loop playsinline autoplay preload="metadata"></video>
+    {% if video.caption %}<figcaption>{{ video.caption }}</figcaption>{% endif %}
+  </figure>
+  {% endif %}
 
   {% if photos and photos.length %}
   <div class="wrap gallery gallery--project">

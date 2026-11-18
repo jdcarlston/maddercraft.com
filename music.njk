@@ -10,22 +10,26 @@ description: Rose Madder explores Ecstatic Black Metal, Noise, Folk and other fo
   <p class="intro">{{ music.intro }}</p>
   <a class="btn btn--rose" href="{{ music.listen }}">Listen on SoundCloud</a>
 </section>
-<div class="wrap releases">
-  {% for r in music.releases %}
-  <div class="release-block{% if r.w > r.h %} release-block--wide{% endif %}" id="{{ r.title | slugify }}">
-    <figure class="release{% if r.w > r.h %} release--wide{% endif %}">
-      <img src="{{ ('/assets/img/music/' + r.file) | resized }}" alt="{{ r.title }} album cover" loading="lazy">
-      <figcaption><span class="tile__title">{{ r.title }}</span><span class="tile__note">{{ r.note }}</span></figcaption>
-    </figure>
-    {% if r.tracks %}{% include "tracks.njk" %}{% endif %}
-  </div>
-  {% endfor %}
+{# One row per release: its cover (all covers the same height), its name and year, then its songs. #}
+<div class="wrap">
+  <ol class="list release-list">
+    {% for r in music.releases %}
+    <li class="release-row" id="{{ r.title | slugify }}">
+      <img class="release-row__cover" src="{{ ('/assets/img/music/' + r.file) | resized }}" alt="{{ r.title }} album cover" loading="lazy">
+      <div class="release-row__info">
+        <h2 class="release-row__title">{{ r.title }}</h2>
+        <p class="label label--small">{{ r.note }}</p>
+        {% if r.tracks %}{% include "tracks.njk" %}{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
 </div>
-<section class="wrap section">
+<section class="section"><div class="wrap">
   <p class="label">Live</p>
   <h2 class="h2">Performance</h2>
   <div class="performances">
     {% for p in music.performances %}<img src="{{ ('/assets/img/music/' + p.file) | resized(900) }}" alt="{{ p.alt }}" loading="lazy">{% endfor %}
   </div>
-</section>
+</div></section>
 <script src="/assets/js/player.js" defer></script>

@@ -19,7 +19,7 @@ module.exports = {
   {
     "file": "akhilanda-tapestry.jpg",
     "alt": "The eyes of the goddess over a gold-mended patchwork quilt, with a crocodile rising from water",
-    "title": "Akhilanda Tapestry",
+    "title": "The Golden Stitch",
     "medium": "Fiber and digital"
   },
   {

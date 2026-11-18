@@ -4,6 +4,11 @@ order: 2
 status: In development
 subtitle: "Our Singing Heart: a harmonic chromatic resonator. Seven curved steel pipes rise into a heart around a ring of organ pipes, played by breath and bellows, lit by the colors of their own notes. A sculpture in development."
 description: "The Venus Hum, a singing heart sculpture of steel, organ pipes, light and sound, in development by JD Carlston of Madder Craft."
+# A clip in the media bucket, shown above the gallery.
+video:
+  file: video/venus-hum-night.mp4
+  poster: video/venus-hum-night-poster.jpg
+  caption: "Night concept animation · People jump on the boxes to play notes and chords, and the heart lights up in their colors. Turn the sound on to hear it."
 # The gallery, in order. `file` is in /assets/img/projects/venus-hum/; `caption` is optional.
 photos:
   - file: daytime-render.jpg
