@@ -10,4 +10,4 @@ description: "Neuroattractive, a book in progress by JD Carlston about magnetism
 
 Some people walk into a room and it turns toward them. *Neuroattractive* starts from the other side of that: standing at the edge of the room, not understanding what makes someone magnetic, wondering whether connection is possible without pretending to be someone else.
 
-Told through my own story, the book looks at what is actually happening between people when attraction sparks, drawing on the science of how nervous systems tune to each other, and at how the coherence of a whole heart and mind can be practiced. It is also a permission slip: **it's okay not to be for everyone.**
+Told through my own story, the book looks at what is actually happening between people when attraction sparks, drawing on the science of how nervous systems tune to each other, and at how the coherence of a whole heart and mind can be practiced. It is also a permission slip: **It's okay not to be *for* everyone.**

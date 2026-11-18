@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "build": "eleventy",
-    "start": "eleventy --serve"
+    "start": "eleventy --serve",
+    "media:images": "node scripts/export-images.js",
+    "media:upload": "rclone copy ../maddercraft-media-upload r2:maddercraft-media --exclude \"_hold/**\" --exclude \".DS_Store\" --exclude \"*.tgz\" --progress"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.8",

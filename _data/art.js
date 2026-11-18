@@ -1,7 +1,7 @@
 // The visual art portfolio, in display order. The home page shows the pieces listed in `featured`.
 // Add a title and medium to any piece and it shows in the caption.
 module.exports = {
-  intro: "My art explores multiple mediums - mainly Watercolor, Oil Pastel, Acrylic, and Fiber. In addition I have designed a few larger sculptures.",
+  intro: "My art explores multiple mediums - mainly Watercolor, Oil Pastel, Acrylic, and Fiber. I also make interactive art pieces that come alive when people take part, like The Golden Stitch, the Windward Weave and the Venus Hum.",
   // The pieces shown on the home page, in order. Use the file names from the list below.
   featured: [
     "mosaic-face.jpg",

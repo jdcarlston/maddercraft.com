@@ -213,7 +213,7 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
 .reading { max-width: 860px; margin: 0 auto; padding: 48px var(--padx) 24px; }
 .reading__head { display: flex; flex-direction: column; gap: 14px; align-items: center; text-align: center; margin-bottom: 40px; }
 .subtitle { font-style: italic; font-size: 22px; color: var(--muted); margin: 0; }
-.poem { font-size: 23px; line-height: 1.65; text-align: center; }
+.poem { font-size: 23px; line-height: 1.65; text-align: center; overflow-wrap: anywhere; }
 .poem p { margin: 0 0 1.4em; }
 .prose { font-size: 20px; line-height: 1.7; overflow-wrap: anywhere; }
 .prose p { margin: 0 0 1.2em; }

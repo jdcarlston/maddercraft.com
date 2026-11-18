@@ -854,7 +854,7 @@ I’msorryIloveyouPleaseforgivemeThankyou
 
 * * *
 
-[Embedded media](https://open.spotify.com/embed/track/3HSBCz4Tj3l1gtjvXal9ey?utm_source=oembed)
+[https://open.spotify.com/track/3HSBCz4Tj3l1gtjvXal9ey](https://open.spotify.com/track/3HSBCz4Tj3l1gtjvXal9ey)
 
 * * *
 

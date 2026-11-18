@@ -11,7 +11,7 @@ layout: base.njk
   <header class="page-head wrap">
     <p class="label">Workshop{% if status %} · {{ status }}{% endif %}</p>
     <h1 class="title">{{ title }}</h1>
-    {% if subtitle %}<p class="intro">{{ subtitle }}</p>{% endif %}
+    {% if subtitle %}<p class="intro">{{ subtitle | keepSentences | safe }}</p>{% endif %}
     {% if request %}<a class="btn btn--rose" href="#request">{{ request.heading }}</a>{% endif %}
     {% if support %}<a class="btn btn--rose" href="#support">{{ support.heading }}</a>{% endif %}
   </header>
@@ -29,7 +29,7 @@ layout: base.njk
   <div class="wrap gallery gallery--project">
     {% for photo in photos %}
     <figure class="gallery__item" data-name="{{ photo.file | fileName }}">
-      <a href="{{ photoFolder }}{{ photo.file }}"><img src="{{ (photoFolder + photo.file) | resized(900) }}" alt="{{ photo.alt }}" loading="lazy"></a>
+      <a href="{{ (photoFolder + photo.file) | original }}"><img src="{{ (photoFolder + photo.file) | resized(900) }}" alt="{{ photo.alt }}" loading="lazy"></a>
       {% if photo.caption %}<figcaption><span class="tile__title">{{ photo.caption }}</span></figcaption>{% endif %}
     </figure>
     {% endfor %}

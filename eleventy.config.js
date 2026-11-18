@@ -1,13 +1,33 @@
 const markdownIt = require("markdown-it");
 const Image = require("@11ty/eleventy-img").default;
+const site = require("./_data/site.js");
+const { webName, originalName } = require("./scripts/image-names.js");
 
 module.exports = function (eleventyConfig) {
   // Poems keep their line breaks exactly as written.
   eleventyConfig.setLibrary("md", markdownIt({ html: true, breaks: true, typographer: true }));
 
-  eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy("writing/images");
+  if (site.imagesFromMedia) {
+    // Pictures come from the media bucket, so only the site's own files are published here:
+    // styles, scripts, the logo, icons, ornaments and the link-preview image.
+    ["assets/site.css", "assets/js", "assets/img/ornament", "assets/img/logo.svg", "assets/img/logo-512.png",
+     "assets/img/favicon.png", "assets/img/apple-touch-icon.png", "assets/img/share.jpg"]
+      .forEach((p) => eleventyConfig.addPassthroughCopy(p));
+  } else {
+    eleventyConfig.addPassthroughCopy("assets");
+  }
+  // Pictures inside poems and essays. With `imagesFromMedia` on, they're served from the media bucket
+  // at the same path (media.maddercraft.com/writing/images/...), so pages are rewritten to point there.
+  if (site.imagesFromMedia) {
+    eleventyConfig.addTransform("writingImagesFromMedia", (content, outputPath) =>
+      outputPath && outputPath.endsWith(".html")
+        ? content.replaceAll('"/writing/images/', `"${site.media}/writing/images/`)
+        : content);
+  } else {
+    eleventyConfig.addPassthroughCopy("writing/images");
+  }
   eleventyConfig.ignores.add("README.md");
+  eleventyConfig.ignores.add(".wtmp/**"); // temporary files some editors leave behind
 
   const byDateDesc = (a, b) => b.date - a.date;
   eleventyConfig.addCollection("poems", (c) => c.getFilteredByGlob("poetry/*.md").sort(byDateDesc));
@@ -51,6 +71,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("byOrder", (pages) =>
     [...(pages || [])].sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999)));
 
+  // Wraps each sentence in a "keep-together" span, so a sentence only breaks onto a new
+  // line when it can't fit on one. Used for short introductions under page titles.
+  const escapeHtml = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  eleventyConfig.addFilter("keepSentences", (text) =>
+    String(text || "").split(/(?<=[.!?])\s+/)
+      .map((sentence) => `<span class="keep-together">${escapeHtml(sentence)}</span>`).join(" "));
+
+  // The full-size original of an image, for links that open a piece. From the media bucket when
+  // `imagesFromMedia` is on in _data/site.js, otherwise from this site.
+  eleventyConfig.addFilter("original", (path) =>
+    site.imagesFromMedia && String(path).startsWith("/assets/img/") ? `${site.media}/images/originals/${originalName(path)}` : path);
+
   eleventyConfig.addFilter("head", (arr, n) => (arr || []).slice(0, n));
   // A file's name without its folder or extension: "/assets/img/art/towhee.jpg" -> "towhee".
   const fileName = (path) => String(path).split("/").pop().replace(/\.[^.]+$/, "");
@@ -75,6 +107,7 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addAsyncFilter("resized", async (path, width = 600) => {
     if (!path || !String(path).startsWith("/")) return path;
+    if (site.imagesFromMedia && path.startsWith("/assets/img/")) return `${site.media}/images/web/${webName(path, width)}`;
     const made = await Image("." + path, resizeOptions(width));  // site path -> file in this folder
     return made.webp[0].url;
   });

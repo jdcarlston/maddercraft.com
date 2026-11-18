@@ -6,6 +6,10 @@ module.exports = {
   // Where the songs and video live (the Cloudflare R2 bucket "maddercraft-media").
   // File paths in _data/music.js are added to the end of this.
   media: "https://media.maddercraft.com",
+  // false: images are served from this site (Netlify). true: from the media bucket.
+  // Before turning this on, run `npm run media:images` and upload the `images` folder it makes
+  // (in maddercraft-media-upload) to the bucket. See scripts/export-images.js.
+  imagesFromMedia: true,
   description: "Visual art, music, poetry and ritual.",
   year: new Date().getFullYear(),
   // The main menu. An item with `children` gets a sub-menu: it drops down on hover with a mouse,

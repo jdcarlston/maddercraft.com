@@ -3,7 +3,7 @@
 module.exports = {
   events: [
     { name: "Sleep Over Mystery School", when: "2022 to present" },
-    { name: "Element 11", when: "Sanctuary Coordinator · 2012 to present" },
+    { name: "Element 11", when: "Rituals since 2012 · Sanctuary Coordinator since 2019 · lead since 2022" },
     { name: "Babalon Rising", when: "2026" },
     { name: "Love Burn", when: "2024 · 2025 · 2026" },
     { name: "Lakes of Fire", when: "2025" },
