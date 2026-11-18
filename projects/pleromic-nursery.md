@@ -8,10 +8,10 @@ description: "Pleromic Nursery, the coming EP from Rose Madder, the music of JD 
 photos:
   - file: cover.jpg
     alt: "Pleromic Nursery album cover"
-    caption: Cover
-  - file: artwork.jpg
-    alt: "The Pleromic Nursery artwork without its lettering"
-    caption: Artwork
+    caption: Front cover
+  - file: back-cover.jpg
+    alt: "Pleromic Nursery back cover: the same ornate frame and flowing hair in muted rose, with a heart cradled at the center"
+    caption: Back cover
 ---
 
 ## In the studio
