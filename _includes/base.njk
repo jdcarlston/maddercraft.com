@@ -36,7 +36,8 @@
       <img src="/assets/img/logo.svg" alt="" width="115" height="115">
       <span class="brand__name">Madder Craft</span>
     </a>
-    <nav class="nav" aria-label="Main">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav class="nav" id="main-nav" aria-label="Main">
       {% for item in site.nav %}
         {% if item.children %}
         <div class="nav__group">
@@ -69,5 +70,6 @@
   </footer>
 </div>
 <script src="/assets/js/forms.js" defer></script>
+<script src="/assets/js/menu.js" defer></script>
 </body>
 </html>

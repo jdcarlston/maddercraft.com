@@ -1,6 +1,23 @@
-{# Gold title curved along a translucent arch, like the Pleromic Nursery cover. Needs: archText, archId #}
-<svg class="arch" viewBox="0 0 900 300" role="img" aria-label="{{ archText }}">
-  <path d="M10 292 V176 C10 64 226 12 450 12 C674 12 890 64 890 176 V292 Z" fill="rgba(46,16,24,0.55)"/>
-  <path id="{{ archId }}" d="M110 250 Q450 60 790 250" fill="none"/>
-  <text class="arch__text" font-size="{{ archSize or 112 }}" text-anchor="middle"><textPath href="#{{ archId }}" startOffset="50%">{{ archText }}</textPath></text>
+{# The home page title: a translucent, open eye. The name curves along the upper lid, an optional tagline
+   along the lower lid, and the iris can be a round button.
+   Needs: archText, archId. Optional: archTagline (text for the lower lid), archLink + archLinkText (makes
+   the iris a button), archSize (font size of the name). #}
+<svg class="arch" viewBox="0 0 900 400" aria-labelledby="{{ archId }}-title">
+  <title id="{{ archId }}-title">{{ archText }}{% if archTagline %}: {{ archTagline }}{% endif %}</title>
+  <path d="M14 200 C 230 -40, 670 -40, 886 200 C 670 440, 230 440, 14 200 Z" fill="rgba(46,16,24,0.55)" stroke="#C9A46A" stroke-opacity="0.55" stroke-width="2"/>
+  <circle cx="450" cy="222" r="135" fill="none" stroke="#C9A46A" stroke-opacity="0.22" stroke-width="2"/>
+  <path id="{{ archId }}" d="M150 182 Q450 62 750 182" fill="none"/>
+  <text class="arch__text" font-size="{{ archSize or 98 }}" text-anchor="middle"><textPath href="#{{ archId }}" startOffset="50%">{{ archText }}</textPath></text>
+  {% if archTagline %}
+  <path id="{{ archId }}-low" d="M200 296 Q450 368 700 296" fill="none"/>
+  <text class="arch__tagline" font-size="38" text-anchor="middle"><textPath href="#{{ archId }}-low" startOffset="50%">{{ archTagline }}</textPath></text>
+  {% endif %}
+  {% if archLink %}
+  <a class="arch__iris" href="{{ archLink }}" aria-label="{{ archLinkText }}">
+    <circle cx="450" cy="222" r="60"/>
+    <text x="450" y="224" text-anchor="middle" dominant-baseline="middle" font-size="24">{{ archLinkText }}</text>
+  </a>
+  {% else %}
+  <circle cx="450" cy="222" r="56" fill="rgba(46,16,24,0.35)"/>
+  {% endif %}
 </svg>

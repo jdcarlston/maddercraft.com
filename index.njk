@@ -7,9 +7,12 @@ heroHeader: true
   <img class="hero__bg" src="{{ '/assets/img/pleromic-nursery-art.jpg' | resized(1920) }}" alt="" aria-hidden="true">
   <div class="hero__wash" aria-hidden="true"></div>
   <div class="hero__inner">
-    <h1 class="hero__title">{% set archText = "Madder Craft" %}{% set archId = "arc-home" %}{% include "arch-title.njk" %}</h1>
-    <p class="hero__line">Visual art, music, poetry and ritual.</p>
-    <a class="btn btn--gold" href="/art/">View the work</a>
+    <h1 class="hero__title">
+      {% set archText = "Madder Craft" %}{% set archId = "arc-home" %}
+      {% set archTagline = "Art, music, writing, and ritual" %}
+      {% set archLink = "/art/" %}{% set archLinkText = "View" %}
+      {% include "arch-title.njk" %}
+    </h1>
   </div>
 </section>
 
