@@ -230,6 +230,18 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
 .project-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
 .project-card:hover img { transform: scale(1.03); }
 
+/* Seven menu items: tighten the menu on mid-width screens so it stays on one line beside the logo. */
+@media (max-width: 1360px) {
+  .nav { gap: 0 16px; }
+  .nav a { font-size: 13px; letter-spacing: 0.1em; }
+  .brand__name { font-size: 28px; }
+}
+
+/* ---------- Modeling page ---------- */
+.credit { color: var(--muted); }
+.credit a { color: var(--gold); }
+.credit--foot { padding-bottom: 64px; text-align: center; }
+
 /* ---------- Art nouveau frame ----------
    On wide screens the side borders join a top and bottom edge to make one frame:
      - frame-corner.svg turns each border's three lines inward. It's drawn for the

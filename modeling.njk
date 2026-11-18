@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: Modeling
+permalink: /modeling/
+description: Modeling and portrait work by JD Carlston and Chick, photographed by Annaka Rochelle.
+---
+{# The Modeling page: a gallery from _data/modeling.js, the photographer credit, and a link to book. #}
+<section class="page-head wrap">
+  <p class="label">Modeling</p>
+  <h1 class="title">In Front of the Lens</h1>
+  <p class="intro">{{ modeling.intro }}</p>
+  <p class="credit label label--small">Photography by <a href="{{ modeling.credit.url }}">{{ modeling.credit.name }}</a></p>
+  <a class="btn btn--rose" href="/contact/?kind=modeling">Book a shoot</a>
+</section>
+<div class="wrap gallery">
+  {% for photo in modeling.photos %}
+  <figure class="gallery__item" data-name="{{ photo.file | fileName }}">
+    <a href="/assets/img/modeling/{{ photo.file }}"><img src="/assets/img/modeling/{{ photo.file }}" alt="{{ photo.alt }}. Photo by {{ modeling.credit.name }}." loading="lazy"></a>
+  </figure>
+  {% endfor %}
+</div>
+<p class="wrap credit credit--foot label label--small">All photographs © {{ modeling.credit.name }} · <a href="{{ modeling.credit.url }}">{{ modeling.credit.url | replace("https://", "") }}</a></p>

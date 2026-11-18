@@ -8,6 +8,7 @@ module.exports = {
   nav: [
     { label: "Visual Art", href: "/art/" },
     { label: "Music", href: "/music/" },
+    { label: "Modeling", href: "/modeling/" },
     { label: "Poetry", href: "/poetry/" },
     { label: "Essays", href: "/essays/" },
     { label: "Ritual", href: "/#ritual" },
