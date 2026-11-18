@@ -2,5 +2,16 @@
   command = "npm run build"
   publish = "_site"
 
+# Project pages used to live under /art/. Old links still work.
+[[redirects]]
+  from = "/art/windward-weave/"
+  to = "/workshop/windward-weave/"
+  status = 301
+
+[[redirects]]
+  from = "/art/venus-hum/"
+  to = "/workshop/venus-hum/"
+  status = 301
+
 [build.environment]
   NODE_VERSION = "22"

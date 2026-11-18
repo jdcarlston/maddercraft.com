@@ -1,13 +1,19 @@
 // Rose Madder releases, in display order. w/h are each cover's shape so wide covers stay wide.
+// `tracks` are the songs that play under each cover: `file` is the path in the media bucket
+// (see `media` in site.js), `length` is shown before it plays, `preview: true` labels a teaser.
 module.exports = {
   band: "Rose Madder",
   intro: "Rose Madder explores Ecstatic Black Metal, Noise, Folk and other forms of avant garde music. Look for an EP out soon.",
   listen: "https://m.soundcloud.com/r0zm4ddr",
   releases: [
-    { title: "Pleromic Nursery", note: "EP · Coming soon", file: "pleromic-nursery.jpg", w: 1, h: 1 },
-    { title: "Ringsies", note: "2020", file: "rose-madder-pink.jpg", w: 1422, h: 800 },
-    { title: "Bone Mother", note: "2020", file: "bone-mother.jpg", w: 1018, h: 800 },
-    { title: "On Our Side", note: "2020", file: "on-our-side.jpg", w: 1422, h: 800 },
+    { title: "Pleromic Nursery", note: "EP · Coming soon", file: "pleromic-nursery.jpg", w: 1, h: 1,
+      tracks: [{ title: "OHM", file: "music/pleromic-nursery/ohm-preview.mp3", length: "1:15", preview: true }] },
+    { title: "Ringsies", note: "2020", file: "rose-madder-pink.jpg", w: 1422, h: 800,
+      tracks: [{ title: "Ringsies", file: "music/ringsies/01-ringsies.mp3", length: "2:31" }] },
+    { title: "Bone Mother", note: "2020", file: "bone-mother.jpg", w: 1018, h: 800,
+      tracks: [{ title: "Bone Mother", file: "music/bone-mother/01-bone-mother.mp3", length: "2:49" }] },
+    { title: "On Our Side", note: "2020", file: "on-our-side.jpg", w: 1422, h: 800,
+      tracks: [{ title: "On Our Side", file: "music/on-our-side/01-on-our-side.mp3", length: "3:00" }] },
     { title: "Rose Madder", note: "2023", file: "rose-madder-2023.jpg", w: 1613, h: 800 },
   ],
   performances: [

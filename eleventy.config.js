@@ -1,4 +1,5 @@
 const markdownIt = require("markdown-it");
+const Image = require("@11ty/eleventy-img").default;
 
 module.exports = function (eleventyConfig) {
   // Poems keep their line breaks exactly as written.
@@ -39,10 +40,44 @@ module.exports = function (eleventyConfig) {
     return m ? m[1] : "";
   });
 
+  // Whether a menu item, or one of its sub-items, is the page being shown, so the menu can highlight it.
+  // Links to a spot on a page (like "/#ritual") never count as the current page.
+  const isCurrent = (item, url) =>
+    (!item.href.includes("#") && url.startsWith(item.href)) ||
+    (item.children || []).some((child) => isCurrent(child, url));
+  eleventyConfig.addFilter("isCurrent", isCurrent);
+
+  // Sorts pages by the `order` number in their header; pages without one go last.
+  eleventyConfig.addFilter("byOrder", (pages) =>
+    [...(pages || [])].sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999)));
+
   eleventyConfig.addFilter("head", (arr, n) => (arr || []).slice(0, n));
   // A file's name without its folder or extension: "/assets/img/art/towhee.jpg" -> "towhee".
   const fileName = (path) => String(path).split("/").pop().replace(/\.[^.]+$/, "");
   eleventyConfig.addFilter("fileName", fileName);
+
+  // Web-sized copies of images, so tiles and galleries don't download full-size originals.
+  //   {{ "/assets/img/art/towhee.jpg" | resized }}       -> a 600px-wide WebP copy (tiles)
+  //   {{ "/assets/img/art/towhee.jpg" | resized(900) }}  -> wider, for galleries and features
+  // The originals are untouched; links that open a piece still point at the full-size file.
+  // Copies are made during the build into _site/img/ and named after the original, e.g.
+  // /img/art-towhee-600.webp. An image already smaller than the width is not enlarged.
+  // Anything that isn't a local site path (an empty value or an outside URL) is passed through.
+  const resizeOptions = (width) => ({
+    widths: [width],
+    formats: ["webp"],
+    outputDir: "./_site/img/",
+    urlPath: "/img/",
+    filenameFormat: (id, src, w, format) => {
+      const folder = src.split("/").slice(-2, -1)[0];
+      return folder + "-" + fileName(src) + "-" + w + "." + format;
+    },
+  });
+  eleventyConfig.addAsyncFilter("resized", async (path, width = 600) => {
+    if (!path || !String(path).startsWith("/")) return path;
+    const made = await Image("." + path, resizeOptions(width));  // site path -> file in this folder
+    return made.webp[0].url;
+  });
 
   // Looks up portfolio pieces by file name, keeping the order of the list given.
   // Used for the home page's `featured` list in _data/art.js. Unknown names are skipped.

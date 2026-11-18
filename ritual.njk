@@ -1,0 +1,54 @@
+---
+layout: base.njk
+title: Ritual
+permalink: /ritual/
+description: Ritual, ceremony and esoteric practice with JD Carlston of Madder Craft, from rites of passage to the Destination Method and NLP.
+---
+{# Each section's id matches a link in the Ritual menu (_data/site.js). #}
+<section class="page-head wrap">
+  <p class="label">Ritual</p>
+  <h1 class="title">Ritual &amp; Ceremony</h1>
+  <p class="intro">Rites for the turning points of a life, ceremony for gatherings large and small, and the practices underneath them.</p>
+  <a class="btn btn--rose" href="/contact/?kind=ceremony">Request a ceremony</a>
+</section>
+
+<div class="wrap"><div class="prose ritual-page">
+  <section id="events">
+    <h2>Events</h2>
+    <p>Where I have held ritual and ceremony:</p>
+    <ul class="list">
+      {% for e in ritual.events %}<li><span>{{ e.name }}</span><span class="label label--small">{{ e.when }}</span></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section id="ceremonies">
+    <h2>Ceremonies</h2>
+    <p>I craft rituals for the transitions in a life, and guide people to create their own: a birth, a coming-of-age, a graduation, a marriage, a divorce, a death, or anything we need to mark in between. Each one is built <em>with</em> you, from what the moment means to the people in it.</p>
+  </section>
+
+  <section id="coaching">
+    <h2>Coaching</h2>
+    <p>One-on-one, my work is grounded in transpersonal education and <em>The Destination Method</em>. Instead of talking around a problem, you learn how your mind builds the patterns you're stuck in, and how to rebuild them. <strong>Often a single two-hour block is enough to resolve many issues</strong>, and the tools stay with you long after.</p>
+    <p><strong>Transpersonal education</strong> is learning that treats the whole person as the classroom: body, mind, emotions and spirit, including the experiences that don't fit neatly into a personal story. Its aim is growth and self-knowledge, not diagnosis or cure. It teaches you how your inner experience works so you can work with it yourself.</p>
+    <p>I offer one-on-one and group sessions built around how you actually think and feel, with follow-ups and support between sessions. Book a free conversation to see if we have a fit.</p>
+    <p><a class="btn btn--line" href="https://calendly.com/jdcarlston/preliminary-consult">Book a free consult</a></p>
+  </section>
+
+  <section id="destination-method">
+    <h2>The Destination Method</h2>
+    <p><em>The Destination Method</em> was created by Dr. Robert Dee McDonald, an NLP architect and clinical researcher. It works with how we hold our inner experience, and how changing that holding changes how we feel and act. It grounds much of my ritual and workshop design.</p>
+  </section>
+
+  <section id="nlp">
+    <h2>NLP</h2>
+    <p><strong>Neuro-Linguistic Programming</strong> studies how the language we use and the inner pictures, sounds and feelings we make shape what we do. I use it to build rituals and practices that land in the <em>body</em>, not just the mind.</p>
+  </section>
+
+  <section id="esoterica">
+    <h2>Esoterica</h2>
+    <p>I teach ceremonial and chaos magickal practice, Hermetic Qabalah, and <em>the science of the subjective</em>: how attention, symbol and story shape what we experience, and how to use them to get more of what you want out of life.</p>
+  </section>
+
+  <p><a class="btn btn--rose" href="/contact/?kind=ceremony">Request a ceremony</a></p>
+</div></div>

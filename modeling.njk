@@ -15,7 +15,7 @@ description: Modeling and portrait work by JD Carlston and Chick, photographed b
 <div class="wrap gallery">
   {% for photo in modeling.photos %}
   <figure class="gallery__item" data-name="{{ photo.file | fileName }}">
-    <a href="/assets/img/modeling/{{ photo.file }}"><img src="/assets/img/modeling/{{ photo.file }}" alt="{{ photo.alt }}. Photo by {{ modeling.credit.name }}." loading="lazy"></a>
+    <a href="/assets/img/modeling/{{ photo.file }}"><img src="{{ ('/assets/img/modeling/' + photo.file) | resized(900) }}" alt="{{ photo.alt }}. Photo by {{ modeling.credit.name }}." loading="lazy"></a>
   </figure>
   {% endfor %}
 </div>

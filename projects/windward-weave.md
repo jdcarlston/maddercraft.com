@@ -1,5 +1,7 @@
 ---
 title: The Windward Weave
+order: 1
+status: Installation
 subtitle: "A hanging net, tied by many hands and woven by the wind. Never-Knot-Broken, it stands for Indra's net and the web of fate. Tie a knot, add to the net, and capture your prayers and intentions in the weave."
 description: "The Windward Weave, a hanging net tied by many hands, by JD Carlston of Madder Craft."
 # The gallery, in order. `file` is in /assets/img/projects/windward-weave/; `caption` is optional.

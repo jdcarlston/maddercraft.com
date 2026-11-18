@@ -1,5 +1,7 @@
 ---
 title: The Venus Hum
+order: 2
+status: In development
 subtitle: "Our Singing Heart: a harmonic chromatic resonator. Seven curved steel pipes rise into a heart around a ring of organ pipes, played by breath and bellows, lit by the colors of their own notes. A sculpture in development."
 description: "The Venus Hum, a singing heart sculpture of steel, organ pipes, light and sound, in development by JD Carlston of Madder Craft."
 # The gallery, in order. `file` is in /assets/img/projects/venus-hum/; `caption` is optional.
@@ -34,8 +36,8 @@ support:
 
 ## Our singing heart
 
-The Venus Hum is a heart you can play. Seven curved steel pipes rise from the ground and bend inward to meet, forming a heart around a ring of organ pipes tuned to a chromatic scale. Visitors press the bellows and the heart sings, in chords centered on C major.
+*The Venus Hum* is a heart you can play. Seven curved steel pipes rise from the ground and bend inward to meet, forming a heart around a ring of organ pipes tuned to a chromatic scale. Visitors press the bellows and **the heart sings**, in chords centered on C major.
 
 At night it becomes light. Sensors in the bellows send color climbing up the pipes, each note matched to its own color by frequency, so every chord paints the heart differently. Lasers meet at an infinity mirror ball hanging at the center, a great rhombicosidodecahedron with raised mirrored edges, scattering light both outward and inward.
 
-It grows from an old idea, Pythagoras's music of the spheres: that the cosmos is one great instrument, and that harmony between its notes is a kind of health.
+It grows from an old idea, Pythagoras's *music of the spheres*: that the cosmos is one great instrument, and that harmony between its notes is a kind of health.

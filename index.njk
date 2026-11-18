@@ -4,7 +4,7 @@ title: Madder Craft
 heroHeader: true
 ---
 <section class="hero">
-  <img class="hero__bg" src="/assets/img/pleromic-nursery-art.jpg" alt="" aria-hidden="true">
+  <img class="hero__bg" src="{{ '/assets/img/pleromic-nursery-art.jpg' | resized(1920) }}" alt="" aria-hidden="true">
   <div class="hero__wash" aria-hidden="true"></div>
   <div class="hero__inner">
     <h1 class="hero__title">{% set archText = "Madder Craft" %}{% set archId = "arc-home" %}{% include "arch-title.njk" %}</h1>
@@ -40,7 +40,7 @@ heroHeader: true
       <p class="feature__lines">{{ feature.content | openingLines(4) }}</p>
       <a class="more" href="{{ feature.url }}">Read the poem →</a>
     </div>
-    <div class="feature__img"><img src="{{ feature.content | firstImage }}" alt="Sunset through a window, a hanging lantern and autumn leaves" loading="lazy"></div>
+    <div class="feature__img"><img src="{{ feature.content | firstImage | resized(900) }}" alt="Sunset through a window, a hanging lantern and autumn leaves" loading="lazy"></div>
   </div>
   <div class="wrap cards">
     {% set shown = 0 %}{% for p in collections.poems %}{% if p.fileSlug != "autumn-heart" and shown < 4 %}{% set shown = shown + 1 %}
@@ -55,21 +55,17 @@ heroHeader: true
 
 <section class="ritual" id="ritual">
   <div class="wrap ritual__inner">
-    <div class="ritual__img"><img src="/assets/img/ritual-altar.jpg" alt="A red ritual altar with candles, roses and offerings, in front of a gold painting of a woman with a leopard and a red painting of roses" loading="lazy"></div>
+    <div class="ritual__img"><img src="{{ '/assets/img/ritual-altar.jpg' | resized(900) }}" alt="A red ritual altar with candles, roses and offerings, in front of a gold painting of a woman with a leopard and a red painting of roses" loading="lazy"></div>
     <div class="ritual__text">
       <p class="label">Esoteric</p>
       <h2 class="h2">Ritual &amp; Ceremony</h2>
       <p class="ritual__lede">I craft rituals for the transitions in a life, and guide people to create their own: a birth, a coming-of-age, a graduation, a marriage, a divorce, a death, or anything we need to mark in between.</p>
-      <p class="ritual__lede">I also teach ceremonial and chaos magickal practice, and how to use the science of the subjective to get more of what you want out of life.</p>
+      <p class="ritual__lede">I also teach ceremonial and chaos magickal practice, and how to use <em>the science of the subjective</em> to get more of what you want out of life.</p>
       <ul class="list">
-        <li><span>Sleep Over Mystery School</span><span class="label label--small">2022 to present</span></li>
-        <li><span>Element 11</span><span class="label label--small">Sanctuary Coordinator · 2012 to present</span></li>
-        <li><span>Babalon Rising</span><span class="label label--small">2026</span></li>
-        <li><span>Love Burn</span><span class="label label--small">2024 · 2025 · 2026</span></li>
-        <li><span>Lakes of Fire</span><span class="label label--small">2025</span></li>
-        <li><span>Burning Man</span><span class="label label--small">2016 · 2018 · 2022</span></li>
+        {% for e in ritual.events %}<li><span>{{ e.name }}</span><span class="label label--small">{{ e.when }}</span></li>
+        {% endfor %}
       </ul>
-      <a class="btn btn--rose" href="/contact/?kind=ceremony">Learn more</a>
+      <a class="btn btn--rose" href="/ritual/">Learn more</a>
     </div>
   </div>
 </section>

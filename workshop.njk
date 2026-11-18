@@ -1,0 +1,13 @@
+---
+layout: base.njk
+title: Workshop
+permalink: /workshop/
+description: Installations, sculpture and music still growing in the Madder Craft workshop.
+---
+<section class="page-head wrap">
+  <p class="label">Workshop</p>
+  <h1 class="title">In the Workshop</h1>
+  <p class="intro">The larger works: pieces that keep growing, sculptures still being built, and music on its way. Each one tells its story and how to bring it to your event or help it come to life.</p>
+</section>
+{% set projects = collections.projects | byOrder %}
+{% include "project-cards.njk" %}

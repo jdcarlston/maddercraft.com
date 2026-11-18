@@ -1,0 +1,13 @@
+{# A release's songs, each with a play button and a progress bar. Pass `r` (a release from _data/music.js).
+   assets/js/player.js makes them play; without JavaScript, the song title links straight to the file. #}
+<ol class="tracks">
+  {% for t in r.tracks %}
+  <li class="track" data-src="{{ site.media }}/{{ t.file }}" data-title="{{ t.title }}">
+    <button class="track__play" type="button" aria-label="Play {{ t.title }}"><span aria-hidden="true">&#9654;</span></button>
+    <a class="track__title" href="{{ site.media }}/{{ t.file }}">{{ t.title }}</a>
+    {% if t.preview %}<span class="track__note">Preview</span>{% endif %}
+    <span class="track__time">{{ t.length }}</span>
+    <span class="track__bar" aria-hidden="true"><span class="track__fill"></span></span>
+  </li>
+  {% endfor %}
+</ol>

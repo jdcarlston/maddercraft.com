@@ -12,16 +12,20 @@ description: Rose Madder explores Ecstatic Black Metal, Noise, Folk and other fo
 </section>
 <div class="wrap releases">
   {% for r in music.releases %}
-  <figure class="release{% if r.w > r.h %} release--wide{% endif %}">
-    <img src="/assets/img/music/{{ r.file }}" alt="{{ r.title }} album cover" loading="lazy">
-    <figcaption><span class="tile__title">{{ r.title }}</span><span class="tile__note">{{ r.note }}</span></figcaption>
-  </figure>
+  <div class="release-block{% if r.w > r.h %} release-block--wide{% endif %}" id="{{ r.title | slugify }}">
+    <figure class="release{% if r.w > r.h %} release--wide{% endif %}">
+      <img src="{{ ('/assets/img/music/' + r.file) | resized }}" alt="{{ r.title }} album cover" loading="lazy">
+      <figcaption><span class="tile__title">{{ r.title }}</span><span class="tile__note">{{ r.note }}</span></figcaption>
+    </figure>
+    {% if r.tracks %}{% include "tracks.njk" %}{% endif %}
+  </div>
   {% endfor %}
 </div>
 <section class="wrap section">
   <p class="label">Live</p>
   <h2 class="h2">Performance</h2>
   <div class="performances">
-    {% for p in music.performances %}<img src="/assets/img/music/{{ p.file }}" alt="{{ p.alt }}" loading="lazy">{% endfor %}
+    {% for p in music.performances %}<img src="{{ ('/assets/img/music/' + p.file) | resized(900) }}" alt="{{ p.alt }}" loading="lazy">{% endfor %}
   </div>
 </section>
+<script src="/assets/js/player.js" defer></script>

@@ -1,0 +1,14 @@
+{# Cards linking to project pages: a photo (or an ornament while there's no photo yet), the title and its status.
+   Pass `projects` (a list of project pages) before including this. #}
+<div class="wrap project-cards">
+  {% for project in projects %}
+  <a class="project-card tile" href="{{ project.url }}">
+    {% if project.data.photos and project.data.photos.length %}
+    <img src="{{ ('/assets/img/projects/' + project.page.fileSlug + '/' + project.data.photos[0].file) | resized(900) }}" alt="{{ project.data.photos[0].alt }}" loading="lazy">
+    {% else %}
+    <span class="project-card__blank" aria-hidden="true">{% include "rose.njk" %}</span>
+    {% endif %}
+    <span class="project-card__caption"><span class="tile__title">{{ project.data.title }}</span><span class="tile__note">{{ project.data.status or "Project" }}</span></span>
+  </a>
+  {% endfor %}
+</div>

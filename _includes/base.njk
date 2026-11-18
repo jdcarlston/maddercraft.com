@@ -37,7 +37,18 @@
       <span class="brand__name">Madder Craft</span>
     </a>
     <nav class="nav" aria-label="Main">
-      {% for item in site.nav %}<a href="{{ item.href }}"{% if page.url.startsWith(item.href) and item.href != '/#ritual' %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+      {% for item in site.nav %}
+        {% if item.children %}
+        <div class="nav__group">
+          <a href="{{ item.href }}"{% if item | isCurrent(page.url) %} aria-current="{{ 'page' if page.url == item.href else 'true' }}"{% endif %}>{{ item.label }}</a>
+          <div class="nav__sub">
+            {% for child in item.children %}<a href="{{ child.href }}"{% if child | isCurrent(page.url) %} aria-current="page"{% endif %}>{{ child.label }}</a>{% endfor %}
+          </div>
+        </div>
+        {% else %}
+        <a href="{{ item.href }}"{% if item | isCurrent(page.url) %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        {% endif %}
+      {% endfor %}
     </nav>
   </header>
 
