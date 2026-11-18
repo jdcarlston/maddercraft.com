@@ -123,7 +123,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("artTiles", (pieces) =>
     pieces.map((piece) => {
       const src = "/assets/img/art/" + piece.file;
-      return { src, alt: piece.alt, title: piece.title, note: piece.medium, name: fileName(src), w: 3, h: 4 };
+      return { src, alt: piece.alt, title: piece.title, note: piece.medium, name: fileName(src), w: 3, h: 4, href: piece.page };
     }));
   eleventyConfig.addFilter("musicTiles", (releases) =>
     releases.map((release) => {

@@ -2,6 +2,7 @@
 // Add a title and medium to any piece and it shows in the caption.
 module.exports = {
   intro: "My art explores multiple mediums - mainly Watercolor, Oil Pastel, Acrylic, and Fiber. I also make interactive art pieces that come alive when people take part, like The Golden Stitch, the Windward Weave and the Venus Hum.",
+  // In `pieces`, a piece with a `page` (like the Windward Weave) links to its project page instead of the full-size image.
   // The pieces shown on the home page, in order. Use the file names from the list below.
   featured: [
     "mosaic-face.jpg",
@@ -26,7 +27,8 @@ module.exports = {
     "file": "windward-weave.jpg",
     "alt": "The Windward Weave: a wall of knotted fabric strips in red light beneath a cluster of mirror balls",
     "title": "The Windward Weave",
-    "medium": "Fiber"
+    "medium": "Fiber",
+    "page": "/workshop/windward-weave/"
   },
   {
     "file": "mosaic-face.jpg",

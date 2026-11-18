@@ -4,6 +4,20 @@ order: 1
 status: Installation
 subtitle: "A hanging net, tied by many hands and woven by the wind. Never-Knot-Broken, it stands for Indra's net and the web of fate. Tie a knot, add to the net, and capture your prayers and intentions in the weave."
 description: "The Windward Weave, a hanging net tied by many hands, by JD Carlston of Madder Craft."
+# Videos in the media bucket, shown above the gallery. The first plays on its own.
+videos:
+  - file: video/windward-weave/in-the-wind.mp4
+    poster: video/windward-weave/in-the-wind-poster.jpg
+    caption: "Woven by the wind."
+  - file: video/windward-weave/lit-at-night.mp4
+    poster: video/windward-weave/lit-at-night-poster.jpg
+    caption: "Lit at night."
+  - file: video/windward-weave/on-site.mp4
+    poster: video/windward-weave/on-site-poster.jpg
+    caption: "On site, hung across the pergolas."
+  - file: video/windward-weave/walk-around.mp4
+    poster: video/windward-weave/walk-around-poster.jpg
+    caption: "A walk around the installation."
 # The gallery, in order. `file` is in /assets/img/projects/windward-weave/; `caption` is optional.
 photos:
   - file: bell-and-ribbons.jpg

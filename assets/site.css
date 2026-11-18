@@ -224,8 +224,10 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
 .ritual-page { max-width: 820px; margin-bottom: 32px; }
 
 /* A project's video (the `video` block in a project file). */
-.project-video { margin-bottom: 32px; }
-.project-video video { display: block; width: 100%; aspect-ratio: 16 / 9; background: var(--iron); }
+.project-videos { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px 20px; margin-bottom: 32px; }
+.project-video { margin: 0; }
+.project-video--lead { grid-column: 1 / -1; }
+.project-video video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: var(--iron); }
 .project-video figcaption { margin-top: 12px; max-width: 70ch; font-size: 17px; font-style: italic; color: var(--muted); line-height: 1.5; }
 
 /* About pages (Red Thread Labs, Engineering Leadership): a readable column under the heading. */

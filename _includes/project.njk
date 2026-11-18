@@ -16,13 +16,19 @@ layout: base.njk
     {% if support %}<a class="btn btn--rose" href="#support">{{ support.heading }}</a>{% endif %}
   </header>
 
-  {# Optional `video` block: a clip from the media bucket (see `media` in _data/site.js), shown above the photos.
-     It plays silently on a loop; the controls turn the sound on. #}
-  {% if video %}
-  <figure class="wrap project-video">
-    <video src="{{ site.media }}/{{ video.file }}"{% if video.poster %} poster="{{ site.media }}/{{ video.poster }}"{% endif %} controls muted loop playsinline autoplay preload="metadata"></video>
-    {% if video.caption %}<figcaption>{{ video.caption }}</figcaption>{% endif %}
-  </figure>
+  {# Optional videos from the media bucket (see `media` in _data/site.js), shown above the photos.
+     Use `videos:` for a list, or `video:` for just one. Each has `file`, and optionally `poster` and `caption`.
+     The first one plays silently on a loop; the others wait for a click. The controls turn the sound on. #}
+  {% set clips = videos if videos else ([video] if video else []) %}
+  {% if clips.length %}
+  <div class="wrap project-videos">
+    {% for clip in clips %}
+    <figure class="project-video{% if loop.first %} project-video--lead{% endif %}">
+      <video src="{{ site.media }}/{{ clip.file }}"{% if clip.poster %} poster="{{ site.media }}/{{ clip.poster }}"{% endif %} controls playsinline{% if loop.first %} muted loop autoplay preload="metadata"{% else %} preload="none"{% endif %}></video>
+      {% if clip.caption %}<figcaption>{{ clip.caption }}</figcaption>{% endif %}
+    </figure>
+    {% endfor %}
+  </div>
   {% endif %}
 
   {% if photos and photos.length %}
