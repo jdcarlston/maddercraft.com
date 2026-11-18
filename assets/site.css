@@ -112,10 +112,14 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
 .arch { display: block; width: 100%; height: auto; }
 .arch__text { font-family: var(--display); fill: var(--gold); stroke: var(--gold); stroke-width: 2.4; stroke-linejoin: round; }
 .arch__tagline { font-family: var(--body); font-style: italic; fill: var(--ink); }
-/* The iris as a button: gold like the other buttons, lighter on hover. */
-.arch__iris circle { fill: var(--gold); transition: fill 0.2s; }
-.arch__iris text { font-family: var(--caps); font-weight: 600; letter-spacing: 0.16em; fill: var(--iron); text-transform: uppercase; }
-.arch__iris:hover circle, .arch__iris:focus-visible circle { fill: var(--ink); }
+/* The iris as a button: the site's off-black with gold lettering; turns the logo's rose on hover. */
+.arch__iris circle { fill: var(--iron); transition: fill 0.2s; }
+.arch__iris text { font-family: var(--caps); font-weight: 600; letter-spacing: 0.16em; fill: var(--gold); text-transform: uppercase; transition: fill 0.2s; }
+.arch__iris:hover circle, .arch__iris:focus-visible circle { fill: #B8325E; } /* the rose of the logo's background flower */
+.arch__iris:hover text, .arch__iris:focus-visible text { fill: var(--ink); }
+/* A faint rose behind the word: gold on the dark button, soft white on the pink hover. */
+.arch__iris-flower { stroke: var(--gold); opacity: 0.14; transition: opacity 0.3s, stroke 0.2s; }
+.arch__iris:hover .arch__iris-flower, .arch__iris:focus-visible .arch__iris-flower { stroke: var(--ink); opacity: 0.18; }
 .hero__line { font-style: italic; font-size: 24px; margin: 0; max-width: 34ch; text-shadow: 0 1px 12px rgba(46,16,24,0.9); }
 
 /* ---------- Sections and scrolling rows ---------- */

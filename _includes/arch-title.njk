@@ -15,6 +15,12 @@
   {% if archLink %}
   <a class="arch__iris" href="{{ archLink }}" aria-label="{{ archLinkText }}">
     <circle cx="450" cy="222" r="60"/>
+    {# The five-petal rose, faint behind the word (see .arch__iris-flower in site.css). #}
+    <g class="arch__iris-flower" transform="translate(450 222) scale(1.05)" fill="none" stroke-width="2.4" stroke-linejoin="round">
+      {% for a in [0,72,144,216,288] %}<ellipse cx="0" cy="-21" rx="15" ry="19" transform="rotate({{ a }})"/>{% endfor %}
+      {% for a in [36,108,180,252,324] %}<path d="M0 -47 L5 -39 L0 -41 L-5 -39 Z" transform="rotate({{ a }})"/>{% endfor %}
+      <circle r="11"/>
+    </g>
     <text x="450" y="224" text-anchor="middle" dominant-baseline="middle" font-size="24">{{ archLinkText }}</text>
   </a>
   {% else %}
