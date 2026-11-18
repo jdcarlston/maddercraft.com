@@ -1,8 +1,10 @@
 ---
 layout: base.njk
 ---
-{# A project page: a title, the story in the project's own words, then a photo gallery.
-   Used by every file in /projects. Photos come from the `photos` list in the file's header. #}
+{# A project page: a title, a photo gallery, then the story in the project's own words.
+   Used by every file in /projects. Photos come from the `photos` list in the file's header.
+   Optional forms at the bottom: a `request` block (book it for an event) or a
+   `support` block (help build or fund it). #}
 {% set photoFolder = "/assets/img/projects/" + page.fileSlug + "/" %}
 <article class="project">
   <header class="page-head wrap">
@@ -10,6 +12,7 @@ layout: base.njk
     <h1 class="title">{{ title }}</h1>
     {% if subtitle %}<p class="intro">{{ subtitle }}</p>{% endif %}
     {% if request %}<a class="btn btn--rose" href="#request">{{ request.heading }}</a>{% endif %}
+    {% if support %}<a class="btn btn--rose" href="#support">{{ support.heading }}</a>{% endif %}
   </header>
 
   {% if photos and photos.length %}
@@ -25,5 +28,6 @@ layout: base.njk
 
   <div class="wrap"><div class="prose project__story">{{ content | safe }}</div></div>
   {% if request %}{% include "event-request.njk" %}{% endif %}
+  {% if support %}{% include "support-request.njk" %}{% endif %}
   <nav class="wrap pager" aria-label="More art"><span></span><a class="pager__all" href="/art/"><span class="label">All visual art</span></a><span></span></nav>
 </article>

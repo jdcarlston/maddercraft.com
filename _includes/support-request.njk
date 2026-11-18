@@ -1,0 +1,31 @@
+{# "Help build or fund this" form for a project page. Turned on by a `support` block in the
+   project's header (heading, text, options). Submissions arrive in Netlify as "support-<project>",
+   then the visitor sees the thank-you page at /thanks/. Styles reuse the contact form's. #}
+{% set formName = "support-" + page.fileSlug %}
+<section class="request wrap" id="support">
+  <h2 class="h2">{{ support.heading }}</h2>
+  <p class="intro">{{ support.text }}</p>
+  <form class="contact" name="{{ formName }}" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="{{ formName }}">
+    <input type="hidden" name="art" value="{{ title }}">
+    <p class="contact__hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+    <div class="contact__row">
+      <label class="field"><span class="label label--small">Name</span><input name="name" type="text" autocomplete="name" required></label>
+      <label class="field"><span class="label label--small">Email</span><input name="email" type="email" autocomplete="email" required></label>
+    </div>
+
+    {% if support.options %}
+    <fieldset class="contact__kinds">
+      <legend class="label">How would you like to help?</legend>
+      <div class="chips">
+        {% for option in support.options %}<label class="chip"><input type="checkbox" name="help" value="{{ option }}"><span>{{ option }}</span></label>{% endfor %}
+      </div>
+    </fieldset>
+    {% endif %}
+
+    <label class="field"><span class="label label--small">Skills, resources or connections you'd bring</span><input name="skills" type="text"></label>
+    <label class="field"><span class="label label--small">Anything else</span><textarea name="message" rows="5"></textarea></label>
+    <button class="btn btn--rose" type="submit">Send</button>
+  </form>
+</section>

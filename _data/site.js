@@ -1,6 +1,6 @@
 module.exports = {
   // Show each image's file name when you hover over it. Handy while choosing pieces; set to false to hide.
-  showFileNames: true,
+  showFileNames: false,
   name: "Madder Craft",
   url: "https://maddercraft.com",
   description: "Visual art, music, poetry and ritual.",
