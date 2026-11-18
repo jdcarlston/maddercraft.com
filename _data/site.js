@@ -20,7 +20,7 @@ module.exports = {
       { label: "Ceremonies", href: "/ritual/#ceremonies" },
       { label: "Workshops & Labs", href: "/ritual/#workshops-labs" },
       { label: "Coaching", href: "/ritual/#coaching" },
-      { label: "The Destination Method", href: "/ritual/#destination-method" },
+      { label: "Practice Labs", href: "/ritual/#practice-labs" },
       { label: "NLP", href: "/ritual/#nlp" },
       { label: "Esoterica", href: "/ritual/#esoterica" },
       { label: "Events", href: "/ritual/#events" },
