@@ -3,6 +3,12 @@
   publish = "_site"
 
 # Project pages used to live under /art/. Old links still work.
+# The Modeling page was renamed Fashion.
+[[redirects]]
+  from = "/modeling/"
+  to = "/fashion/"
+  status = 301
+
 [[redirects]]
   from = "/art/windward-weave/"
   to = "/workshop/windward-weave/"

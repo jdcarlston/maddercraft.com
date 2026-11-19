@@ -8,7 +8,7 @@ module.exports = {
     { id: "magickal-work", name: "Magickal Work" },
     { id: "art-commission", name: "Art Commission" },
     { id: "music", name: "Music" },
-    { id: "modeling", name: "Modeling" },
+    { id: "fashion", name: "Fashion" },
     { id: "something-else", name: "Something Else" },
   ],
 };

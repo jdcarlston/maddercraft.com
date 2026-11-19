@@ -1,4 +1,4 @@
-// The Modeling page. Photos live in /assets/img/modeling/, shown in this order.
+// The Fashion page (/fashion/; this file keeps its old name). Photos live in /assets/img/modeling/, shown in this order.
 // `who` is shown on hover and helps when choosing; `credit` is the photographer for the whole set.
 module.exports = {
   intro: "Editorial and portrait work with Chick, shot at the Versace Mansion in Miami.",

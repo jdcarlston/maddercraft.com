@@ -1,16 +1,16 @@
 ---
 layout: base.njk
-title: Modeling
-permalink: /modeling/
-description: Modeling and portrait work by JD Carlston and Chick, photographed by Annaka Rochelle.
+title: Fashion
+permalink: /fashion/
+description: Fashion and portrait work by JD Carlston and Chick, photographed by Annaka Rochelle.
 ---
-{# The Modeling page: a gallery from _data/modeling.js, the photographer credit, and a link to book. #}
+{# The Fashion page (the file and its photo folder keep the old name "modeling"): a gallery from _data/modeling.js, the photographer credit, and a link to book. #}
 <section class="page-head wrap">
-  <p class="label">Modeling</p>
+  <p class="label">Fashion</p>
   <h1 class="title">In Front of the Lens</h1>
   <p class="intro">{{ modeling.intro }}</p>
   <p class="credit label label--small">Photography by <a href="{{ modeling.credit.url }}">{{ modeling.credit.name }}</a></p>
-  <a class="btn btn--rose" href="/contact/?kind=modeling">Book a shoot</a>
+  <a class="btn btn--rose" href="/contact/?kind=fashion">Book a shoot</a>
 </section>
 <div class="wrap gallery">
   {% for photo in modeling.photos %}

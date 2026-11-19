@@ -35,7 +35,7 @@ module.exports = {
     ] },
     { label: "Gallery", href: "/art/", children: [
       { label: "Creations", href: "/art/#creations" },
-      { label: "Modeling", href: "/modeling/" },
+      { label: "Fashion", href: "/fashion/" },
     ] },
     // Each song links to its release on the Music page (the ids come from the release titles).
     { label: "Music", href: "/music/", children: [

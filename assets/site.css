@@ -111,7 +111,10 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
 .hero__title { margin: 0; width: 100%; max-width: 780px; }
 .arch { display: block; width: 100%; height: auto; }
 .arch__text { font-family: var(--display); fill: var(--gold); stroke: var(--gold); stroke-width: 2.4; stroke-linejoin: round; }
-.arch__tagline { font-family: var(--body); font-style: italic; fill: var(--ink); }
+.arch__tagline { font-family: var(--body); font-style: italic; fill: var(--ink); white-space: pre; }
+/* The linked words in the tagline: gold and underlined on hover or keyboard focus. */
+.arch__tagline-link tspan { transition: fill 0.2s; }
+.arch__tagline-link:hover tspan, .arch__tagline-link:focus-visible tspan { fill: var(--gold); text-decoration: underline; }
 /* The iris as a button: the site's off-black with gold lettering; turns the logo's rose on hover. */
 .arch__iris circle { fill: var(--iron); transition: fill 0.2s; }
 .arch__iris text { font-family: var(--caps); font-weight: 600; letter-spacing: 0.16em; fill: var(--gold); text-transform: uppercase; transition: fill 0.2s; }
@@ -331,7 +334,7 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
   .brand__name { font-size: 28px; }
 }
 
-/* ---------- Modeling page ---------- */
+/* ---------- Fashion page ---------- */
 .credit { color: var(--muted); }
 .credit a { color: var(--gold); }
 .credit--foot { padding-bottom: 64px; text-align: center; }
