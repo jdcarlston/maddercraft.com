@@ -394,3 +394,23 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
   .nav__sub { position: static; display: flex; flex-direction: row; flex-wrap: wrap; min-width: 0; padding: 0; background: none; border: 0; opacity: 1; visibility: visible; transform: none; }
 }
 
+/* ---------- Home hero: keep her third eye under the frame's top flower ----------
+   The painting is square and fills the full width, so on its own it grows (and crops)
+   as the window gets wider while the hero stays 860px tall. On screens wide enough to
+   show the frame:
+     - the hero grows with the width (61vw ~ its shape at a 1410px window), so the picture
+       keeps the same framing instead of zooming in on wide screens;
+     - the point between her brows is pinned to the centre of the top flower:
+         --hero-eye-art: how far down the painting her third eye is (17% of its height)
+         --hero-eye-page: how far from the top of the page the flower's centre is
+   translateY(%) is measured against the image's own height, so the two line up exactly,
+   and scaling around that same point (transform-origin) doesn't move it. */
+@media (min-width: 1140px) {
+  .hero { --hero-eye-art: 17%; --hero-eye-page: 20px; min-height: max(860px, 61vw); }
+  .hero__bg {
+    inset: auto; left: 0; top: var(--hero-eye-page);
+    width: 100%; height: auto; aspect-ratio: 1 / 1;
+    transform-origin: 50% var(--hero-eye-art);
+    transform: translateY(calc(-1 * var(--hero-eye-art))) scale(1.04);
+  }
+}
