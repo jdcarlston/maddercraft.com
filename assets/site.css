@@ -398,19 +398,34 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
    The painting is square and fills the full width, so on its own it grows (and crops)
    as the window gets wider while the hero stays 860px tall. On screens wide enough to
    show the frame:
-     - the hero grows with the width (61vw ~ its shape at a 1410px window), so the picture
-       keeps the same framing instead of zooming in on wide screens;
+     - the picture is narrower than the window (--hero-art-width) with soft side edges;
      - the point between her brows is pinned to the centre of the top flower:
          --hero-eye-art: how far down the painting her third eye is (17% of its height)
-         --hero-eye-page: how far from the top of the page the flower's centre is
+         --hero-art-width: how wide the picture is, as a share of the window (smaller = zoomed out)
+         --hero-eye-page: where her third eye sits, measured from the top of the page (the flower centre is at 20px; raise this to move the picture down)
    translateY(%) is measured against the image's own height, so the two line up exactly,
    and scaling around that same point (transform-origin) doesn't move it. */
 @media (min-width: 1140px) {
-  .hero { --hero-eye-art: 17%; --hero-eye-page: 20px; min-height: max(860px, 61vw); }
+  /* The hero ends 180px below the eye, so the dark fade at its bottom follows the eye:
+     eye top (eye-page + 19.65vw + 10px) + eye height (44.5% of its 53.7vw width = 23.9vw) + 180px. */
+  .hero { --hero-eye-art: 17%; --hero-eye-page: 36px; --hero-art-width: 86%; min-height: calc(var(--hero-eye-page) + 10px + 19.65vw + 23.9vw + 180px); }
   .hero__bg {
-    inset: auto; left: 0; top: var(--hero-eye-page);
-    width: 100%; height: auto; aspect-ratio: 1 / 1;
+    inset: auto; left: 50%; top: var(--hero-eye-page);
+    width: var(--hero-art-width); height: auto; aspect-ratio: 1 / 1;
     transform-origin: 50% var(--hero-eye-art);
-    transform: translateY(calc(-1 * var(--hero-eye-art))) scale(1.04);
+    transform: translate(-50%, calc(-1 * var(--hero-eye-art))) scale(1.04);
+    /* Narrower than the window, so fade the side edges into the background. */
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
   }
+  /* The "Madder Craft" eye: as wide as her shoulders, with the iris on the top of her heart.
+     Measured on the painting: her shoulders span 60% of its width and the top of her heart is
+     53.8% of the way down. With the picture 86% of the window wide (scaled 1.04):
+       shoulders = 0.60 x 0.86 x 1.04  = 53.7% of the window  -> the eye's width
+       heart top = eye-page + (0.538 - 0.17) x 0.86 x 1.04 x width = eye-page + 32.9vw
+       the iris sits 24.7% of the eye's width below its top  = 13.25vw
+       so the eye starts at eye-page + 32.9vw - 13.25vw      = eye-page + 19.65vw
+     If you change --hero-art-width, --hero-eye-art or the painting, redo these numbers. */
+  .hero__title { max-width: 53.7vw; }
+  .hero__inner { justify-content: flex-start; padding-top: calc(var(--hero-eye-page) + 19.65vw + 10px); } /* +10px: JD's nudge, iris just below the top of the heart */
 }
