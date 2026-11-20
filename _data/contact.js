@@ -9,6 +9,7 @@ module.exports = {
     { id: "art-commission", name: "Art Commission" },
     { id: "music", name: "Music" },
     { id: "fashion", name: "Fashion" },
+    { id: "styling", name: "Styling" },
     { id: "something-else", name: "Something Else" },
   ],
 };
