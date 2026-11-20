@@ -1,7 +1,7 @@
 ---
 title: "This is Wealth…"
 date: 2024-02-26
-category: poetry
+category: prose
 sorted_by: guess
 medium_tags: ["Wealth Creation", "Self Actualization", "Journeying", "The Fool", "Coaching"]
 medium_url: https://medium.com/@rozmadder/this-is-wealth-f6d1ab59735f
