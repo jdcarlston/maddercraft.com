@@ -1,0 +1,2 @@
+{#- A row of buttons from `buttons`: each { text, href, style } with style "rose" (filled) or "line" (outline). -#}
+{% for b in buttons %}<a class="btn btn--{{ b.style or 'rose' }}" href="{{ b.href }}">{{ b.text }}</a>{% if not loop.last %} {% endif %}{% endfor %}

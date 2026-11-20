@@ -6,12 +6,15 @@
 #
 # On the live site: "Sign In Using Access Token" with a GitHub personal access token.
 #
-# What's editable here: poems, essays and Workshop project pages (all Markdown files).
-# The other pages (home, art, music, fashion, ritual, contact...) are hand-built .njk pages
-# with their lists in _data/*.js, and are edited in a text editor.
+# What's editable here:
+#   Pages            the words on every page (_data/pages/*.yml)
+#   Lists            the gallery, music releases, fashion photos, ritual events, contact form and menu (_data/*.yml)
+#   Poetry, Essays, Workshop projects   one Markdown file each
+# The page designs themselves (.njk files) are edited in a text editor.
 #
-# Note: saving a file in the editor rewrites its header, so any "# comment" lines in the
-# header are dropped. The project pages have a few; they're only notes, the page is unchanged.
+# Note: saving a file in the editor rewrites it, so any "# comment" lines in it are dropped.
+# They're only notes; the page is unchanged. The same notes are shown as hints in the editor.
+
 
 backend:
   name: github
@@ -23,6 +26,239 @@ media_folder: writing/images
 public_folder: /writing/images
 
 collections:
+  # ---------- Pages: the words on each page, one file each in _data/pages/ ----------
+  - name: pages
+    label: Pages
+    label_singular: Page
+    description: "The words on each page. The layout and pictures stay as designed. Text boxes use Markdown: *italic*, **bold**, [link text](/url/)."
+    files:
+      - name: bio
+        label: Bio
+        file: _data/pages/bio.yml
+        # The &names below define fields that other pages reuse with *names.
+        fields:
+          - &f_description { name: description, label: Search and link-preview description, widget: text, required: false }
+          - &f_label { name: label, label: Small label above the title, widget: string }
+          - &f_title { name: title, label: Title, widget: string }
+          - &f_intro { name: intro, label: Intro, widget: text, required: false, hint: "One paragraph. Markdown works: *italic*, **bold**, [link text](/url/)." }
+          - { name: photoAlt, label: Description of the portrait, widget: string }
+          - { name: text, label: Text, widget: markdown }
+          - &f_buttons
+            name: buttons
+            label: Buttons
+            widget: list
+            required: false
+            summary: "{{fields.text}} → {{fields.href}}"
+            fields:
+              - { name: text, label: Button text, widget: string }
+              - { name: href, label: Link, widget: string, hint: "A page like /contact/?kind=ceremony or a full address like https://..." }
+              - { name: style, label: Style, widget: select, default: rose, options: [ { label: "Filled (rose)", value: rose }, { label: "Outline (gold)", value: line } ] }
+      - name: ritual
+        label: Ritual
+        file: _data/pages/ritual.yml
+        fields:
+          - *f_description
+          - *f_label
+          - *f_title
+          - &f_introLines { name: introLines, label: Intro phrases, widget: list, required: false, hint: "Each phrase stays together on one line when the text wraps. Used instead of Intro." }
+          - *f_buttons
+          - &f_sections
+            name: sections
+            label: Sections
+            widget: list
+            summary: "{{fields.heading}}"
+            fields:
+              - { name: id, label: Section address, widget: string, required: false, hint: "Lets a menu link jump here, like /ritual/#coaching. If the menu uses it, keep it the same." }
+              - { name: heading, label: Heading, widget: string, required: false }
+              - { name: text, label: Text, widget: markdown, required: false }
+              - name: list
+                label: Two-column list
+                widget: list
+                required: false
+                summary: "{{fields.name}} · {{fields.note}}"
+                fields:
+                  - { name: name, label: Name, widget: string }
+                  - { name: note, label: Note, widget: string }
+              - { name: textAfter, label: Text after the list, widget: markdown, required: false }
+              - { name: ritualEvents, label: Show the ritual events list, widget: boolean, required: false, hint: "The events come from Lists → Ritual events." }
+              - *f_buttons
+          - { name: closingButtons, label: Buttons at the end, widget: list, required: false, fields: [ { name: text, label: Button text, widget: string }, { name: href, label: Link, widget: string }, { name: style, label: Style, widget: select, default: rose, options: [ { label: "Filled (rose)", value: rose }, { label: "Outline (gold)", value: line } ] } ] }
+      - name: home
+        label: Home
+        file: _data/pages/home.yml
+        fields:
+          - { name: heroTagline, label: Tagline under the title, widget: string, hint: "The words Art, music, writing, fashion and ritual each link to their page." }
+          - { name: art, label: Art row, widget: object, fields: [ { name: label, label: Label, widget: string }, { name: heading, label: Heading, widget: string } ] }
+          - { name: music, label: Music row, widget: object, fields: [ { name: label, label: Label, widget: string } ] }
+          - name: poetry
+            label: Poetry
+            widget: object
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: featuredPoem, label: Featured poem, widget: relation, collection: poetry, value_field: "{{slug}}", search_fields: [title], display_fields: [title] }
+              - { name: featuredImageAlt, label: Description of the featured poem's picture, widget: string }
+          - name: ritual
+            label: Ritual block
+            widget: object
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: heading, label: Heading, widget: string }
+              - { name: imageAlt, label: Description of the altar picture, widget: string }
+              - { name: ledes, label: Paragraphs, widget: list, field: { name: lede, label: Paragraph, widget: text } }
+              - *f_buttons
+      - name: fashion
+        label: Fashion
+        file: _data/pages/fashion.yml
+        fields:
+          - *f_description
+          - *f_label
+          - *f_title
+          - *f_intro
+          - *f_buttons
+          - name: styling
+            label: Styling consultations
+            widget: object
+            fields:
+              - { name: label, label: Small label, widget: string }
+              - { name: heading, label: Heading, widget: string }
+              - { name: text, label: Text, widget: markdown }
+              - *f_buttons
+      - { name: engineering, label: Engineering Leadership, file: _data/pages/engineering.yml, fields: [ *f_description, *f_label, *f_title, *f_intro, *f_buttons, *f_sections ] }
+      - { name: red-thread-labs, label: Red Thread Labs, file: _data/pages/red-thread-labs.yml, fields: [ *f_description, *f_label, *f_title, *f_introLines, *f_buttons, *f_sections ] }
+      - { name: art, label: Gallery, file: _data/pages/art.yml, fields: [ *f_description, *f_label, *f_title, { name: creationsHeading, label: Heading above the pieces, widget: string } ] }
+      - { name: music, label: Music, file: _data/pages/music.yml, fields: [ *f_description, *f_label, *f_buttons, { name: performanceLabel, label: Performance label, widget: string }, { name: performanceHeading, label: Performance heading, widget: string } ] }
+      - { name: workshop, label: Workshop, file: _data/pages/workshop.yml, fields: [ *f_description, *f_label, *f_title, *f_intro ] }
+      - { name: poetry-page, label: Poetry list, file: _data/pages/poetry.yml, fields: [ *f_description, *f_label, *f_title, { name: intro, label: Intro, widget: string, hint: "{count} becomes the number of poems." } ] }
+      - { name: essays-page, label: Essays list, file: _data/pages/essays.yml, fields: [ *f_description, *f_label, *f_title, *f_intro ] }
+      - name: contact
+        label: Contact
+        file: _data/pages/contact.yml
+        fields:
+          - *f_description
+          - *f_label
+          - *f_title
+          - *f_intro
+          - { name: kindsLabel, label: Question above the kinds of work, widget: string }
+          - { name: sendButton, label: Send button, widget: string }
+          - { name: thanksIntro, label: Thank-you message after sending, widget: text, hint: "A link to your calendar is added after it." }
+
+  # ---------- Lists: the gallery, releases, photos, events, contact form and menu ----------
+  - name: lists
+    label: Lists
+    label_singular: List
+    files:
+      - name: art
+        label: Gallery
+        file: _data/art.yml
+        fields:
+          - { name: intro, label: Intro (Gallery page and home page), widget: text }
+          - { name: featured, label: On the home page, widget: list, hint: "File names from the pieces below, in the order to show them." }
+          - name: pieces
+            label: Pieces
+            widget: list
+            summary: "{{fields.title}} {{fields.file}}"
+            hint: "Shown in this order. Pictures live in assets/img/art/."
+            fields:
+              - { name: file, label: File name, widget: string }
+              - { name: alt, label: Description for screen readers, widget: string }
+              - { name: title, label: Title, widget: string, required: false, hint: "With a title, the piece gets a caption." }
+              - { name: medium, label: Medium, widget: string, required: false }
+              - { name: page, label: Links to page, widget: string, required: false, hint: "Like /workshop/windward-weave/. Leave empty to open the full-size picture." }
+      - name: music
+        label: Music
+        file: _data/music.yml
+        fields:
+          - { name: band, label: Band name, widget: string }
+          - { name: intro, label: Intro (Music page and home page), widget: text }
+          - { name: listen, label: SoundCloud link, widget: string }
+          - name: releases
+            label: Releases
+            widget: list
+            summary: "{{fields.title}} · {{fields.note}}"
+            fields:
+              - { name: title, label: Title, widget: string, hint: "Its menu link is the title in lowercase with hyphens, like /music/#bone-mother." }
+              - { name: note, label: Note, widget: string, hint: "Like 2020 or EP · Coming soon" }
+              - { name: file, label: Cover file (assets/img/music/), widget: string }
+              - { name: w, label: Cover width, widget: number }
+              - { name: h, label: Cover height, widget: number }
+              - name: tracks
+                label: Songs
+                widget: list
+                required: false
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: file, label: Audio file (in the media bucket), widget: string }
+                  - { name: length, label: Length, widget: string, hint: "Like 3:42" }
+                  - { name: preview, label: Preview clip, widget: boolean, required: false }
+          - name: performances
+            label: Performance photos
+            widget: list
+            fields:
+              - { name: file, label: File name (assets/img/music/), widget: string }
+              - { name: alt, label: Description for screen readers, widget: string }
+      - name: modeling
+        label: Fashion photos
+        file: _data/modeling.yml
+        fields:
+          - { name: credit, label: Photographer, widget: object, fields: [ { name: name, label: Name, widget: string }, { name: url, label: Website, widget: string } ] }
+          - name: photos
+            label: Photos
+            widget: list
+            summary: "{{fields.who}} · {{fields.file}}"
+            hint: "Shown in this order. Photos live in assets/img/modeling/."
+            fields:
+              - { name: file, label: File name, widget: string }
+              - { name: alt, label: Description for screen readers, widget: string }
+              - { name: who, label: Who's in it, widget: string, required: false }
+      - name: ritual
+        label: Ritual events
+        file: _data/ritual.yml
+        fields:
+          - name: events
+            label: Events (most recent first)
+            widget: list
+            summary: "{{fields.name}} · {{fields.when}}"
+            fields:
+              - { name: name, label: Event, widget: string }
+              - { name: when, label: When, widget: string }
+      - name: contact
+        label: Contact form
+        file: _data/contact.yml
+        fields:
+          - { name: calendly, label: Calendar link people go to after sending, widget: string }
+          - name: kinds
+            label: Kinds of work
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: id, label: Short id, widget: string, hint: "Lowercase with hyphens. /contact/?kind=<id> preselects it." }
+              - { name: name, label: Name, widget: string }
+      - name: menu
+        label: Menu
+        file: _data/menu.yml
+        fields:
+          - name: nav
+            label: Main menu
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: href, label: Link, widget: string }
+              - name: children
+                label: Sub-menu
+                widget: list
+                required: false
+                summary: "{{fields.label}}"
+                fields:
+                  - { name: label, label: Label, widget: string }
+                  - { name: href, label: Link, widget: string }
+          - name: elsewhere
+            label: Footer links
+            widget: list
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: href, label: Link, widget: string }
+
   # ---------- Poetry: one file per poem in poetry/ ----------
   - name: poetry
     label: Poetry

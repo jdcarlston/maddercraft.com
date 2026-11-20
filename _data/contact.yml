@@ -1,0 +1,20 @@
+# The contact form's kinds of work, and the Calendly link people go to after sending.
+# /contact/?kind=<id> preselects a kind. Edit in /admin under Lists → Contact form, or here.
+calendly: https://calendly.com/jdcarlston/preliminary-consult
+kinds:
+  - id: ritual
+    name: Ritual
+  - id: ceremony
+    name: Ceremony
+  - id: magickal-work
+    name: Magickal Work
+  - id: art-commission
+    name: Art Commission
+  - id: music
+    name: Music
+  - id: fashion
+    name: Fashion
+  - id: styling
+    name: Styling
+  - id: something-else
+    name: Something Else

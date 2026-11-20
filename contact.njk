@@ -2,13 +2,12 @@
 layout: base.njk
 title: Contact
 permalink: /contact/
-description: Ask JD Carlston about ritual, ceremony, magickal work or an art commission, and book a preliminary consultation.
+eleventyComputed:
+  description: "{{ pages['contact'].description }}"
 ---
-<section class="page-head wrap">
-  <p class="label">Contact</p>
-  <h1 class="title">Work with Madder Craft</h1>
-  <p class="intro">For ritual, ceremony, magickal work and art commissions. Tell me what you're calling in. You'll get my calendar link to book a preliminary consultation. I read every message and reply personally within two business days.</p>
-</section>
+{# The words are in _data/pages/contact.yml (editable in /admin). #}
+{#- The words are in _data/pages/contact.yml; the kinds of work are in _data/contact.yml (edit both in /admin). -#}
+{% set p = pages.contact %}{% include "page-head.njk" %}
 
 <div class="wrap">
   <form class="contact" name="contact" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="bot-field" data-then-url="{{ contact.calendly }}">
@@ -16,7 +15,7 @@ description: Ask JD Carlston about ritual, ceremony, magickal work or an art com
     <p class="contact__hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
     <fieldset class="contact__kinds">
-      <legend class="label">What kind of work?</legend>
+      <legend class="label">{{ pages.contact.kindsLabel }}</legend>
       <div class="chips">
       {% for k in contact.kinds %}<label class="chip"><input type="radio" name="kind" value="{{ k.name }}" id="kind-{{ k.id }}"{% if loop.first %} required{% endif %}><span>{{ k.name }}</span></label>{% endfor %}
       </div>
@@ -29,7 +28,7 @@ description: Ask JD Carlston about ritual, ceremony, magickal work or an art com
     <label class="field"><span class="label label--small">When are you hoping for? (optional)</span><input name="timing" type="text"></label>
     <label class="field"><span class="label label--small">Tell me about it</span><textarea name="message" rows="7" required></textarea></label>
 
-    <button class="btn btn--rose" type="submit">Send and book a consult</button>
+    <button class="btn btn--rose" type="submit">{{ pages.contact.sendButton }}</button>
     <p class="contact__status" role="status" aria-live="polite"></p>
   </form>
 </div>

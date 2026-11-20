@@ -18,8 +18,12 @@ Hosted on Netlify: build `npm run build`, publish `_site`.
 
 ## Site editor (/admin)
 
-Poems, essays and Workshop project pages can be edited in a browser with Sveltia CMS,
-the same editor as red-thread-labs.com. What it can edit is set in `admin/config.yml`.
+Every page's words, the lists (gallery, music, fashion photos, ritual events, contact form, menu),
+and the poems, essays and Workshop projects can be edited in a browser with Sveltia CMS, the same
+editor as red-thread-labs.com. What it can edit is set in `admin/config.yml`.
+
+The words live in `_data/pages/<page>.yml` and the lists in `_data/*.yml`; the `.njk` files hold
+the page designs and read from them.
 
 - **On your Mac:** run `npm start`, open http://localhost:8080/admin/ in Chrome or Edge,
   choose **Work with Local Repository** and pick this folder. Saving writes the files here;

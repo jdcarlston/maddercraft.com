@@ -1,4 +1,5 @@
 const markdownIt = require("markdown-it");
+const yaml = require("js-yaml");
 const Image = require("@11ty/eleventy-img").default;
 const site = require("./_data/site.js");
 const { webName, originalName } = require("./scripts/image-names.js");
@@ -26,8 +27,18 @@ module.exports = function (eleventyConfig) {
   } else {
     eleventyConfig.addPassthroughCopy("writing/images");
   }
+  // Data files can be YAML (_data/*.yml), which the site editor at /admin can read and write.
+  eleventyConfig.addDataExtension("yml,yaml", (contents) => yaml.load(contents));
+
+  // Page text written in Markdown in _data/pages/*.yml.
+  // `markdown` turns a block of text into paragraphs; `markdownInline` is for one line (no <p> around it).
+  const pageMd = markdownIt({ html: true });
+  eleventyConfig.addFilter("markdown", (text) => pageMd.render(String(text || "")));
+  eleventyConfig.addFilter("markdownInline", (text) => pageMd.renderInline(String(text || "")));
+
   eleventyConfig.addPassthroughCopy("admin"); // the site editor at /admin (see admin/config.yml)
   eleventyConfig.ignores.add("README.md");
+  eleventyConfig.ignores.add("_to_delete/**"); // old files waiting to be deleted
   eleventyConfig.ignores.add(".wtmp/**"); // temporary files some editors leave behind
 
   const byDateDesc = (a, b) => b.date - a.date;

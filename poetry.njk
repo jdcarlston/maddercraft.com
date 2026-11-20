@@ -2,13 +2,12 @@
 layout: base.njk
 title: Poetry
 permalink: /poetry/
-description: Poems from Madder Craft.
+eleventyComputed:
+  description: "{{ pages['poetry'].description }}"
 ---
-<section class="page-head wrap">
-  <p class="label">Poetry</p>
-  <h1 class="title">Poems</h1>
-  <p class="intro">{{ collections.poems.length }} poems, newest first.</p>
-</section>
+{# The words are in _data/pages/poetry.yml (editable in /admin). #}
+{#- The words are in _data/pages/poetry.yml (edit in /admin under Pages). {count} in the intro becomes the number of poems. -#}
+{% set p = { label: pages.poetry.label, title: pages.poetry.title, intro: pages.poetry.intro | replace("{count}", collections.poems.length), buttons: pages.poetry.buttons } %}{% include "page-head.njk" %}
 <div class="wrap">
   {% set lastYear = "" %}
   {% for p in collections.poems %}{% set y = p.date | year %}

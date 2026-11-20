@@ -1,0 +1,32 @@
+{#- The sections of a text page. Pass `sections`, a list from _data/pages/<page>.yml. Each section can have:
+      id           an address so a menu link can jump to it (/ritual/#coaching). Keep it if a menu item uses it.
+      heading      its heading
+      text         its words, in Markdown
+      list         a two-column list of { name, note }
+      textAfter    more words after the list
+      ritualEvents true to show the list of ritual events (_data/ritual.yml)
+      buttons      buttons at the end, each { text, href, style } -#}
+{% for s in sections %}
+  {%- if s.id %}<section id="{{ s.id }}">{% endif %}
+  {%- if s.heading %}
+  <h2>{{ s.heading }}</h2>
+  {%- endif %}
+  {{ s.text | markdown | safe if s.text }}
+  {%- if s.list %}
+  <ul class="list">
+    {% for i in s.list %}<li><span>{{ i.name }}</span><span class="label label--small">{{ i.note }}</span></li>
+    {% endfor %}
+  </ul>
+  {%- endif %}
+  {%- if s.ritualEvents %}
+  <ul class="list">
+    {% for e in ritual.events %}<li><span>{{ e.name }}</span><span class="label label--small">{{ e.when }}</span></li>
+    {% endfor %}
+  </ul>
+  {%- endif %}
+  {{ s.textAfter | markdown | safe if s.textAfter }}
+  {%- if s.buttons %}{% set buttons = s.buttons %}
+  <p>{% include "buttons.njk" %}</p>
+  {%- endif %}
+  {%- if s.id %}</section>{% endif %}
+{% endfor %}

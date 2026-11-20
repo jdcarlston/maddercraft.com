@@ -8,5 +8,5 @@ description: Your message was sent.
 <section class="page-head wrap">
   <p class="label">Received</p>
   <h1 class="title">Thank you</h1>
-  <p class="intro">Your message is with me. Taking you to my calendar to book a preliminary consultation. If nothing happens, <a href="{{ contact.calendly }}">open the calendar here</a>.</p>
+  <p class="intro">{{ pages.contact.thanksIntro | markdownInline | safe }} If nothing happens, <a href="{{ contact.calendly }}">open the calendar here</a>.</p>
 </section>

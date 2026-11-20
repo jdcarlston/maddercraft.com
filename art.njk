@@ -2,14 +2,13 @@
 layout: base.njk
 title: Gallery
 permalink: /art/
-description: Watercolor, oil pastel, acrylic and fiber work from Madder Craft.
+eleventyComputed:
+  description: "{{ pages['art'].description }}"
 ---
-<section class="page-head wrap">
-  <p class="label">Visual art</p>
-  <h1 class="title">Gallery</h1>
-  <p class="intro">{{ art.intro }}</p>
-</section>
-<div class="wrap"><h2 class="label section-label" id="creations">Creations</h2></div>
+{# The words are in _data/pages/art.yml (editable in /admin). #}
+{#- The words are in _data/pages/art.yml; the intro and pieces are in _data/art.yml (edit both in /admin). -#}
+{% set p = { label: pages.art.label, title: pages.art.title, intro: art.intro, buttons: pages.art.buttons } %}{% include "page-head.njk" %}
+<div class="wrap"><h2 class="label section-label" id="creations">{{ pages.art.creationsHeading }}</h2></div>
 <div class="wrap gallery">
   {% for p in art.pieces %}
   <figure class="gallery__item" data-name="{{ p.file | fileName }}">

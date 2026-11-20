@@ -2,32 +2,24 @@
 layout: base.njk
 title: Fashion
 permalink: /fashion/
-description: Fashion and portrait work by JD Carlston and Chick, photographed by Annaka Rochelle, plus fashion and styling consultations with JD.
+eleventyComputed:
+  description: "{{ pages['fashion'].description }}"
 ---
-{# The Fashion page (the file and its photo folder keep the old name "modeling"): a gallery from _data/modeling.js, the photographer credit, a link to book,
-   and the styling consultations section just under the heading (#styling). #}
-<section class="page-head wrap">
-  <p class="label">Fashion</p>
-  <h1 class="title">In Front of the Lens</h1>
-  <p class="intro">{{ modeling.intro }}</p>
-  <p class="credit label label--small">Photography by <a href="{{ modeling.credit.url }}">{{ modeling.credit.name }}</a></p>
-  <a class="btn btn--rose" href="/contact/?kind=fashion">Book a Consult</a>
-</section>
-{# Styling consultations. The four ways to work together are listed here; edit them in place. #}
+{#- The Fashion page (the file and its photo folder keep the old name "modeling"). Words: _data/pages/fashion.yml.
+    Photos: _data/modeling.yml. Edit both in /admin. The styling section sits just under the heading (#styling). -#}
+{%- set p = pages.fashion %}
+{%- set headExtra %}<p class="credit label label--small">Photography by <a href="{{ modeling.credit.url }}">{{ modeling.credit.name }}</a></p>{% endset %}
+{% include "page-head.njk" %}
+{#- Styling consultations: the words are in `styling` in _data/pages/fashion.yml. -#}
+{%- set st = pages.fashion.styling %}
 <section class="wrap" id="styling">
-  <p class="label section-label">Fashion &amp; styling consultations</p>
-  <h2 class="h2">Dress like who you are</h2>
+  <p class="label section-label">{{ st.label }}</p>
+  <h2 class="h2">{{ st.heading }}</h2>
   <div class="prose about-page">
-    <p>Clothes are one of the first things people read about us, and one of the easiest places to practice being seen. I've spent years in front of the lens and dressing for stage, ritual and ceremony, and I love helping people find the look that's actually theirs.</p>
-    <p>Styling with me can be as practical or as deep as you want. We can sort your closet, find your colors and build outfits that work. We can style you for a wedding, a shoot or a big night. And if you want to go further, we can explore dressing so how you look matches how you live and love, because coherence is magnetic.</p>
-    <h3>Ways to work together</h3>
-    <ul>
-      <li><strong>Online consult.</strong> A video session to find your style direction, your palette and a shopping list.</li>
-      <li><strong>In-person closet edit.</strong> At your home in the Salt Lake area: what to keep, tailor or let go, then outfits built from what you love.</li>
-      <li><strong>Shopping session.</strong> We shop together in person, or I send you curated picks after we talk.</li>
-      <li><strong>With coaching.</strong> Add a styling session to a <a href="/red-thread-labs/#coaching">Red Thread Labs</a> coaching package or Level-Up Session.</li>
-    </ul>
-    <p><a class="btn btn--rose" href="https://calendly.com/jdcarlston/preliminary-consult">Book a fashion consult</a> <a class="btn btn--line" href="/contact/?kind=styling">Ask about styling</a></p>
+    {{ st.text | markdown | safe }}
+    {%- if st.buttons %}{% set buttons = st.buttons %}
+    <p>{% include "buttons.njk" %}</p>
+    {%- endif %}
   </div>
 </section>
 <div class="wrap gallery">

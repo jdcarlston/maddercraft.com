@@ -1,0 +1,22 @@
+{#- The heading block at the top of a page. Pass `p`, the page's words from _data/pages/<page>.yml:
+      label        small line above the title
+      title        the big title
+      intro        one paragraph under it (Markdown: *italic*, **bold**, [link](/url/))
+      introLines   instead of `intro`: phrases that each stay on one line when the text wraps
+      buttons      a list of { text, href, style }, style "rose" (filled) or "line" (outline)
+    Set `headExtra` (HTML) before including this to add something after the intro, like a photo credit. -#}
+<section class="page-head wrap">
+  <p class="label">{{ p.label }}</p>
+  <h1 class="title">{{ p.title }}</h1>
+  {%- if p.introLines %}
+  <p class="intro">{% for line in p.introLines %}<span class="keep-together">{{ line | markdownInline | safe }}</span>{% if not loop.last %} {% endif %}{% endfor %}</p>
+  {%- elif p.intro %}
+  <p class="intro">{{ p.intro | markdownInline | safe }}</p>
+  {%- endif %}
+  {%- if headExtra %}
+  {{ headExtra | safe }}
+  {%- endif %}
+  {%- if p.buttons %}
+  {% set buttons = p.buttons %}{% include "buttons.njk" %}
+  {%- endif %}
+</section>

@@ -1,0 +1,23 @@
+# The words on the home page. Edit in /admin under Pages, or here.
+# Text fields use Markdown: *italic*, **bold**, [link text](/url/). Blank line = new paragraph.
+heroTagline: Art, music, writing, fashion, and ritual
+art:
+  label: Visual art
+  heading: Portfolio
+music:
+  label: Music
+poetry:
+  label: Poetry
+  featuredPoem: autumn-heart
+  featuredImageAlt: Sunset through a window, a hanging lantern and autumn leaves
+ritual:
+  label: Esoteric
+  heading: Ritual & Ceremony
+  imageAlt: A red ritual altar with candles, roses and offerings, in front of a gold painting of a woman with a leopard and a red painting of roses
+  ledes:
+  - 'I craft rituals for the transitions in a life, and guide people to create their own: a birth, a coming-of-age, a graduation, a marriage, a divorce, a death, or anything we need to mark in between.'
+  - I also teach ceremonial and chaos magickal practice, and how to use *the science of the subjective* to get more of what you want out of life.
+  buttons:
+  - text: Learn more
+    href: /ritual/
+    style: rose

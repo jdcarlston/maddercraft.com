@@ -1,0 +1,36 @@
+# The words on the Red Thread Labs page. Edit in /admin under Pages, or here.
+# Text fields use Markdown: *italic*, **bold**, [link text](/url/). Blank line = new paragraph.
+description: Red Thread Labs, JD Carlston's coaching, workshop and retreat business, home of Practice Labs.
+label: About · My business
+title: Red Thread Labs
+introLines:
+- Find the hidden thread that's been shaping your life.
+- Choose what you weave next.
+buttons:
+- text: Visit Red Thread Labs
+  href: https://red-thread-labs.com
+  style: rose
+sections:
+- text: |-
+    Red Thread Labs LLC is my business helping people *practice* what is being preached. We hold labs and events that help people build long-lasting, authentic relationship skills.
+
+    In our **Practice Labs** we use methods and teach skills that help people build new habits. The loops you acquired in childhood tend to run your love life, your friendships and your work. **Change them once, and they change everywhere.** We find the patterns, try out new skills, and actually shift behavior using evidence-based methods.
+- heading: Practice Labs
+  text: 'Hands-on workshops for people who keep looping the same pattern and want to change it, whether you''re dating, partnered for decades, or somewhere in between. You come as *the scientist of your own life*: you practice, notice what happens, and take the skill home.'
+- id: coaching
+  heading: Coaching
+  text: |-
+    One-on-one, my work is grounded in transpersonal education and my Practice Labs methodology. Instead of talking around a problem, you learn how your mind builds the patterns you're stuck in, and how to rebuild them. **Often a single two-hour block is enough to resolve many issues**, and the tools stay with you long after.
+
+    **Transpersonal education** is learning that treats the whole person as the classroom: body, mind, emotions and spirit, including the experiences that don't fit neatly into a personal story. Its aim is growth and self-knowledge, not diagnosis or cure. It teaches you how your inner experience works so you can work with it yourself.
+
+    I offer one-on-one and group sessions built around how you actually think and feel, with follow-ups and support between sessions. Book a free conversation to see if we have a fit.
+- heading: Consultations
+  text: Teams and leadership, ceremonies and rituals, readings and spiritual consults, and [fashion and styling](/fashion/#styling), for when you need a focused session rather than an ongoing practice.
+  buttons:
+  - text: Book a free consult
+    href: https://calendly.com/jdcarlston/preliminary-consult
+    style: rose
+  - text: red-thread-labs.com
+    href: https://red-thread-labs.com
+    style: line

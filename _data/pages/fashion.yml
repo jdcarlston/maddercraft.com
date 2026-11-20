@@ -1,0 +1,31 @@
+# The words on the Fashion page. Edit in /admin under Pages, or here.
+# Text fields use Markdown: *italic*, **bold**, [link text](/url/). Blank line = new paragraph.
+description: Fashion and portrait work by JD Carlston and Chick, photographed by Annaka Rochelle, plus fashion and styling consultations with JD.
+label: Fashion
+title: In Front of the Lens
+intro: Editorial and portrait work with Chick, shot at the Versace Mansion in Miami.
+buttons:
+- text: Book a Consult
+  href: /contact/?kind=fashion
+  style: rose
+styling:
+  label: Fashion & styling consultations
+  heading: Dress like who you are
+  text: |-
+    Clothes are one of the first things people read about us, and one of the easiest places to practice being seen. I've spent years in front of the lens and dressing for stage, ritual and ceremony, and I love helping people find the look that's actually theirs.
+
+    Styling with me can be as practical or as deep as you want. We can sort your closet, find your colors and build outfits that work. We can style you for a wedding, a shoot or a big night. And if you want to go further, we can explore dressing so how you look matches how you live and love, because coherence is magnetic.
+
+    ### Ways to work together
+
+    - **Online consult.** A video session to find your style direction, your palette and a shopping list.
+    - **In-person closet edit.** At your home in the Salt Lake area: what to keep, tailor or let go, then outfits built from what you love.
+    - **Shopping session.** We shop together in person, or I send you curated picks after we talk.
+    - **With coaching.** Add a styling session to a [Red Thread Labs](/red-thread-labs/#coaching) coaching package or Level-Up Session.
+  buttons:
+  - text: Book a fashion consult
+    href: https://calendly.com/jdcarlston/preliminary-consult
+    style: rose
+  - text: Ask about styling
+    href: /contact/?kind=styling
+    style: line

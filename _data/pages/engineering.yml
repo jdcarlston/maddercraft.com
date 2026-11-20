@@ -1,0 +1,32 @@
+# The words on the Engineering Leadership page. Edit in /admin under Pages, or here.
+# Text fields use Markdown: *italic*, **bold**, [link text](/url/). Blank line = new paragraph.
+description: JD Carlston's engineering leadership work, more than twenty years building software and the teams that own it.
+label: About · Engineering
+title: Engineering Leadership
+intro: Where systems meet people. More than twenty years building software and the teams that own it.
+buttons:
+- text: Visit jdcarlston.com
+  href: https://jdcarlston.com
+  style: rose
+sections:
+- text: 'My engineering work sits where architecture meets the people who have to live with it, with engineers who get better at their craft along the way. It''s the same practice as everything else here: helping a system become *more coherent*.'
+- heading: Where I've led
+  list:
+  - name: Stack Overflow
+    note: Director of Product Engineering · 2024–2026
+  - name: Pluralsight
+    note: Senior Director of Architecture · 2018–2024
+  - name: Merrick Bank
+    note: AVP Systems Programming · 2008–2018
+  - name: Equis International, ProTel Networks and more
+    note: Earlier
+  textAfter: At Stack Overflow I coordinated eight teams through a re-architecture that **launched on schedule** and **doubled deploy frequency**. At Pluralsight I led architecture for an organization of up to **500 people across 65+ teams** on three continents, through two acquisitions. At Merrick Bank I grew engineering **from 2 people to 16**, serving **4.5 million customers a month**.
+- heading: Facilitation and consulting
+  text: 'I bring engineers and subject-matter experts together to work through real problems: Design Storms and EventStorms, workshops at conferences in the US and Europe, and decisions about where domain boundaries belong. I offer leadership and team coaching, working sessions, offsites and workshops.'
+  buttons:
+  - text: jdcarlston.com
+    href: https://jdcarlston.com
+    style: rose
+  - text: Get in touch
+    href: /contact/
+    style: line

@@ -1,0 +1,78 @@
+# The main menu and the footer links. Edit in /admin under Lists → Menu, or here.
+# An item with `children` gets a sub-menu (drops down with a mouse; on phones the sub-items follow it).
+# Ritual's sub-items jump to sections on the Ritual page: keep each `#id` matching a section id there.
+# Music's sub-items jump to releases: the id is the release title in lowercase with hyphens.
+nav:
+  - label: Ritual
+    href: /ritual/
+    children:
+      - label: Ceremonies
+        href: /ritual/#ceremonies
+      - label: Workshops & Labs
+        href: /ritual/#workshops-labs
+      - label: Coaching
+        href: /ritual/#coaching
+      - label: Practice Labs
+        href: /ritual/#practice-labs
+      - label: NLP
+        href: /ritual/#nlp
+      - label: Esoterica
+        href: /ritual/#esoterica
+      - label: Events
+        href: /ritual/#events
+  - label: Workshop
+    href: /workshop/
+    children:
+      - label: Windward Weave
+        href: /workshop/windward-weave/
+      - label: Venus Hum
+        href: /workshop/venus-hum/
+      - label: Pleromic Nursery
+        href: /workshop/pleromic-nursery/
+      - label: The Whores Grimoire
+        href: /workshop/whores-grimoire/
+      - label: Neuroattractive
+        href: /workshop/neuroattractive/
+  - label: Gallery
+    href: /art/
+    children:
+      - label: Creations
+        href: /art/#creations
+      - label: Fashion
+        href: /fashion/
+  - label: Music
+    href: /music/
+    children:
+      - label: Ringsies
+        href: /music/#ringsies
+      - label: Bone Mother
+        href: /music/#bone-mother
+      - label: On Our Side
+        href: /music/#on-our-side
+      - label: OHM (preview)
+        href: /music/#pleromic-nursery
+  - label: Writing
+    href: /poetry/
+    children:
+      - label: Poetry
+        href: /poetry/
+      - label: Essays
+        href: /essays/
+  - label: About
+    href: /bio/
+    children:
+      - label: Bio
+        href: /bio/
+      - label: Contact
+        href: /contact/
+      - label: Red Thread Labs
+        href: /red-thread-labs/
+      - label: Engineering Leadership
+        href: /engineering/
+elsewhere:
+  - label: SoundCloud
+    href: https://m.soundcloud.com/r0zm4ddr
+  - label: Red Thread Labs
+    href: https://red-thread-labs.com
+  - label: JD Carlston
+    href: https://jdcarlston.com

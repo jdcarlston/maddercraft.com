@@ -2,14 +2,12 @@
 layout: base.njk
 title: Music
 permalink: /music/
-description: Rose Madder explores Ecstatic Black Metal, Noise, Folk and other forms of avant garde music.
+eleventyComputed:
+  description: "{{ pages['music'].description }}"
 ---
-<section class="page-head wrap">
-  <p class="label">Music</p>
-  <h1 class="title">{{ music.band }}</h1>
-  <p class="intro">{{ music.intro }}</p>
-  <a class="btn btn--rose" href="{{ music.listen }}">Listen on SoundCloud</a>
-</section>
+{# The words are in _data/pages/music.yml (editable in /admin). #}
+{#- The words are in _data/pages/music.yml; the band, intro and releases are in _data/music.yml (edit both in /admin). -#}
+{% set p = { label: pages.music.label, title: music.band, intro: music.intro, buttons: pages.music.buttons } %}{% include "page-head.njk" %}
 {# One row per release: its cover (all covers the same height), its name and year, then its songs. #}
 <div class="wrap">
   <ol class="list release-list">
@@ -26,8 +24,8 @@ description: Rose Madder explores Ecstatic Black Metal, Noise, Folk and other fo
   </ol>
 </div>
 <section class="section"><div class="wrap">
-  <p class="label">Live</p>
-  <h2 class="h2">Performance</h2>
+  <p class="label">{{ pages.music.performanceLabel }}</p>
+  <h2 class="h2">{{ pages.music.performanceHeading }}</h2>
   <div class="performances">
     {% for p in music.performances %}<img src="{{ ('/assets/img/music/' + p.file) | resized(900) }}" alt="{{ p.alt }}" loading="lazy">{% endfor %}
   </div>

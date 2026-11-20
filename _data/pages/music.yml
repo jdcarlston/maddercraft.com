@@ -1,0 +1,10 @@
+# The words on the Music page. Edit in /admin under Pages, or here.
+# Text fields use Markdown: *italic*, **bold**, [link text](/url/). Blank line = new paragraph.
+description: Rose Madder explores Ecstatic Black Metal, Noise, Folk and other forms of avant garde music.
+label: Music
+buttons:
+- text: Listen on SoundCloud
+  href: https://m.soundcloud.com/r0zm4ddr
+  style: rose
+performanceLabel: Live
+performanceHeading: Performance
