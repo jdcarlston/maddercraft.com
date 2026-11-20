@@ -1,5 +1,5 @@
 ---
-title: "Speaking with the certainty Of the true believer The proscribed and practiced Man"
+title: "true beleaveher"
 date: 2023-01-28
 category: poetry
 sorted_by: guess
