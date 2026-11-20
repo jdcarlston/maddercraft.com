@@ -397,6 +397,17 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
   .nav__sub { position: static; display: flex; flex-direction: row; flex-wrap: wrap; min-width: 0; padding: 0; background: none; border: 0; opacity: 1; visibility: visible; transform: none; }
 }
 
+/* Phones and the folded menu: a small gold dot between the pages in each group,
+   so you can tell where one link ends and the next begins.
+   The dot is drawn at the start of each link after the first; the 12px either side replaces the usual gap. */
+@media (hover: none), (max-width: 900px) {
+  .nav__sub { column-gap: 0; }
+  .nav__sub a + a::before {
+    content: "\00B7"; /* middle dot */
+    display: inline-block; margin: 0 12px; color: var(--gold);
+  }
+}
+
 /* ---------- Home hero: keep her third eye under the frame's top flower ----------
    The painting is square and fills the full width, so on its own it grows (and crops)
    as the window gets wider while the hero stays 860px tall. On screens wide enough to
