@@ -15,3 +15,14 @@ Eleventy site for Madder Craft: visual art, Rose Madder music, poetry, essays, a
 - `assets/site.css`: colors, fonts and layout. `assets/img/`: logo, borders, art.
 
 Hosted on Netlify: build `npm run build`, publish `_site`.
+
+## Site editor (/admin)
+
+Poems, essays and Workshop project pages can be edited in a browser with Sveltia CMS,
+the same editor as red-thread-labs.com. What it can edit is set in `admin/config.yml`.
+
+- **On your Mac:** run `npm start`, open http://localhost:8080/admin/ in Chrome or Edge,
+  choose **Work with Local Repository** and pick this folder. Saving writes the files here;
+  commit and push as usual.
+- **On the live site:** go to /admin/ and choose **Sign In Using Access Token** with a
+  GitHub personal access token.

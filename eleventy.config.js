@@ -26,6 +26,7 @@ module.exports = function (eleventyConfig) {
   } else {
     eleventyConfig.addPassthroughCopy("writing/images");
   }
+  eleventyConfig.addPassthroughCopy("admin"); // the site editor at /admin (see admin/config.yml)
   eleventyConfig.ignores.add("README.md");
   eleventyConfig.ignores.add(".wtmp/**"); // temporary files some editors leave behind
 
