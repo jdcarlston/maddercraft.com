@@ -211,7 +211,7 @@ collections:
               - { name: alt, label: Description for screen readers, widget: string }
               - { name: who, label: Who's in it, widget: string, required: false }
       - name: ritual
-        label: Ritual events
+        label: Ritual events & photos
         file: _data/ritual.yml
         fields:
           - name: events
@@ -221,6 +221,19 @@ collections:
             fields:
               - { name: name, label: Event, widget: string }
               - { name: when, label: When, widget: string }
+          - name: photos
+            label: Photos (home page slider)
+            widget: list
+            required: false
+            summary: "{{fields.title}} · {{fields.file}}"
+            hint: "Shown in this order. Photos live in assets/img/ritual/."
+            fields:
+              - { name: file, label: File name, widget: string }
+              - { name: alt, label: Description for screen readers, widget: string }
+              - { name: title, label: Caption title, widget: string, required: false, hint: "Like Element 11 Sanctuary" }
+              - { name: note, label: Caption note, widget: string, required: false, hint: "Like 2024" }
+              - { name: w, label: Width (shape), widget: number, required: false, hint: "With Height, the photo's shape, like 4 and 5. Leave both empty for a 4:5 portrait." }
+              - { name: h, label: Height (shape), widget: number, required: false }
       - name: contact
         label: Contact form
         file: _data/contact.yml

@@ -131,7 +131,7 @@ module.exports = function (eleventyConfig) {
 
   // The scrolling rows (_includes/row.njk) all take the same "tile" shape:
   //   { src, alt, title, note, name, w, h }  where w/h is the image's shape.
-  // These two filters turn art pieces and music releases into tiles.
+  // These filters turn art pieces, music releases and ritual photos into tiles.
   eleventyConfig.addFilter("artTiles", (pieces) =>
     pieces.map((piece) => {
       const src = "/assets/img/art/" + piece.file;
@@ -141,6 +141,12 @@ module.exports = function (eleventyConfig) {
     releases.map((release) => {
       const src = "/assets/img/music/" + release.file;
       return { src, alt: release.title + " album cover", title: release.title, note: release.note, name: fileName(src), w: release.w, h: release.h };
+    }));
+  // Ritual photos (_data/ritual.yml → photos). w/h default to a 4:5 portrait when left out.
+  eleventyConfig.addFilter("ritualTiles", (photos = []) =>
+    photos.map((photo) => {
+      const src = "/assets/img/ritual/" + photo.file;
+      return { src, alt: photo.alt, title: photo.title, note: photo.note, name: fileName(src), w: photo.w || 4, h: photo.h || 5 };
     }));
 
   // Neighbours in a collection, for earlier/later links.

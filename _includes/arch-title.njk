@@ -1,9 +1,10 @@
 {# The home page title: a translucent, open eye. The name curves along the upper lid, an optional tagline
    along the lower lid, and the iris can be a round button.
    Needs: archText, archId. Optional: archTagline (text for the lower lid), archLink + archLinkText (makes
-   the iris a button), archSize (font size of the name), archTaglineSize (font size of the tagline, default 38).
+   the iris a button), archTaglineGap (extra room either side of each diamond), archTaglineCenter (where along the lower lid the middle of the tagline sits, in %; default 50),
+   archSize (font size of the name), archTaglineSize (font size of the tagline, default 38).
    archTaglineLinks: a list of { text, href } pieces that make up the tagline; a piece with an href
-   becomes a link, a piece without one is plain text (the commas and "and"). When it's set, it's
+   becomes a link, a piece without one is plain text, and { diamond: true } draws a small gold diamond between words. When it's set, it's
    drawn instead of archTagline (archTagline is still used as the title read by screen readers). #}
 <svg class="arch" viewBox="0 0 900 400" aria-labelledby="{{ archId }}-title">
   <title id="{{ archId }}-title">{{ archText }}{% if archTagline %}: {{ archTagline }}{% endif %}</title>
@@ -12,11 +13,14 @@
   <path id="{{ archId }}" d="M150 182 Q450 62 750 182" fill="none"/>
   <text class="arch__text" font-size="{{ archSize or 98 }}" text-anchor="middle"><textPath href="#{{ archId }}" startOffset="50%">{{ archText }}</textPath></text>
   {% if archTagline %}
-  <path id="{{ archId }}-low" d="M150 284 Q450 376 750 284" fill="none"/>
-  <text class="arch__tagline" font-size="{{ archTaglineSize or 38 }}" text-anchor="middle"><textPath href="#{{ archId }}-low" startOffset="50%">
+  {#- The tagline's line: the middle of the lower lid's own curve, raised 40, so the words run parallel to the lid. #}
+  <path id="{{ archId }}-low" d="M117 247 C311 371, 589 371, 783 247" fill="none"/>
+  <text class="arch__tagline" font-size="{{ archTaglineSize or 38 }}" text-anchor="middle"><textPath href="#{{ archId }}-low" startOffset="{{ archTaglineCenter or 50 }}%">
     {%- if archTaglineLinks -%}
       {%- for piece in archTaglineLinks -%}
-        {%- if piece.href %}<a class="arch__tagline-link" href="{{ piece.href }}"><tspan>{{ piece.text }}</tspan></a>{% else %}<tspan>{{ piece.text }}</tspan>{% endif -%}
+        {%- if piece.href %}<a class="arch__tagline-link" href="{{ piece.href }}"><tspan>{{ piece.text }}</tspan></a>
+        {%- elif piece.diamond %}<tspan> </tspan><tspan class="arch__diamond" dx="{{ archTaglineGap or 0 }}" aria-hidden="true">&#9670;</tspan><tspan dx="{{ archTaglineGap or 0 }}"> </tspan>
+        {%- else %}<tspan>{{ piece.text }}</tspan>{% endif -%}
       {%- endfor -%}
     {%- else -%}{{ archTagline }}{%- endif -%}
   </textPath></text>

@@ -1,5 +1,5 @@
 # Where JD has held ritual and ceremony, most recent first (home page and Ritual page).
-# Edit in /admin under Lists → Ritual events, or here.
+# Edit in /admin under Lists → Ritual events & photos, or here.
 events:
   - name: Sleep Over Mystery School
     when: 2022 to present
@@ -15,3 +15,99 @@ events:
     when: Rituals and a camp temple · 2022
   - name: Burning Man
     when: 2016 · 2018 · 2022
+
+# The photo slider under Ritual & Ceremony on the home page, in this order.
+# Photos live in assets/img/ritual/. w and h are the photo's shape (like 4 and 5 for a portrait); leave them out for 4:5.
+photos:
+  - file: red-altar-candles.jpg
+    alt: JD lighting tall candles on a red altar table set with plates and candelabras, against a red wall
+    w: 4
+    h: 5
+  - file: cathedral-candles.jpg
+    alt: Tall prayer candles burning in a stand beside a stone pillar in a Gothic cathedral
+    w: 3
+    h: 4
+  - file: red-votives.jpg
+    alt: Rows of red votive candles glowing before a chapel altar beneath tall arched windows
+    w: 3
+    h: 4
+  - file: embroidered-vestment.jpg
+    alt: An embroidered gold and silver vestment and mitre on display in a dark room
+    w: 3
+    h: 4
+  - file: cathedral-nave.jpg
+    alt: A Gothic cathedral nave with stained glass windows and rows of chairs
+    w: 3
+    h: 4
+  - file: chapel-chandelier.jpg
+    alt: A round iron chandelier hanging in a chapel, an altar and arched windows beyond
+    w: 3
+    h: 4
+  - file: grotto-altar.jpg
+    alt: A rock grotto altar lit by candles and string lights, with bottles and offerings
+    w: 4
+    h: 3
+  - file: fire-tall.jpg
+    alt: A tall ritual fire blazing against the night sky
+    w: 3
+    h: 4
+  - file: fire-sparks.jpg
+    alt: A fire throwing sparks over a sand circle at night
+    w: 3
+    h: 4
+  - file: fire-logs.jpg
+    alt: A ring of logs burning on sand at night
+    w: 3
+    h: 4
+  - file: fire-circle.jpg
+    alt: A fire in a sand circle at night, with figures standing at the edge of the light
+    w: 3
+    h: 4
+  - file: fire-stump.jpg
+    alt: Flames rising from a burning stump at night
+    w: 3
+    h: 4
+  - file: fire-forest.jpg
+    alt: A stacked bonfire sending smoke and sparks up into a dark forest, people gathered around it
+    w: 3
+    h: 4
+  - file: singing-bowls.jpg
+    alt: Brass singing bowls, a mortar, feathers, braided cords and silks laid on a patchwork quilt
+    w: 4
+    h: 3
+  - file: bowls-rose-petals.jpg
+    alt: Small ceramic bowls and a rattle on a woven rug scattered with rose petals, people seated around it
+    w: 3
+    h: 4
+  - file: sunrise-blanket.jpg
+    alt: A blanket with a drum and stones laid out on the grass at sunrise among pines
+    w: 4
+    h: 3
+  - file: temple-spire.jpg
+    alt: JD in a feathered headdress and striped trousers before a carved wooden temple spire
+    w: 3
+    h: 4
+  - file: temple-steps.jpg
+    alt: JD on the steps of a carved wooden temple under a cloudy blue sky
+    w: 3
+    h: 4
+  - file: temple-wide.jpg
+    alt: A carved wooden temple with prayer flags, JD standing at its center
+    w: 3
+    h: 4
+  - file: red-shrine.jpg
+    alt: JD before a red painted shrine with string lights and a glowing skull
+    w: 4
+    h: 3
+  - file: obelisk-dusk.jpg
+    alt: An ancient obelisk against the evening sky
+    w: 3
+    h: 4
+  - file: greek-vases.jpg
+    alt: Painted Greek amphorae in a museum case
+    w: 3
+    h: 4
+  - file: sun-through-trees.jpg
+    alt: The sun breaking through a forest canopy
+    w: 3
+    h: 4

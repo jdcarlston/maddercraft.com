@@ -11,12 +11,16 @@ heroHeader: true
   <div class="hero__inner">
     <h1 class="hero__title">
       {% set archText = "Madder Craft" %}{% set archId = "arc-home" %}
-      {% set archTagline = pages.home.heroTagline %}{% set archTaglineSize = 34 %}
+      {% set archTagline = pages.home.heroTagline %}{% set archTaglineSize = 20 %}
+      {#- 50.6 (not 50) puts "Art" right at the bottom of the curve, since the words either side aren't quite the same length.
+          Change or reorder the words and this needs a new number. #}
+      {% set archTaglineCenter = 50.6 %}
+      {% set archTaglineGap = 7 %}{#- extra room either side of each diamond #}
       {% set archTaglineLinks = [
-        { text: "Art", href: "/art/" }, { text: " · " },
-        { text: "Music", href: "/music/" }, { text: " · " },
-        { text: "Writing", href: "/poetry/" }, { text: " · " },
-        { text: "Fashion", href: "/fashion/" }, { text: " · " },
+        { text: "Writing", href: "/poetry/" }, { diamond: true },
+        { text: "Music", href: "/music/" }, { diamond: true },
+        { text: "Art", href: "/art/" }, { diamond: true },
+        { text: "Fashion", href: "/fashion/" }, { diamond: true },
         { text: "Ritual", href: "/ritual/" }
       ] %}
       {% set archLink = "/art/" %}{% set archLinkText = "View" %}
@@ -81,4 +85,11 @@ heroHeader: true
       {% set buttons = r.buttons %}{% include "buttons.njk" %}
     </div>
   </div>
+  {#- ifAsync, not if: the photos go through the async "resized" filter, which a plain if skips. #}
+  {%- ifAsync ritual.photos and ritual.photos.length %}
+  <div class="ritual__row">
+    {% set items = ritual.photos | ritualTiles %}
+    {% set height = 420 %}{% set rowLabel = "Ritual and ceremony photos" %}{% include "row.njk" %}
+  </div>
+  {%- endif %}
 </section>
