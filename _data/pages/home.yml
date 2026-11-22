@@ -1,6 +1,6 @@
 # The words on the home page. Edit in /admin under Pages, or here.
 # Text fields use Markdown: *italic*, **bold**, [link text](/url/). Blank line = new paragraph.
-heroTagline: Art · music · writing · fashion · ritual
+heroTagline: Art · Music · Writing · Fashion · Ritual
 art:
   label: Visual art
   heading: Portfolio
