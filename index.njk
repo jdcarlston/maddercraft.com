@@ -70,12 +70,20 @@ heroHeader: true
 </section>
 
 <section class="ritual" id="ritual">
+  {#- Two columns: the photo slider on the left, starting level with the first paragraph; the heading sits above the text on the right. #}
   <div class="wrap ritual__inner">
     {%- set r = pages.home.ritual %}
-    <div class="ritual__img"><img src="{{ '/assets/img/ritual-altar.jpg' | resized(900) }}" alt="{{ r.imageAlt }}" loading="lazy"></div>
-    <div class="ritual__text">
+    <div class="ritual__head">
       <p class="label">{{ r.label }}</p>
       <h2 class="h2">{{ r.heading }}</h2>
+    </div>
+    {#- ifAsync, not if: the photos go through the async "resized" filter, which a plain if skips. #}
+    {%- ifAsync ritual.photos and ritual.photos.length %}
+    <div class="ritual__slider">
+      {% set slides = ritual.photos | ritualTiles %}{% set sliderLabel = "Ritual and ceremony photos" %}{% include "slider.njk" %}
+    </div>
+    {%- endif %}
+    <div class="ritual__body">
       {% for l in r.ledes %}<p class="ritual__lede">{{ l | markdownInline | safe }}</p>
       {% endfor %}
       <ul class="list">
@@ -85,11 +93,4 @@ heroHeader: true
       {% set buttons = r.buttons %}{% include "buttons.njk" %}
     </div>
   </div>
-  {#- ifAsync, not if: the photos go through the async "resized" filter, which a plain if skips. #}
-  {%- ifAsync ritual.photos and ritual.photos.length %}
-  <div class="ritual__row">
-    {% set items = ritual.photos | ritualTiles %}
-    {% set height = 420 %}{% set rowLabel = "Ritual and ceremony photos" %}{% include "row.njk" %}
-  </div>
-  {%- endif %}
 </section>

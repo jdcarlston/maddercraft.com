@@ -142,10 +142,11 @@ module.exports = function (eleventyConfig) {
       const src = "/assets/img/music/" + release.file;
       return { src, alt: release.title + " album cover", title: release.title, note: release.note, name: fileName(src), w: release.w, h: release.h };
     }));
-  // Ritual photos (_data/ritual.yml → photos). w/h default to a 4:5 portrait when left out.
+  // Ritual photos (_data/ritual.yml → photos). A file name is looked for in assets/img/ritual/;
+  // a full path (starting with /) is used as it is. w/h default to a 4:5 portrait when left out.
   eleventyConfig.addFilter("ritualTiles", (photos = []) =>
     photos.map((photo) => {
-      const src = "/assets/img/ritual/" + photo.file;
+      const src = photo.file.startsWith("/") ? photo.file : "/assets/img/ritual/" + photo.file;
       return { src, alt: photo.alt, title: photo.title, note: photo.note, name: fileName(src), w: photo.w || 4, h: photo.h || 5 };
     }));
 

@@ -103,7 +103,6 @@ collections:
             fields:
               - { name: label, label: Label, widget: string }
               - { name: heading, label: Heading, widget: string }
-              - { name: imageAlt, label: Description of the altar picture, widget: string }
               - { name: ledes, label: Paragraphs, widget: list, field: { name: lede, label: Paragraph, widget: text } }
               - *f_buttons
       - name: fashion
@@ -226,7 +225,7 @@ collections:
             widget: list
             required: false
             summary: "{{fields.title}} · {{fields.file}}"
-            hint: "Shown in this order. Photos live in assets/img/ritual/."
+            hint: "Shown in this order, one at a time, beside Ritual & Ceremony on the home page. Photos live in assets/img/ritual/, or give a full path like /assets/img/ritual-altar.jpg."
             fields:
               - { name: file, label: File name, widget: string }
               - { name: alt, label: Description for screen readers, widget: string }

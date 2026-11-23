@@ -1,0 +1,18 @@
+{# One photo at a time: swipe, use the arrow buttons, or the arrow keys. Loops round at the ends.
+   Expects `slides` (tiles from a filter like ritualTiles) and `sliderLabel` for screen readers.
+   The buttons and counter are run by assets/js/slider.js; without it the photos still swipe. #}
+<div class="slider" data-slider role="region" aria-roledescription="carousel" aria-label="{{ sliderLabel }}">
+  <div class="slider__track" tabindex="0">
+    {% for s in slides %}
+    <figure class="slider__slide" data-name="{{ s.name }}" aria-roledescription="slide" aria-label="{{ loop.index }} of {{ slides.length }}">
+      <img src="{{ s.src | resized(900) }}" alt="{{ s.alt }}"{% if not loop.first %} loading="lazy"{% endif %}>
+      {% if s.title or s.note %}<figcaption><span class="tile__title">{{ s.title }}</span><span class="tile__note">{{ s.note }}</span></figcaption>{% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+  <div class="slider__controls">
+    <button class="slider__btn" type="button" data-prev aria-label="Previous photo">&#8249;</button>
+    <span class="slider__count"><span data-current>1</span> / {{ slides.length }}</span>
+    <button class="slider__btn" type="button" data-next aria-label="Next photo">&#8250;</button>
+  </div>
+</div>

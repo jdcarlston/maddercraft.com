@@ -16,9 +16,12 @@ events:
   - name: Burning Man
     when: 2016 · 2018 · 2022
 
-# The photo slider under Ritual & Ceremony on the home page, in this order.
-# Photos live in assets/img/ritual/. w and h are the photo's shape (like 4 and 5 for a portrait); leave them out for 4:5.
+# The photo slider beside Ritual & Ceremony on the home page, one photo at a time, in this order.
+# Photos live in assets/img/ritual/ (or give a full path like /assets/img/ritual-altar.jpg).
+# w and h are the photo's shape (like 4 and 5 for a portrait); leave them out for 4:5.
 photos:
+  - file: /assets/img/ritual-altar.jpg
+    alt: A red ritual altar with candles, roses and offerings, in front of a gold painting of a woman with a leopard and a red painting of roses
   - file: red-altar-candles.jpg
     alt: JD lighting tall candles on a red altar table set with plates and candelabras, against a red wall
     w: 4
@@ -75,18 +78,10 @@ photos:
     alt: Brass singing bowls, a mortar, feathers, braided cords and silks laid on a patchwork quilt
     w: 4
     h: 3
-  - file: bowls-rose-petals.jpg
-    alt: Small ceramic bowls and a rattle on a woven rug scattered with rose petals, people seated around it
-    w: 3
-    h: 4
   - file: sunrise-blanket.jpg
     alt: A blanket with a drum and stones laid out on the grass at sunrise among pines
     w: 4
     h: 3
-  - file: temple-spire.jpg
-    alt: JD in a feathered headdress and striped trousers before a carved wooden temple spire
-    w: 3
-    h: 4
   - file: temple-steps.jpg
     alt: JD on the steps of a carved wooden temple under a cloudy blue sky
     w: 3
