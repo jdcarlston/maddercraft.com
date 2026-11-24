@@ -1,7 +1,7 @@
 ---
 title: "Jesus Christ, What a Mess!"
 date: 2023-06-17
-category: poetry
+category: prose
 sorted_by: guess
 medium_tags: ["Cathedral", "Humanity", "Awaken", "Blood Of Christ", "Blood Sweat And Tears"]
 medium_url: https://medium.com/@rozmadder/jesus-christ-what-a-mess-c2ac7f37fb8

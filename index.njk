@@ -29,7 +29,7 @@ heroHeader: true
   </div>
 </section>
 
-{#- Now in the studio: one project leads (pages.home.now.project, a file in projects/). -#}
+{#- The lead project, right under the title: (pages.home.now.project, a file in projects/). -#}
 {%- set now = pages.home.now %}{% set lead = null %}
 {%- for pr in collections.projects %}{% if pr.page.fileSlug == now.project %}{% set lead = pr %}{% endif %}{% endfor %}
 {%- if lead %}
@@ -52,6 +52,32 @@ heroHeader: true
     <p class="label">{{ pages.home.thread.label }}</p>
     <h2 class="h2">{{ pages.home.thread.heading }}</h2>
     <div class="thread__text">{{ pages.home.thread.text | markdown | safe }}</div>
+  </div>
+</section>
+
+<section class="ritual" id="ritual">
+  {#- Two columns: the photo slider on the left, starting level with the first paragraph; the heading sits above the text on the right. #}
+  <div class="wrap ritual__inner">
+    {%- set r = pages.home.ritual %}
+    <div class="ritual__head">
+      <p class="label">{{ r.label }}</p>
+      <h2 class="h2">{{ r.heading }}</h2>
+    </div>
+    {#- ifAsync, not if: the photos go through the async "resized" filter, which a plain if skips. #}
+    {%- ifAsync ritual.photos and ritual.photos.length %}
+    <div class="ritual__slider">
+      {% set slides = ritual.photos | ritualTiles %}{% set sliderLabel = "Ritual and ceremony photos" %}{% include "slider.njk" %}
+    </div>
+    {%- endif %}
+    <div class="ritual__body">
+      {% for l in r.ledes %}<p class="ritual__lede">{{ l | markdownInline | safe }}</p>
+      {% endfor %}
+      <ul class="list">
+        {% for e in ritual.events %}<li><span>{{ e.name }}</span><span class="label label--small">{{ e.when }}</span></li>
+        {% endfor %}
+      </ul>
+      {% set buttons = r.buttons %}{% include "buttons.njk" %}
+    </div>
   </div>
 </section>
 
@@ -85,40 +111,15 @@ heroHeader: true
     <div class="feature__img"><img src="{{ feature.content | firstImage | resized(900) }}" alt="{{ pages.home.poetry.featuredImageAlt }}" loading="lazy"></div>
   </div>
   <div class="wrap cards">
-    {% set shown = 0 %}{% for p in collections.poems %}{% if p.fileSlug != pages.home.poetry.featuredPoem and shown < 4 %}{% set shown = shown + 1 %}
+    {#- The poems listed in pages.home.poetry.cards, in that order. -#}
+    {% for slug in pages.home.poetry.cards %}{% for p in collections.poems %}{% if p.fileSlug == slug %}
     <article class="card">
       <p class="label label--small">{{ p.date | monthYear }}</p>
       <h3><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
       <p class="card__lines">{{ p.content | openingLines(2) }}</p>
-    </article>{% endif %}{% endfor %}
+    </article>{% endif %}{% endfor %}{% endfor %}
   </div>
   <div class="wrap center"><a class="btn btn--line" href="/poetry/">All {{ collections.poems.length }} poems</a></div>
-</section>
-
-<section class="ritual" id="ritual">
-  {#- Two columns: the photo slider on the left, starting level with the first paragraph; the heading sits above the text on the right. #}
-  <div class="wrap ritual__inner">
-    {%- set r = pages.home.ritual %}
-    <div class="ritual__head">
-      <p class="label">{{ r.label }}</p>
-      <h2 class="h2">{{ r.heading }}</h2>
-    </div>
-    {#- ifAsync, not if: the photos go through the async "resized" filter, which a plain if skips. #}
-    {%- ifAsync ritual.photos and ritual.photos.length %}
-    <div class="ritual__slider">
-      {% set slides = ritual.photos | ritualTiles %}{% set sliderLabel = "Ritual and ceremony photos" %}{% include "slider.njk" %}
-    </div>
-    {%- endif %}
-    <div class="ritual__body">
-      {% for l in r.ledes %}<p class="ritual__lede">{{ l | markdownInline | safe }}</p>
-      {% endfor %}
-      <ul class="list">
-        {% for e in ritual.events %}<li><span>{{ e.name }}</span><span class="label label--small">{{ e.when }}</span></li>
-        {% endfor %}
-      </ul>
-      {% set buttons = r.buttons %}{% include "buttons.njk" %}
-    </div>
-  </div>
 </section>
 
 {#- Work with me: the four ways in, from _data/pages/work-with-me.yml. -#}

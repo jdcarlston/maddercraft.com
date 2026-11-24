@@ -1,6 +1,6 @@
 ---
 title: "Haiku In The Pursuit of Happiness"
-date: 2017-09-15
+date: 2014-09-15
 category: poetry
 sorted_by: tags
 medium_tags: ["Haiku", "Pursuit Of Happiness", "Poetry", "Rainbow"]

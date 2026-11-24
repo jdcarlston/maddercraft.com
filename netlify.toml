@@ -31,5 +31,11 @@
   to = "/essays/this-is-wealth/"
   status = 301
 
+# "Jesus Christ, What a Mess!" moved from Poetry to Essays.
+[[redirects]]
+  from = "/poetry/jesus-christ-what-a-mess/"
+  to = "/essays/jesus-christ-what-a-mess/"
+  status = 301
+
 [build.environment]
   NODE_VERSION = "22"

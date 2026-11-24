@@ -3,15 +3,15 @@
 heroTagline: Writing · Music · Art · Fashion · Ritual
 # The project shown first, right under the title (a file name in projects/, without .md).
 now:
-  label: Now in the studio
-  project: pleromic-nursery
-  text: The next record from Rose Madder, being finished now. Listen to a preview of "OHM."
+  label: Still growing
+  project: windward-weave
+  text: Tied by many hands and woven by the wind. Tie a knot, add to the net, and capture your prayers and intentions in the weave. It travels to festivals, gatherings, weddings and ceremonies, and it keeps getting bigger.
   buttons:
-  - text: Listen to the preview
-    href: /workshop/pleromic-nursery/
+  - text: See the Weave
+    href: /workshop/windward-weave/
     style: rose
-  - text: All the music
-    href: /music/
+  - text: Bring it to your event
+    href: /workshop/windward-weave/#request
     style: line
 thread:
   label: The thread
@@ -29,6 +29,11 @@ poetry:
   label: Poetry
   featuredPoem: autumn-heart
   featuredImageAlt: Sunset through a window, a hanging lantern and autumn leaves
+  # The three poems under the featured one, in this order (file names in poetry/, without .md).
+  cards:
+  - demon-lands
+  - esoteric-synesthesia
+  - midnight-mother
 ritual:
   label: Esoteric
   heading: Ritual & Ceremony
