@@ -156,5 +156,47 @@ module.exports = function (eleventyConfig) {
     return { later: i > 0 ? items[i - 1] : null, earlier: i >= 0 && i < items.length - 1 ? items[i + 1] : null };
   });
 
+  // Search engines and AI tools: robots.txt, sitemap.xml, llms.txt, structured data, and offsite links
+  // opening in a new tab. The workings are in lib/seo.js (the same file jdcarlston.com uses).
+  require("./lib/seo.js")(eleventyConfig, {
+    site,
+    ownSite: /^https?:\/\/([a-z0-9-]+\.)*maddercraft\.com(\/|$)/i,
+    main: "jd",
+    people: {
+      jd: {
+        name: "JD Carlston",
+        alternateName: ["Roz Madder", "Rose Madder"],
+        description: "Engineer, artist and ritualist: the person behind Madder Craft, the music of Rose Madder and the poetry of Roz Madder.",
+        url: site.url + "/bio/",
+        sameAs: ["https://jdcarlston.com", "https://www.red-thread-labs.com/about/jd/", "https://rozmadder.medium.com"],
+      },
+    },
+    organization: { name: site.name, description: site.description, founder: { "@id": site.url + "/#jd" } },
+    pageNode(data, { ref, plain, url, image }) {
+      const date = data.page.date.toISOString().slice(0, 10);
+      const where = data.page.inputPath;
+      if (where.includes("/poetry/") && data.title) {
+        return { "@type": "CreativeWork", genre: "Poetry", name: plain(data.title), author: ref("jd"), datePublished: date, url, isPartOf: { "@type": "CollectionPage", name: "Poetry", url: site.url + "/poetry/" } };
+      }
+      if (where.includes("/essays/") && data.title) {
+        return { "@type": "BlogPosting", headline: plain(data.title), description: plain(data.description || data.subtitle), author: ref("jd"), publisher: ref("org"), datePublished: date, image, url, mainEntityOfPage: url };
+      }
+      if (where.includes("/projects/")) {
+        return { "@type": "CreativeWork", name: plain(data.title), description: plain(data.description), creator: ref("jd"), image, url };
+      }
+      if (data.page.url === "/bio/") return { "@type": "ProfilePage", url, mainEntity: ref("jd") };
+    },
+    llms: {
+      intro: "Madder Craft is the creative home of JD Carlston: visual art, sculpture and fiber work, the music of Rose Madder, the poetry of Roz Madder, essays, and ritual and ceremony. JD's relationship coaching and Practice Labs are at red-thread-labs.com; JD's engineering work is at jdcarlston.com.",
+      sections: [
+        { heading: "Main pages", links: () => site.nav.map((n) => ({ title: n.label, url: n.href })).concat(
+          [{ title: "Contact", url: "/contact/" }]) },
+        { heading: "Workshop: art and projects", links: (c) => (c.projects || []).map((p) => ({ title: p.data.title, url: p.url, note: p.data.description })) },
+        { heading: "Essays", links: (c) => c.essays.map((p) => ({ title: p.data.title, url: p.url, note: p.data.description || p.data.subtitle })) },
+        { heading: "Poetry", links: (c) => [{ title: `Poetry by Roz Madder (${c.poems.length} poems)`, url: "/poetry/" }] },
+      ],
+    },
+  });
+
   return { dir: { input: ".", includes: "_includes", data: "_data", output: "_site" }, markdownTemplateEngine: false };
 };

@@ -460,3 +460,6 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
   .hero__title { max-width: 53.7vw; }
   .hero__inner { justify-content: flex-start; padding-top: calc(var(--hero-eye-page) + 19.65vw + 10px); } /* +10px: JD's nudge, iris just below the top of the heart */
 }
+
+/* Text only screen readers hear, like "(opens in a new tab)" on offsite links (lib/seo.js). */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
