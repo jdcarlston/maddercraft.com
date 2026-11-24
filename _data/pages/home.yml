@@ -31,7 +31,7 @@ poetry:
   featuredImageAlt: Sunset through a window, a hanging lantern and autumn leaves
   # The three poems under the featured one, in this order (file names in poetry/, without .md).
   cards:
-  - demon-lands
+  - sunlight-champagne
   - esoteric-synesthesia
   - midnight-mother
 ritual:
