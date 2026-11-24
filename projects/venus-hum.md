@@ -1,6 +1,8 @@
 ---
 title: The Venus Hum
 order: 2
+# The invitation at the end of the page (see _includes/invite.njk).
+inviteHeading: Want a piece like this for your event?
 status: In development
 subtitle: "Our Singing Heart: a harmonic chromatic resonator. Seven curved steel pipes rise into a heart around a ring of organ pipes, played by breath and bellows, lit by the colors of their own notes. A sculpture in development."
 description: "The Venus Hum, a singing heart sculpture of steel, organ pipes, light and sound, in development by JD Carlston of Madder Craft."

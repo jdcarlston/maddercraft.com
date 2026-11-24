@@ -1,9 +1,11 @@
 ---
 title: The Windward Weave
 order: 1
-status: Installation
+# The invitation at the end of the page (see _includes/invite.njk).
+inviteHeading: Want a weave for your gathering?
+status: Interactive · Growing
 subtitle: "The walls of the Temple of the Wind, tied by many hands and woven by the element. Never-Knot-Broken, it connects us to Indra's net and the web of fate. Tie a knot, add to the net, and capture your prayers and intentions in the weave."
-description: "The Windward Weave, a hanging net tied by many hands, by JD Carlston of Madder Craft."
+description: "The Windward Weave, an interactive hanging net still growing, tied by many hands, by JD Carlston of Madder Craft."
 # Videos in the media bucket, shown above the gallery. The first plays on its own.
 videos:
   - file: video/windward-weave/in-the-wind.mp4

@@ -3,40 +3,13 @@
 # Ritual's sub-items jump to sections on the Ritual page: keep each `#id` matching a section id there.
 # Music's sub-items jump to releases: the id is the release title in lowercase with hyphens.
 nav:
-  - label: Ritual
-    href: /ritual/
-    children:
-      - label: Ceremonies
-        href: /ritual/#ceremonies
-      - label: Workshops & Labs
-        href: /ritual/#workshops-labs
-      - label: Coaching
-        href: /ritual/#coaching
-      - label: Practice Labs
-        href: /ritual/#practice-labs
-      - label: NLP
-        href: /ritual/#nlp
-      - label: Esoterica
-        href: /ritual/#esoterica
-      - label: Events
-        href: /ritual/#events
-  - label: Workshop
-    href: /workshop/
-    children:
-      - label: Windward Weave
-        href: /workshop/windward-weave/
-      - label: Venus Hum
-        href: /workshop/venus-hum/
-      - label: Pleromic Nursery
-        href: /workshop/pleromic-nursery/
-      - label: The Whores Grimoire
-        href: /workshop/whores-grimoire/
-      - label: Neuroattractive
-        href: /workshop/neuroattractive/
-  - label: Gallery
+  - label: Art
     href: /art/
+    match: /workshop/ # project pages live at /workshop/<name>/ and count as Art in the menu
     children:
-      - label: Creations
+      - label: In progress
+        href: /art/#in-progress
+      - label: Gallery
         href: /art/#creations
       - label: Fashion
         href: /fashion/
@@ -58,6 +31,15 @@ nav:
         href: /poetry/
       - label: Essays
         href: /essays/
+  - label: Ritual
+    href: /ritual/
+    children:
+      - label: Ceremonies
+        href: /ritual/#ceremonies
+      - label: Esoterica
+        href: /ritual/#esoterica
+      - label: Events
+        href: /ritual/#events
   - label: About
     href: /bio/
     children:
@@ -65,14 +47,16 @@ nav:
         href: /bio/
       - label: Contact
         href: /contact/
-      - label: Red Thread Labs
-        href: /red-thread-labs/
-      - label: Engineering Leadership
-        href: /engineering/
+# The button at the end of the menu.
+cta:
+  label: Work with me
+  href: /work-with-me/
 elsewhere:
   - label: SoundCloud
     href: https://m.soundcloud.com/r0zm4ddr
   - label: Red Thread Labs
     href: https://red-thread-labs.com
+  - label: Engineering leadership
+    href: /engineering/
   - label: JD Carlston
     href: https://jdcarlston.com

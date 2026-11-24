@@ -55,9 +55,13 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
 .nav { display: flex; flex-wrap: wrap; gap: 0 22px; }
 .nav a { font-family: var(--caps); font-size: 14px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); text-decoration: none; padding: 12px 0; }
 .nav a:hover, .nav a[aria-current] { color: var(--gold); }
+/* The "Work with me" button at the end of the menu (cta in _data/menu.yml). */
+.nav .nav__cta { align-self: center; margin-left: 6px; padding: 9px 20px; border-radius: 999px; background: var(--rose-btn); color: #fff; font-weight: 600; }
+.nav .nav__cta:hover, .nav .nav__cta[aria-current] { background: var(--rose); color: #fff; }
 
 /* Small headings that split the Gallery page into Projects and Creations (the menu links jump to them). */
 .section-label { margin-top: 56px; margin-bottom: 18px; scroll-margin-top: 24px; }
+.section-intro { margin-bottom: 24px; }
 
 /* Sub-menus (menu items with `children` in _data/site.js).
    With a mouse, the sub-menu drops down when you hover over or tab to its parent.
@@ -151,6 +155,7 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
 .feature__img { flex: 1 1 380px; min-height: 420px; position: relative; overflow: hidden; }
 .feature__img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .cards { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 56px; }
+.cards--selected { margin-top: 8px; margin-bottom: 24px; } /* the selected poems, right under their heading */
 .card { flex: 1 1 240px; display: flex; flex-direction: column; gap: 10px; padding-top: 22px; border-top: 1px solid var(--rose); }
 .card h3 { margin: 0; }
 .card h3 a { font-style: italic; font-weight: 500; font-size: 30px; line-height: 1.1; text-decoration: none; }
@@ -463,3 +468,31 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
 
 /* Text only screen readers hear, like "(opens in a new tab)" on offsite links (lib/seo.js). */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* "Want something like this? Let's talk" at the end of project and ritual pages (_includes/invite.njk). */
+.invite { margin-top: 72px; margin-bottom: 24px; }
+.invite__inner { padding: 48px clamp(24px, 5vw, 64px); border: 1px solid rgba(201, 164, 106, 0.35); border-radius: 6px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.invite__inner .intro { margin: 0 auto; }
+.invite__buttons { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 28px; margin: 8px 0 0; }
+
+/* The Work with me page: one panel per way of working (_data/pages/work-with-me.yml). */
+.ways { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 28px; margin-top: 40px; }
+.way { display: flex; flex-direction: column; gap: 14px; padding: 36px clamp(22px, 3vw, 40px); border: 1px solid rgba(201, 164, 106, 0.35); border-radius: 6px; scroll-margin-top: 24px; }
+.way__heading { font-size: clamp(32px, 3vw, 42px); }
+.way__for { color: var(--muted); }
+.way__text p { margin: 0 0 12px; }
+.way__buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: auto 0 0; padding-top: 8px; }
+
+/* Home page: the lead project, the thread, the ways to work together and the sign-up (index.njk). */
+.feature__buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; }
+.feature--now .feature__img { min-height: 480px; }
+.thread__inner { max-width: 820px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.thread__text p { font-size: 21px; line-height: 1.6; margin: 0 0 14px; }
+.work__ways { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 20px; margin-top: 32px; margin-bottom: 36px; }
+.work__way { display: flex; flex-direction: column; gap: 10px; padding: 28px 24px; border: 1px solid rgba(201, 164, 106, 0.35); border-radius: 6px; text-decoration: none; color: var(--ink); transition: border-color 0.15s; }
+.work__way:hover { border-color: var(--gold); }
+.work__heading { font-family: var(--display); -webkit-text-stroke: 0.035em currentColor; font-size: 28px; line-height: 1.1; color: var(--gold); }
+.work__for { color: var(--muted); font-size: 17px; }
+.signup__inner { max-width: 640px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.signup__form { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end; gap: 14px; width: 100%; margin-top: 8px; }
+.signup__form .field { flex: 1 1 200px; text-align: left; }

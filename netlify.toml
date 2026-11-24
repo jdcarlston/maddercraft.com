@@ -19,6 +19,12 @@
   to = "/workshop/venus-hum/"
   status = 301
 
+# The Workshop page was folded into Art (In progress). Project pages stay at /workshop/<name>/.
+[[redirects]]
+  from = "/workshop/"
+  to = "/art/#in-progress"
+  status = 301
+
 # "This Is Wealth" moved from Poetry to Essays (it's a personal essay with a poem at the end).
 [[redirects]]
   from = "/poetry/this-is-wealth/"

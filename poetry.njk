@@ -8,6 +8,17 @@ eleventyComputed:
 {# The words are in _data/pages/poetry.yml (editable in /admin). #}
 {#- The words are in _data/pages/poetry.yml (edit in /admin under Pages). {count} in the intro becomes the number of poems. -#}
 {% set p = { label: pages.poetry.label, title: pages.poetry.title, intro: pages.poetry.intro | replace("{count}", collections.poems.length), buttons: pages.poetry.buttons } %}{% include "page-head.njk" %}
+{#- Selected poems first (pages.poetry.selected, in that order), then every poem by year. -#}
+<div class="wrap"><h2 class="label section-label" id="selected">{{ pages.poetry.selectedHeading }}</h2></div>
+<div class="wrap cards cards--selected">
+  {% for slug in pages.poetry.selected %}{% for p in collections.poems %}{% if p.fileSlug == slug %}
+  <article class="card">
+    <p class="label label--small">{{ p.date | monthYear }}</p>
+    <h3><a href="{{ p.url }}">{{ p.data.title }}</a></h3>
+    <p class="card__lines">{{ p.content | openingLines(2) }}</p>
+  </article>{% endif %}{% endfor %}{% endfor %}
+</div>
+<div class="wrap"><h2 class="label section-label" id="archive">{{ pages.poetry.archiveHeading }}</h2></div>
 <div class="wrap">
   {% set lastYear = "" %}
   {% for p in collections.poems %}{% set y = p.date | year %}

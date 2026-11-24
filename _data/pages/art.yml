@@ -1,6 +1,8 @@
-# The words on the Gallery page. Edit in /admin under Pages, or here.
+# The words on the Art page. Edit in /admin under Pages, or here.
 # Text fields use Markdown: *italic*, **bold**, [link text](/url/). Blank line = new paragraph.
-description: Watercolor, oil pastel, acrylic and fiber work from Madder Craft.
+description: Art from Madder Craft, from installations and sculpture in progress to watercolor, oil pastel, acrylic and fiber work.
 label: Visual art
-title: Gallery
-creationsHeading: Creations
+title: Art
+inProgressHeading: In progress
+inProgressIntro: 'The larger works: interactive pieces that come alive when people take part, sculptures still being built, books and music on their way. Each one tells its story and how to bring it to your event or help it come to life.'
+creationsHeading: Gallery

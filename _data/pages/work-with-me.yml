@@ -1,0 +1,77 @@
+# The words on the Work with me page (/work-with-me/). Edit in /admin under Pages, or here.
+# Text fields use Markdown: *italic*, **bold**, [link text](/url/). Blank line = new paragraph.
+description: Work with JD Carlston of Madder Craft on ceremonies and ritual, art commissions and collaborations, style and coherence, and coaching.
+label: Work with me
+title: Let's make something together
+intro: Everything I make is for the same thing, helping people feel more alive and more like themselves. Here are the ways we can do that together.
+ways:
+- id: ceremony
+  heading: Ceremony, ritual and magick
+  forWho: For couples, families, communities and anyone standing at a threshold.
+  text: |-
+    I craft rituals for the transitions in a life, and guide people to create their own: a birth, a coming-of-age, a graduation, a marriage, a divorce, a death, or anything we need to mark in between. Each one is built *with* you, from what the moment means to the people in it.
+
+    I also teach ceremonial and chaos magickal practice, Hermetic Qabalah, and *the science of the subjective*.
+  buttons:
+  - text: Request a ceremony
+    href: /contact/?kind=ceremony
+    style: rose
+  - text: About ritual
+    href: /ritual/
+    style: line
+- id: collaborations
+  heading: Commissions and collaborations
+  forWho: For event organizers, venues, camps, gatherings and collectors.
+  text: |-
+    I build pieces that come alive when people take part, like the [Windward Weave](/workshop/windward-weave/), tied by many hands, and the [Venus Hum](/workshop/venus-hum/), a singing heart played with breath. I also paint, and I write and record music as [Rose Madder](/music/).
+
+    If you have a space, an event or a gathering that needs something made for it, tell me about it and we'll find out what it wants to be.
+  buttons:
+  - text: Start a conversation
+    href: /contact/?kind=art-collaboration
+    style: rose
+  - text: See the art
+    href: /art/
+    style: line
+- id: style
+  heading: Style and coherence
+  forWho: For anyone who wants how they look to match who they are.
+  text: |-
+    Clothes are one of the first things people read about us, and one of the easiest places to practice being seen. We can sort your closet, find your colors and build outfits that work, style you for a wedding, a shoot or a big night, or go deeper, so how you look matches how you live and love. Coherence is magnetic.
+
+    Online consults, in-person closet edits in the Salt Lake area, and shopping sessions.
+  buttons:
+  - text: Ask about styling
+    href: /contact/?kind=styling
+    style: rose
+  - text: See the fashion work
+    href: /fashion/
+    style: line
+- id: coaching
+  heading: Coaching and Practice Labs
+  forWho: For people ready to change the patterns they keep landing in.
+  text: |-
+    One-on-one, my work is grounded in transpersonal education and my Practice Labs methodology. Instead of talking around a problem, you learn how your mind builds the patterns you're stuck in, and how to rebuild them. In groups, Practice Labs are hands-on evenings, workshops and retreats where people practice new ways of meeting each other.
+
+    This work owes a great deal to my study with Dr. Robert Dee McDonald, an NLP architect and clinical researcher and co-founder of the [Telos Healing Center](https://teloscenter.com). I offer it through my company, Red Thread Labs.
+  buttons:
+  - text: Book a free consult
+    href: https://calendly.com/jdcarlston/preliminary-consult
+    style: rose
+  - text: Explore Red Thread Labs
+    href: https://red-thread-labs.com
+    style: line
+closing:
+  heading: Not sure which fits?
+  text: Send me a note about what you're calling in, and we'll figure it out together. I read every message and reply personally.
+  buttons:
+  - text: Get in touch
+    href: /contact/
+    style: rose
+# The invitation at the end of project and ritual pages (_includes/invite.njk).
+invite:
+  label: Work with me
+  heading: Want something like this?
+  text: Tell me about the space, the gathering or the moment you're making something for. I read every message and reply personally.
+  button: Let's talk
+  moreLink: Ways to work with me →

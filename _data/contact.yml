@@ -10,6 +10,8 @@ kinds:
     name: Magickal Work
   - id: art-commission
     name: Art Commission
+  - id: art-collaboration
+    name: Art Collaboration
   - id: music
     name: Music
   - id: fashion

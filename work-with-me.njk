@@ -1,0 +1,29 @@
+---
+layout: base.njk
+title: Work with me
+permalink: /work-with-me/
+eleventyComputed:
+  description: "{{ pages['work-with-me'].description }}"
+---
+{#- The words are in _data/pages/work-with-me.yml (edit in /admin under Pages → Work with me).
+    Each way of working has an id, so a link can jump straight to it: /work-with-me/#ceremony. -#}
+{% set p = pages["work-with-me"] %}{% include "page-head.njk" %}
+
+<div class="wrap ways">
+  {% for w in p.ways %}
+  <section class="way" id="{{ w.id }}">
+    <h2 class="h2 way__heading">{{ w.heading }}</h2>
+    <p class="label label--small way__for">{{ w.forWho }}</p>
+    <div class="prose way__text">{{ w.text | markdown | safe }}</div>
+    <p class="way__buttons">{% set buttons = w.buttons %}{% include "buttons.njk" %}</p>
+  </section>
+  {% endfor %}
+</div>
+
+<aside class="invite wrap" aria-label="{{ p.closing.heading }}">
+  <div class="invite__inner">
+    <h2 class="h2 invite__heading">{{ p.closing.heading }}</h2>
+    <p class="intro">{{ p.closing.text }}</p>
+    <p class="invite__buttons">{% set buttons = p.closing.buttons %}{% include "buttons.njk" %}</p>
+  </div>
+</aside>

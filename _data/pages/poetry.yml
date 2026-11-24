@@ -3,4 +3,20 @@
 description: Poems from Madder Craft.
 label: Poetry
 title: Poems
-intro: '{count} poems, newest first.'
+intro: Poems by Roz Madder. Start with a few I'd hand you first, or wander the whole archive of {count}.
+# The poems shown first, in this order (file names in poetry/, without .md). Change them in /admin.
+selectedHeading: Start here
+selected:
+- gilgamesh
+- metta
+- garbage
+- let-my-heart-break
+- merry-go-round
+- autumn-heart
+- esoteric-synesthesia
+- west-virginia-is-wild
+- dove
+- demon-lands
+- the-embryonic-lighthouse-and-the-catherine-wheel
+- jesus-christ-what-a-mess
+archiveHeading: All the poems

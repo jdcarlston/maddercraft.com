@@ -1,6 +1,6 @@
 # The words on the Ritual page. Edit in /admin under Pages, or here.
 # Text fields use Markdown: *italic*, **bold**, [link text](/url/). Blank line = new paragraph.
-description: Ritual, ceremony and esoteric practice with JD Carlston of Madder Craft, from rites of passage to Practice Labs and NLP.
+description: Ritual, ceremony and esoteric practice with JD Carlston of Madder Craft, from rites of passage to ceremonial magick and Hermetic Qabalah.
 label: Ritual
 title: Ritual & Ceremony
 introLines:
@@ -15,41 +15,6 @@ sections:
 - id: ceremonies
   heading: Ceremonies
   text: 'I craft rituals for the transitions in a life, and guide people to create their own: a birth, a coming-of-age, a graduation, a marriage, a divorce, a death, or anything we need to mark in between. Each one is built *with* you, from what the moment means to the people in it.'
-- id: workshops-labs
-  heading: Workshops & Labs
-  text: |-
-    Some things are learned best in a room full of people. Through [Red Thread Labs](/red-thread-labs/) I hold labs, workshops and events where people practice relationship skills together: noticing the patterns they're stuck in, trying out new ways of meeting each other, and getting honest feedback in a space built for it.
-
-    Our hands-on **labs** put **Practice Labs** to work in a group. They're for anyone who wants deeper, more authentic connection, whether you're dating, partnered for decades, or somewhere in between. You come as *the scientist of your own life*, and you leave with skills you've actually practiced.
-
-    I also plan and host **multi-day retreats**, **dinners**, and **lunch and learns**, and bring this work to teams, communities and gatherings.
-  buttons:
-  - text: Explore Red Thread Labs
-    href: https://red-thread-labs.com
-    style: line
-- id: coaching
-  heading: Coaching
-  text: |-
-    One-on-one, my work is grounded in transpersonal education and my Practice Labs methodology. Instead of talking around a problem, you learn how your mind builds the patterns you're stuck in, and how to rebuild them. **Often a single two-hour block is enough to resolve many issues**, and the tools stay with you long after.
-
-    **Transpersonal education** is learning that treats the whole person as the classroom: body, mind, emotions and spirit, including the experiences that don't fit neatly into a personal story. Its aim is growth and self-knowledge, not diagnosis or cure. It teaches you how your inner experience works so you can work with it yourself.
-
-    I offer one-on-one and group sessions built around how you actually think and feel, with follow-ups and support between sessions. Book a free conversation to see if we have a fit.
-  buttons:
-  - text: Book a free consult
-    href: https://calendly.com/jdcarlston/preliminary-consult
-    style: line
-- id: practice-labs
-  heading: Practice Labs
-  text: |-
-    Practice Labs are the processes I use one-on-one and in groups to help people get where they want to go. They work with how we hold our inner experience, and how changing that holding changes how we feel and act.
-
-    This work owes a great deal to my study with Dr. Robert Dee McDonald, an NLP architect and clinical researcher and co-founder of the [Telos Healing Center](https://teloscenter.com), whose teaching shaped how I listen and how I build each process.
-
-    From there, I've woven what I learned together with many other sources into a methodology of my own.
-- id: nlp
-  heading: NLP
-  text: '**Neuro-Linguistic Programming** studies how the language we use and the inner pictures, sounds and feelings we make shape what we do. I use it to build rituals and practices that land in the *body*, not just the mind.'
 - id: esoterica
   heading: Esoterica
   text: 'I teach ceremonial and chaos magickal practice, Hermetic Qabalah, and *the science of the subjective*: how attention, symbol and story shape what we experience, and how to use them to get more of what you want out of life.'

@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Gallery
+title: Art
 permalink: /art/
 eleventyComputed:
   description: "{{ pages['art'].description }}"
@@ -8,6 +8,13 @@ eleventyComputed:
 {# The words are in _data/pages/art.yml (editable in /admin). #}
 {#- The words are in _data/pages/art.yml; the intro and pieces are in _data/art.yml (edit both in /admin). -#}
 {% set p = { label: pages.art.label, title: pages.art.title, intro: art.intro, buttons: pages.art.buttons } %}{% include "page-head.njk" %}
+{#- In progress: the larger projects (one Markdown file each in projects/, pages at /workshop/<name>/). -#}
+<div class="wrap"><h2 class="label section-label" id="in-progress">{{ pages.art.inProgressHeading }}</h2>
+  <p class="intro section-intro">{{ pages.art.inProgressIntro | markdownInline | safe }}</p></div>
+{% set projects = collections.projects | byOrder %}
+{% include "project-cards.njk" %}
+
+{#- The finished pieces (_data/art.yml). -#}
 <div class="wrap"><h2 class="label section-label" id="creations">{{ pages.art.creationsHeading }}</h2></div>
 <div class="wrap gallery">
   {% for p in art.pieces %}

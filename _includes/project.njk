@@ -9,7 +9,7 @@ layout: base.njk
 {% set photoFolder = "/assets/img/projects/" + page.fileSlug + "/" %}
 <article class="project">
   <header class="page-head wrap">
-    <p class="label">Workshop{% if status %} · {{ status }}{% endif %}</p>
+    <p class="label">Art{% if status %} · {{ status }}{% endif %}</p>
     <h1 class="title">{{ title }}</h1>
     {% if subtitle %}<p class="intro">{{ subtitle | keepSentences | safe }}</p>{% endif %}
     {% if request %}<a class="btn btn--rose" href="#request">{{ request.heading }}</a>{% endif %}
@@ -52,5 +52,6 @@ layout: base.njk
   <div class="wrap"><div class="prose project__story">{{ content | safe }}</div></div>
   {% if request %}{% include "event-request.njk" %}{% endif %}
   {% if support %}{% include "support-request.njk" %}{% endif %}
-  <nav class="wrap pager" aria-label="More from the workshop"><span></span><a class="pager__all" href="/workshop/"><span class="label">Everything in the workshop</span></a><span></span></nav>
+  {% if invite != false %}{% include "invite.njk" %}{% endif %}
+  <nav class="wrap pager" aria-label="More art in progress"><span></span><a class="pager__all" href="/art/#in-progress"><span class="label">More art in progress</span></a><span></span></nav>
 </article>

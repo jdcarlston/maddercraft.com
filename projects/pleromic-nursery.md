@@ -1,6 +1,9 @@
 ---
 title: Pleromic Nursery
 order: 3
+# The invitation at the end of the page (see _includes/invite.njk).
+inviteKind: music
+inviteHeading: Want music for your ceremony or event?
 status: EP · Coming soon
 subtitle: "The coming EP from Rose Madder, still in the studio."
 description: "Pleromic Nursery, the coming EP from Rose Madder, the music of JD Carlston of Madder Craft."

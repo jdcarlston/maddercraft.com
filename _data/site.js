@@ -23,4 +23,5 @@ module.exports = {
   // The main menu and footer links live in _data/menu.yml, so they can be edited in /admin.
   nav: menu.nav,
   elsewhere: menu.elsewhere,
+  cta: menu.cta, // the "Work with me" button at the end of the menu
 };

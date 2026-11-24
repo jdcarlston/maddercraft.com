@@ -1,0 +1,16 @@
+{#- The invitation at the end of project and ritual pages: "Want something like this? Let's talk."
+    The words are in _data/pages/work-with-me.yml (invite). A page can choose which kind of work the
+    button preselects on the contact form with `inviteKind` (an id from _data/contact.yml), and change
+    the question with `inviteHeading`. -#}
+{%- set inv = pages["work-with-me"].invite %}
+<aside class="invite wrap" aria-label="Work with me">
+  <div class="invite__inner">
+    <p class="label">{{ inv.label }}</p>
+    <h2 class="h2 invite__heading">{{ inviteHeading or inv.heading }}</h2>
+    <p class="intro">{{ inv.text }}</p>
+    <p class="invite__buttons">
+      <a class="btn btn--rose" href="/contact/?kind={{ inviteKind or 'art-commission' }}">{{ inv.button }}</a>
+      <a class="more" href="/work-with-me/">{{ inv.moreLink }}</a>
+    </p>
+  </div>
+</aside>

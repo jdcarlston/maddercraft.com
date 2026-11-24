@@ -1,6 +1,7 @@
 ---
 title: Neuroattractive
 order: 5
+invite: false # a book: no "Want something like this?" at the end
 status: Book · In progress
 subtitle: "A book for anyone who has felt like the odd one out in the room. Being written."
 description: "Neuroattractive, a book in progress by JD Carlston about magnetism, connection and heart-mind coherence."

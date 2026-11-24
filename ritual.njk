@@ -10,5 +10,5 @@ eleventyComputed:
 
 <div class="wrap"><div class="prose ritual-page">
   {% set sections = p.sections %}{% include "page-sections.njk" %}
-  {% if p.closingButtons %}<p>{% set buttons = p.closingButtons %}{% include "buttons.njk" %}</p>{% endif %}
 </div></div>
+{% set inviteKind = "ceremony" %}{% set inviteHeading = "Have a moment that needs marking?" %}{% include "invite.njk" %}

@@ -51,6 +51,7 @@
         <a href="{{ item.href }}"{% if item | isCurrent(page.url) %} aria-current="page"{% endif %}>{{ item.label }}</a>
         {% endif %}
       {% endfor %}
+      {%- if site.cta %}<a class="nav__cta" href="{{ site.cta.href }}"{% if page.url == site.cta.href %} aria-current="page"{% endif %}>{{ site.cta.label }}</a>{% endif %}
     </nav>
   </header>
 

@@ -74,8 +74,10 @@ module.exports = function (eleventyConfig) {
 
   // Whether a menu item, or one of its sub-items, is the page being shown, so the menu can highlight it.
   // Links to a spot on a page (like "/#ritual") never count as the current page.
+  // `match` on a menu item (like /workshop/ on Art) also marks it current for pages under that address.
   const isCurrent = (item, url) =>
     (!item.href.includes("#") && url.startsWith(item.href)) ||
+    (item.match && url.startsWith(item.match)) ||
     (item.children || []).some((child) => isCurrent(child, url));
   eleventyConfig.addFilter("isCurrent", isCurrent);
 

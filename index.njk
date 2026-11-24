@@ -29,6 +29,32 @@ heroHeader: true
   </div>
 </section>
 
+{#- Now in the studio: one project leads (pages.home.now.project, a file in projects/). -#}
+{%- set now = pages.home.now %}{% set lead = null %}
+{%- for pr in collections.projects %}{% if pr.page.fileSlug == now.project %}{% set lead = pr %}{% endif %}{% endfor %}
+{%- if lead %}
+<section class="section" id="now">
+  <div class="wrap feature feature--now">
+    <div class="feature__img"><a href="{{ lead.url }}"><img src="{{ ('/assets/img/projects/' + lead.page.fileSlug + '/' + lead.data.photos[0].file) | resized(900) }}" alt="{{ lead.data.photos[0].alt }}" loading="lazy"></a></div>
+    <div class="feature__text">
+      <p class="label">{{ now.label }}</p>
+      <h2 class="h2">{{ lead.data.title }}</h2>
+      <p class="intro">{{ now.text }}</p>
+      <p class="feature__buttons">{% set buttons = now.buttons %}{% include "buttons.njk" %}</p>
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+{#- The thread: what ties the work together. -#}
+<section class="section thread" id="thread">
+  <div class="wrap thread__inner">
+    <p class="label">{{ pages.home.thread.label }}</p>
+    <h2 class="h2">{{ pages.home.thread.heading }}</h2>
+    <div class="thread__text">{{ pages.home.thread.text | markdown | safe }}</div>
+  </div>
+</section>
+
 <section class="section" id="visual-art">
   <div class="section__head wrap">
     <div><p class="label">{{ pages.home.art.label }}</p><h2 class="h2">{{ pages.home.art.heading }}</h2><p class="intro">{{ art.intro }}</p></div>
@@ -92,5 +118,37 @@ heroHeader: true
       </ul>
       {% set buttons = r.buttons %}{% include "buttons.njk" %}
     </div>
+  </div>
+</section>
+
+{#- Work with me: the four ways in, from _data/pages/work-with-me.yml. -#}
+<section class="section work" id="work-with-me">
+  <div class="section__head wrap">
+    <div><p class="label">{{ pages.home.work.label }}</p><h2 class="h2">{{ pages.home.work.heading }}</h2><p class="intro">{{ pages.home.work.intro }}</p></div>
+  </div>
+  <div class="wrap work__ways">
+    {% for w in pages["work-with-me"].ways %}
+    <a class="work__way" href="/work-with-me/#{{ w.id }}">
+      <span class="work__heading">{{ w.heading }}</span>
+      <span class="work__for">{{ w.forWho }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  <div class="wrap center"><a class="btn btn--rose" href="/work-with-me/">{{ pages.home.work.button }}</a></div>
+</section>
+
+{#- The mailing list. Sign-ups are kept in Netlify (Forms → mailing-list) until the list moves to Kit. -#}
+<section class="section signup" id="signup">
+  <div class="wrap signup__inner">
+    <p class="label">{{ pages.home.signup.label }}</p>
+    <h2 class="h2">{{ pages.home.signup.heading }}</h2>
+    <p class="intro">{{ pages.home.signup.text }}</p>
+    <form class="signup__form" name="mailing-list" method="POST" action="/subscribed/" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="mailing-list">
+      <p class="contact__hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <label class="field"><span class="label label--small">First name</span><input name="first_name" type="text" autocomplete="given-name"></label>
+      <label class="field"><span class="label label--small">Email</span><input name="email" type="email" autocomplete="email" required></label>
+      <button class="btn btn--rose" type="submit">{{ pages.home.signup.button }}</button>
+    </form>
   </div>
 </section>
