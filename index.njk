@@ -137,19 +137,3 @@ heroHeader: true
   </div>
   <div class="wrap center"><a class="btn btn--rose" href="/work-with-me/">{{ pages.home.work.button }}</a></div>
 </section>
-
-{#- The mailing list. Sign-ups are kept in Netlify (Forms → mailing-list) until the list moves to Kit. -#}
-<section class="section signup" id="signup">
-  <div class="wrap signup__inner">
-    <p class="label">{{ pages.home.signup.label }}</p>
-    <h2 class="h2">{{ pages.home.signup.heading }}</h2>
-    <p class="intro">{{ pages.home.signup.text }}</p>
-    <form class="signup__form" name="mailing-list" method="POST" action="/subscribed/" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="mailing-list">
-      <p class="contact__hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-      <label class="field"><span class="label label--small">First name</span><input name="first_name" type="text" autocomplete="given-name"></label>
-      <label class="field"><span class="label label--small">Email</span><input name="email" type="email" autocomplete="email" required></label>
-      <button class="btn btn--rose" type="submit">{{ pages.home.signup.button }}</button>
-    </form>
-  </div>
-</section>

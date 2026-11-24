@@ -108,7 +108,6 @@ collections:
               - { name: featuredImageAlt, label: Description of the featured poem's picture, widget: string }
               - { name: cards, label: Poems under it, widget: relation, collection: poetry, value_field: "{{slug}}", search_fields: [title], display_fields: [title], multiple: true }
           - { name: work, label: Work with me band, widget: object, fields: [ { name: label, label: Label, widget: string }, { name: heading, label: Heading, widget: string }, { name: intro, label: Intro, widget: string }, { name: button, label: Button text, widget: string } ] }
-          - { name: signup, label: Mailing list sign-up, widget: object, fields: [ { name: label, label: Label, widget: string }, { name: heading, label: Heading, widget: string }, { name: text, label: Text, widget: string }, { name: button, label: Button text, widget: string } ] }
           - name: ritual
             label: Ritual block
             widget: object

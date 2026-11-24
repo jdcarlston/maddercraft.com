@@ -483,7 +483,7 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
 .way__text p { margin: 0 0 12px; }
 .way__buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: auto 0 0; padding-top: 8px; }
 
-/* Home page: the lead project, the thread, the ways to work together and the sign-up (index.njk). */
+/* Home page: the lead project, the thread, and the ways to work together (index.njk). */
 .feature__buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; }
 .feature--now .feature__img { min-height: 480px; }
 .thread__inner { max-width: 820px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 18px; }
@@ -493,6 +493,3 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
 .work__way:hover { border-color: var(--gold); }
 .work__heading { font-family: var(--display); -webkit-text-stroke: 0.035em currentColor; font-size: 28px; line-height: 1.1; color: var(--gold); }
 .work__for { color: var(--muted); font-size: 17px; }
-.signup__inner { max-width: 640px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
-.signup__form { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end; gap: 14px; width: 100%; margin-top: 8px; }
-.signup__form .field { flex: 1 1 200px; text-align: left; }
