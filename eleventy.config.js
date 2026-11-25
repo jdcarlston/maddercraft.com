@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig) {
   if (site.imagesFromMedia) {
     // Pictures come from the media bucket, so only the site's own files are published here:
     // styles, scripts, the logo, icons, ornaments and the link-preview image.
-    ["assets/site.css", "assets/js", "assets/img/ornament", "assets/img/logo.svg", "assets/img/logo-512.png",
+    ["assets/site.css", "assets/js", "assets/img/ornament", "assets/img/logo.svg", "assets/img/logo-512.png", "assets/img/logo-layers",
      "assets/img/favicon.png", "assets/img/apple-touch-icon.png", "assets/img/share.jpg"]
       .forEach((p) => eleventyConfig.addPassthroughCopy(p));
   } else {
