@@ -49,7 +49,7 @@ nav:
         href: /contact/
 # The button at the end of the menu.
 cta:
-  label: Work with me
+  label: Collaborate
   href: /work-with-me/
 elsewhere:
   - label: SoundCloud
