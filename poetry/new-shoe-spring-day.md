@@ -12,7 +12,7 @@ medium_url: https://medium.com/@rozmadder/new-shoe-spring-day-11c01870fd2d
 * * *
 
 A Trans Sandwich Angel
-Who’s beauty surprised me when I looked up
+Whose beauty surprised me when I looked up
 To give them my order at the window
 “So Pretty!” I thought. Flustrd and entranced
 “So Cute” came out instead.

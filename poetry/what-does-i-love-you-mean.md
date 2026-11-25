@@ -1,6 +1,6 @@
 ---
 title: "What does 'I Love You' Mean?"
-date: 2021-11-06
+date: 2012-01-01
 category: poetry
 sorted_by: title prefix
 medium_tags: ["What Does I Love You Mean", "Relating Harmoniously", "Learning How To Love", "The Authentic Self", "Being A Partner"]
