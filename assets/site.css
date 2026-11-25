@@ -412,17 +412,21 @@ a:focus-visible, button:focus-visible, .row:focus-visible { outline: 2px solid v
   .nav-toggle { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border: 1px solid var(--gold); border-radius: 999px; background: rgba(46, 16, 24, 0.6); color: var(--gold); font-family: var(--caps); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; }
   .nav { display: none; flex-basis: 100%; flex-direction: column; padding: 8px 20px 16px; background: rgba(46, 16, 24, 0.96); border: 1px solid rgba(201, 164, 106, 0.35); border-radius: 6px; }
   .nav.is-open { display: flex; }
-  /* Inside the open menu, every group is a row: its name in gold, then its pages. */
-  .nav__group { flex-basis: 100%; flex-wrap: wrap; align-items: baseline; }
-  .nav__group > a { color: var(--gold); }
+  /* Inside the open menu, each group's name sits on its own line in gold,
+     and its pages are stacked under it, indented behind a thin gold line.
+     One link per line keeps every tap target big enough for a thumb. */
+  .nav__group { flex-basis: 100%; flex-direction: column; align-items: stretch; }
+  .nav__group > a { color: var(--gold); padding-bottom: 4px; }
   .nav__group > a::after { content: none; }
-  .nav__sub { position: static; display: flex; flex-direction: row; flex-wrap: wrap; min-width: 0; padding: 0; background: none; border: 0; opacity: 1; visibility: visible; transform: none; }
+  .nav__sub { position: static; display: flex; flex-direction: column; min-width: 0; margin: 0 0 8px; padding: 0 0 0 16px; background: none; border: 0; border-left: 1px solid rgba(201, 164, 106, 0.35); border-radius: 0; opacity: 1; visibility: visible; transform: none; }
+  .nav__sub a { padding: 10px 0; }
+  .nav__cta { align-self: flex-start; margin: 12px 0 0; }
 }
 
-/* Phones and the folded menu: a small gold diamond between the pages in each group,
+/* Touch screens wide enough to show the whole menu (tablets): a small gold diamond between the pages in each group,
    so you can tell where one link ends and the next begins.
    The diamond is drawn at the start of each link after the first; the 12px either side replaces the usual gap. */
-@media (hover: none), (max-width: 900px) {
+@media (hover: none) and (min-width: 901px) {
   .nav__sub { column-gap: 0; }
   .nav__sub a + a::before {
     content: "\25C6"; /* small diamond, like the ones on the home page eye */
