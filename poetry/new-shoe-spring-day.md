@@ -1,6 +1,6 @@
 ---
 title: "New Shoe Spring Day"
-date: 2018-10-15
+date: 2018-05-01
 category: poetry
 sorted_by: tags
 medium_tags: ["Poetry", "Love", "42", "Birthday", "Spring"]
@@ -21,7 +21,7 @@ Trying for a bit more loving impact
 Kissing you, feeling the vibration between us
 Near the Capitol and City Creek
 Walking the road from our first date
-All the way up in the almost-to0-hot sun
+All the way up in the almost-too-hot sun
 Wearing my new brocade-shiny shoes
 To the bottle-opener bench
 Where the furry-flying buggas hovered

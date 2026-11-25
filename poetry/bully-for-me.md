@@ -1,6 +1,6 @@
 ---
 title: "Bully For Me"
-date: 2019-05-09
+date: 2019-04-01
 category: poetry
 sorted_by: guess
 medium_tags: ["Abuse", "Consent", "PTSD", "Bully For Me", "Shadow Work"]

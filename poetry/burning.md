@@ -1,6 +1,6 @@
 ---
 title: "burning"
-date: 2019-07-19
+date: 2018-10-01
 category: poetry
 sorted_by: guess
 medium_url: https://medium.com/@rozmadder/burning-dbab2aacbd9b

@@ -1,6 +1,6 @@
 ---
 title: "Naga Kanya, the Head of the Snake"
-date: 2018-10-15
+date: 2018-06-01
 category: poetry
 sorted_by: guess
 medium_url: https://medium.com/@rozmadder/naga-kanya-the-head-of-the-snake-36e9c1a4459

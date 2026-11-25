@@ -1,6 +1,6 @@
 ---
 title: "Numerology"
-date: 2023-10-03
+date: 2023-08-26
 category: poetry
 sorted_by: tags
 medium_tags: ["Poetry", "Numerology", "Identity", "Magick", "Thelema"]

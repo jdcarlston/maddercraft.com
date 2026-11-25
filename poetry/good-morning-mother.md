@@ -1,6 +1,6 @@
 ---
 title: "Good Morning Mother"
-date: 2020-01-02
+date: 2018-05-01
 category: poetry
 sorted_by: guess
 medium_tags: ["Productivity", "Waking Up", "Parenting Teenagers", "Motherhood", "School Starts Too Early"]

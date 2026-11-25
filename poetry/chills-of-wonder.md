@@ -1,6 +1,6 @@
 ---
 title: "Chills of Wonder"
-date: 2020-09-28
+date: 2016-09-01
 category: poetry
 sorted_by: title prefix
 medium_url: https://medium.com/@rozmadder/chills-of-wonder-ba75bc0ae1d3

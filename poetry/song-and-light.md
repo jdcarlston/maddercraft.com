@@ -1,6 +1,6 @@
 ---
 title: "Song and Light"
-date: 2019-10-30
+date: 2018-10-01
 category: poetry
 sorted_by: guess
 medium_url: https://medium.com/@rozmadder/song-and-light-f8068d1f6418

@@ -45,7 +45,7 @@ And you learned
 Differently now
 And breathe a new
 
-Future protjecting itself
+Future projecting itself
 In front of you
 Stretching and yawning
 As it wakes

@@ -1,6 +1,6 @@
 ---
 title: "October"
-date: 2019-10-30
+date: 2018-10-01
 category: poetry
 sorted_by: guess
 medium_url: https://medium.com/@rozmadder/october-8b53aba47d89

@@ -1,6 +1,6 @@
 ---
 title: "Humanity"
-date: 2019-08-06
+date: 2019-03-01
 category: poetry
 sorted_by: guess
 medium_url: https://medium.com/@rozmadder/humanity-87f7478d9aef

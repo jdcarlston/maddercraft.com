@@ -1,6 +1,6 @@
 ---
 title: "Scylla-ing"
-date: 2018-10-15
+date: 2018-07-01
 category: poetry
 sorted_by: guess
 medium_url: https://medium.com/@rozmadder/scylla-ing-e99a878288f

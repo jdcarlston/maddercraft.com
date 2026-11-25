@@ -1,6 +1,6 @@
 ---
 title: "You"
-date: 2019-08-06
+date: 2018-10-01
 category: poetry
 sorted_by: guess
 medium_url: https://medium.com/@rozmadder/you-95a5b8962f12

@@ -1,6 +1,6 @@
 ---
 title: "Non-Verbal Nature"
-date: 2018-10-15
+date: 2018-06-01
 category: poetry
 sorted_by: tags
 medium_tags: ["Nature", "Sickness", "Caring", "Empathy", "Poetry"]

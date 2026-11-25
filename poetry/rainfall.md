@@ -1,6 +1,6 @@
 ---
 title: "rainfall"
-date: 2022-10-08
+date: 2022-08-05
 category: poetry
 sorted_by: guess
 medium_url: https://medium.com/@rozmadder/rainfall-f1fce50b56fb

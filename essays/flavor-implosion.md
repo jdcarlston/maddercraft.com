@@ -1,7 +1,7 @@
 ---
-title: "Flavor Implosion​​"
+title: "Flavor Implosion"
 date: 2023-06-14
-category: poetry
+category: prose
 sorted_by: guess
 medium_tags: ["Scotch Bonnets", "Jamaica", "Mystery School", "Fishkill"]
 medium_url: https://medium.com/@rozmadder/flavor-implosion-9cc43497bbe3

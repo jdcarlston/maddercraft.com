@@ -1,6 +1,6 @@
 ---
 title: "for i++"
-date: 2022-10-30
+date: 2019-09-01
 category: poetry
 sorted_by: guess
 medium_url: https://medium.com/@rozmadder/for-i-463281ecee63

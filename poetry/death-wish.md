@@ -1,6 +1,6 @@
 ---
 title: "Death Wish"
-date: 2019-08-06
+date: 2019-01-01
 category: poetry
 sorted_by: guess
 medium_url: https://medium.com/@rozmadder/death-wish-a0faed673307

@@ -1,6 +1,6 @@
 ---
 title: "Plumbum"
-date: 2020-04-07
+date: 2017-03-01
 category: poetry
 sorted_by: guess
 medium_url: https://medium.com/@rozmadder/plumbum-8ffd999eca

@@ -1,6 +1,6 @@
 ---
 title: "Succulent Dreams"
-date: 2020-08-21
+date: 2020-07-01
 category: poetry
 sorted_by: title prefix
 medium_url: https://medium.com/@rozmadder/succulent-dreams-96399fe355a0

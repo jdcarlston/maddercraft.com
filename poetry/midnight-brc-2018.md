@@ -1,6 +1,6 @@
 ---
 title: "Midnight, BRC 2018"
-date: 2018-10-15
+date: 2018-09-01
 category: poetry
 sorted_by: tags
 medium_tags: ["Poetry", "Burning Man", "Sappho", "Black Rock City"]

@@ -22,8 +22,8 @@ To admit and understand something that
 Has been cloistered and ignored
 And still frightens mankind
 
-Bleeding and hidden, a stage behind *meat curtains
-*Our volumes exist without a voice
+Bleeding and hidden, a stage behind *meat curtains*
+Our volumes exist without a voice
 Those femmes with, and those without
 Our bodies a facade
 So many can’t hearken,
@@ -42,8 +42,8 @@ Penetrated like an enemy fortress,
 Part of the land, a plot of dirt,
 To be fertilized by the plow
 To be rendered and controlled,
-Tended until barren and childlike *hysterical
-*But “*funbags*,” oh they get objectified attention,
+Tended until barren and childlike *hysterical*
+But “*funbags*,” oh they get objectified attention,
 With products and pink ribbons
 Like Mary’s glamour 
 Shot by all the unnamed mothers

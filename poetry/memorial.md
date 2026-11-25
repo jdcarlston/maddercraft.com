@@ -1,6 +1,6 @@
 ---
 title: "Memorial"
-date: 2020-05-19
+date: 2018-05-01
 category: poetry
 sorted_by: tags
 medium_tags: ["Breaking Up", "Birthdays", "Memories", "Poetry", "Magic"]

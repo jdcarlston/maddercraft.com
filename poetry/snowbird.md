@@ -1,6 +1,6 @@
 ---
 title: "Snowbird"
-date: 2020-05-12
+date: 2018-08-01
 category: poetry
 sorted_by: tags
 medium_tags: ["Mountains", "Poetry", "Snowbird", "Escape", "Nature"]

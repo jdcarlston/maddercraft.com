@@ -1,6 +1,6 @@
 ---
 title: "Earworm Orchestra"
-date: 2020-03-09
+date: 2019-10-01
 category: poetry
 sorted_by: guess
 medium_tags: ["Flashback"]

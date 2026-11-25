@@ -1,6 +1,6 @@
 ---
 title: "Snuggle Golden Happy"
-date: 2019-08-06
+date: 2018-11-01
 category: poetry
 sorted_by: guess
 medium_url: https://medium.com/@rozmadder/snuggle-golden-happy-1e0b27eac028
