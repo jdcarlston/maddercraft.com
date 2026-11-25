@@ -20,10 +20,14 @@ videos:
   - file: video/windward-weave/walk-around.mp4
     poster: video/windward-weave/walk-around-poster.jpg
     caption: "A walk around the Temple of the Wind."
-# The gallery, in order. `file` is in /assets/img/projects/windward-weave/; `caption` is optional.
+# The gallery, in order. `file` is in /assets/img/projects/windward-weave/; `caption` and `credit` (photographer name and url) are optional.
+# The first photo is also the one shown on the home page and the project card.
 photos:
   - file: bell-and-ribbons.jpg
     alt: "A hand with blue glitter nails holding a strip of the Weave beside a small brass bell, the knotted silk in red, purple and green against the desert"
+    credit:
+      name: Saffire Greenfield
+      url: https://www.instagram.com/saff_ire/
   - file: camp-at-night.jpg
     alt: "The Weave hanging around a camp at dusk, its strips lit pink, green and gold beside trees washed in purple light"
   - file: strips-in-sun.jpg

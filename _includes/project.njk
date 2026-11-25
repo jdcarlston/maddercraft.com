@@ -36,7 +36,7 @@ layout: base.njk
     {% for photo in photos %}
     <figure class="gallery__item" data-name="{{ photo.file | fileName }}">
       <a href="{{ (photoFolder + photo.file) | original }}"><img src="{{ (photoFolder + photo.file) | resized(900) }}" alt="{{ photo.alt }}" loading="lazy"></a>
-      {% if photo.caption %}<figcaption><span class="tile__title">{{ photo.caption }}</span></figcaption>{% endif %}
+      {% if photo.caption or photo.credit %}<figcaption>{% if photo.caption %}<span class="tile__title">{{ photo.caption }}</span>{% endif %}{% if photo.credit %}{% set credit = photo.credit %}{% include "photo-credit.njk" %}{% endif %}</figcaption>{% endif %}
     </figure>
     {% endfor %}
   </div>

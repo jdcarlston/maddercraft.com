@@ -35,7 +35,7 @@ heroHeader: true
 {%- if lead %}
 <section class="section" id="now">
   <div class="wrap feature feature--now">
-    <div class="feature__img"><a href="{{ lead.url }}"><img src="{{ ('/assets/img/projects/' + lead.page.fileSlug + '/' + lead.data.photos[0].file) | resized(900) }}" alt="{{ lead.data.photos[0].alt }}" loading="lazy"></a></div>
+    <div class="feature__img"><a href="{{ lead.url }}"><img src="{{ ('/assets/img/projects/' + lead.page.fileSlug + '/' + lead.data.photos[0].file) | resized(900) }}" alt="{{ lead.data.photos[0].alt }}" loading="lazy"></a>{% if lead.data.photos[0].credit %}{% set credit = lead.data.photos[0].credit %}{% include "photo-credit.njk" %}{% endif %}</div>
     <div class="feature__text">
       <p class="label">{{ now.label }}</p>
       <h2 class="h2">{{ lead.data.title }}</h2>

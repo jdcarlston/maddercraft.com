@@ -1,0 +1,2 @@
+{#- A small "Photo by" line. Set `credit` ({ name, url }) before including this. The link is optional. -#}
+<span class="credit label label--small photo-credit">Photo by {% if credit.url %}<a href="{{ credit.url }}">{{ credit.name }}</a>{% else %}{{ credit.name }}{% endif %}</span>

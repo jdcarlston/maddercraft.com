@@ -394,6 +394,7 @@ collections:
           - { name: file, label: File name, widget: string }
           - { name: alt, label: Description for screen readers, widget: string }
           - { name: caption, label: Caption, widget: string, required: false }
+          - { name: credit, label: Photographer (optional), widget: object, required: false, fields: [ { name: name, label: Name, widget: string }, { name: url, label: Link (website or Instagram), widget: string, required: false } ] }
       - name: video
         label: Video (one clip)
         widget: object
