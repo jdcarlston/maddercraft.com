@@ -7,10 +7,14 @@ module.exports = {
   // Show each image's file name when you hover over it. Handy while choosing pieces; set to false to hide.
   showFileNames: false,
   name: "Madder Craft",
-  url: "https://maddercraft.com",
+  url: "https://www.maddercraft.com",
+  // Visitor counting with Cloudflare Web Analytics (free, no cookies, so no cookie banner).
+  // In Cloudflare: Analytics & Logs → Web Analytics → Add a site, enter this site's domain, copy the
+  // token from the snippet it shows, and paste it here between the quotes.
+  analytics: { cloudflareToken: "" },
   // true lets AI companies train their models on the site's writing as well as cite it in answers.
   // false keeps the site in AI answers but out of training (see robots.txt, made by lib/seo.js).
-  allowAITraining: true,
+  allowAITraining: false,
   // Where the songs and video live (the Cloudflare R2 bucket "maddercraft-media").
   // File paths in _data/music.js are added to the end of this.
   media: "https://media.maddercraft.com",

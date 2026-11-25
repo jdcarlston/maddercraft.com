@@ -74,5 +74,10 @@
 <script src="/assets/js/forms.js" defer></script>
 <script src="/assets/js/menu.js" defer></script>
 <script src="/assets/js/slider.js" defer></script>
+{#- Visitor counting: Cloudflare Web Analytics (no cookies). Paste the site's token into
+    analytics.cloudflareToken in _data/site.js to turn it on; empty means no counting. #}
+{%- if site.analytics and site.analytics.cloudflareToken %}
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.analytics.cloudflareToken }}"}'></script>
+{%- endif %}
 </body>
 </html>
